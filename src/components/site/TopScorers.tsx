@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import { fetchTopScorersTable, fetchClubs } from "@/lib/queries";
+import { CODE_TO_SLUG } from "@/lib/clubCodes";
 import { DivisionTab } from "@/components/DivisionTab";
 import type { DivisionKey } from "@/lib/divisions";
 import { ClubCrest } from "@/components/site/ClubCrest";
@@ -10,18 +11,6 @@ interface Props {
   className?: string;
   showHeader?: boolean;
 }
-
-// Map club_code → club slug for linking
-const CODE_TO_SLUG: Record<string, string> = {
-  NDFC: "nondaeng-fc",
-  SUTD: "soengsang-united",
-  PMFC: "phimai-fc",
-  PUTD: "pakthongchai-united",
-  KBFC: "khonburi-fc",
-  SNFC: "suranaree-fc",
-  UNKR: "union-korat",
-  KSFC: "khamsakaesaeng-fc",
-};
 
 type Row = { id: string; name: string; club_code: string; goals: number; category: string };
 
@@ -73,8 +62,8 @@ export function TopScorers({ limit = 10, className = "", showHeader = true }: Pr
         ) : (
           <ul className="divide-y divide-border">
             {rows.map((p, i) => {
-              const slug = CODE_TO_SLUG[p.club_code];
-              const club = clubs.find((c) => c.slug === slug);
+                          const slug = CODE_TO_SLUG[p.club_code as keyof typeof CODE_TO_SLUG];
+                          const club = clubs.find((c) => c.slug === slug);
               return (
                 <li key={p.id} className="flex items-center gap-3 p-3 hover:bg-korat-red/5 transition-colors">
                   <div className={`font-display text-xl tabular-nums w-8 text-center ${i < 3 ? "text-korat-red" : "text-muted-foreground"}`}>

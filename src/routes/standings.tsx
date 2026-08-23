@@ -100,7 +100,7 @@ function StandingsPage() {
               );
             })}
             {standings.length === 0 && (
-              <tr><td colSpan={10} className="p-8 text-center text-muted-foreground text-sm">ยังไม่มีข้อมูลตารางคะแนน</td></tr>
+              <tr><td colSpan={10} className="p-8 text-center text-muted-foreground text-sm">ยังไม่มีผลการแข่งขันของฤดูกาล {SITE_YEAR} — รอโปรแกรมเปิดฤดูกาล</td></tr>
             )}
           </tbody>
         </table>

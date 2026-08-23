@@ -13,19 +13,32 @@ import {
 import { ClubCrest } from "@/components/site/ClubCrest";
 import { DIVISIONS } from "@/lib/divisions";
 import { Award, Share2, ArrowLeft } from "lucide-react";
-import { SITE_YEAR } from "@/lib/site";
+import { SITE_YEAR, buildHead } from "@/lib/site";
 
 export const Route = createFileRoute("/matches/$matchId")({
+  // โหลดข้อมูลแมตช์ฝั่ง server → head (og:*) ส่งออกใน HTML เพื่อให้ Facebook/LINE
+  // แสดง preview ถูกต้องตอนแชร์ลิงก์ (pattern เดียวกับ news.$slug.tsx)
+  loader: async ({ params }) => {
+    try {
+      return await fetchMatchById(params.matchId);
+    } catch {
+      return null;
+    }
+  },
+  head: ({ loaderData, params }) => {
+    const m = loaderData as any;
+    const hasTeams = Boolean(m?.home?.name && m?.away?.name);
+    const title = hasTeams
+      ? `${m.home.short_name} ${m.home_score ?? 0}-${m.away_score ?? 0} ${m.away.short_name}`
+      : `แมตช์ ${params.matchId}`;
+    const desc = hasTeams
+      ? m.status === "completed"
+        ? `ผลการแข่งขัน ${m.home.name} ${m.home_score ?? 0}-${m.away_score ?? 0} ${m.away.name} · แมตช์เดย์ ${m.matchweek} · ${m.venue ?? "สนามแข่งขัน"}`
+        : `โปรแกรมแข่งขัน ${m.home.name} พบ ${m.away.name} · แมตช์เดย์ ${m.matchweek} · ${m.venue ?? "สนามแข่งขัน"}`
+      : "ผลการแข่งขันแบบสด สถิติ ผู้ทำประตู MVP และคลังภาพ";
+    return buildHead(title, desc, `/matches/${params.matchId}`);
+  },
   component: MatchCenter,
-  head: ({ params }) => ({
-    meta: [
-      { title: `แมตช์ ${params.matchId} — Korat Super League ${SITE_YEAR}` },
-      {
-        name: "description",
-        content: "ผลการแข่งขันแบบสด สถิติ ผู้ทำประตู MVP และคลังภาพ",
-      },
-    ],
-  }),
 });
 
 function normalize(s?: string) {

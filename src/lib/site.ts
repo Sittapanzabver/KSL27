@@ -13,9 +13,11 @@ export const PLATFORM_OWNER_NOTE = "ผู้พัฒนาเทคโนโ�
 
 const OG_IMAGE = `${SITE_URL}/og-image.png`;
 
-/** สร้าง head (meta + canonical) สำหรับหน้าเว็บ — แชร์ลิงก์แล้วขึ้น preview ถูกต้อง */
-export function buildHead(title: string, description: string, path: string) {
+/** สร้าง head (meta + canonical) สำหรับหน้าเว็บ — แชร์ลิงก์แล้วขึ้น preview ถูกต้อง
+ *  @param image URL ของรูป og:image — ถ้าไม่ส่ง ใช้ default (`/og-image.png`) */
+export function buildHead(title: string, description: string, path: string, image?: string) {
   const fullTitle = `${title} — ${SITE_NAME} ${SITE_YEAR}`;
+  const ogImage = image || OG_IMAGE;
   return {
     meta: [
       { title: fullTitle },
@@ -23,12 +25,12 @@ export function buildHead(title: string, description: string, path: string) {
       { property: "og:title", content: fullTitle },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: OG_IMAGE },
+      { property: "og:image", content: ogImage },
       { property: "og:site_name", content: SITE_NAME },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: fullTitle },
       { name: "twitter:description", content: description },
-      { name: "twitter:image", content: OG_IMAGE },
+      { name: "twitter:image", content: ogImage },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}${path}` }],
   };
