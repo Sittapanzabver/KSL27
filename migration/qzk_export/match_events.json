@@ -1,0 +1,242 @@
+[
+  {
+    "id": "70ff3410-b0ee-4cc2-9e91-430bdec184ce",
+    "match_id": "a1110001-0000-4000-8000-000000000001",
+    "player_id": "865079b9-8f9d-4a3c-bcf2-c03e641e98fb",
+    "club_id": "5ea7ea7e-735f-41e4-913d-1e292b30e6ff",
+    "event_type": "own_goal",
+    "minute": 51,
+    "detail": null,
+    "created_at": "2026-05-04T06:31:23.899729+00:00"
+  },
+  {
+    "id": "83d53fe2-2961-412e-8341-9015825f1f35",
+    "match_id": "a1110001-0000-4000-8000-000000000001",
+    "player_id": "b0000001-0000-4000-8000-000000000001",
+    "club_id": "5ea7ea7e-735f-41e4-913d-1e292b30e6ff",
+    "event_type": "yellow_card",
+    "minute": 18,
+    "detail": null,
+    "created_at": "2026-05-04T06:31:23.899729+00:00"
+  },
+  {
+    "id": "c8ac75cd-dcfb-4daa-9e15-b456dd36d700",
+    "match_id": "a1110001-0000-4000-8000-000000000001",
+    "player_id": "9eeff600-8ad9-48fa-8348-622e3b2f2710",
+    "club_id": "5ea7ea7e-735f-41e4-913d-1e292b30e6ff",
+    "event_type": "yellow_card",
+    "minute": 24,
+    "detail": null,
+    "created_at": "2026-05-04T06:31:23.899729+00:00"
+  },
+  {
+    "id": "42b3374e-0306-4e7f-a28b-09867cdbdc82",
+    "match_id": "a1110001-0000-4000-8000-000000000001",
+    "player_id": "b0000002-0000-4000-8000-000000000002",
+    "club_id": "5ea7ea7e-735f-41e4-913d-1e292b30e6ff",
+    "event_type": "yellow_card",
+    "minute": 64,
+    "detail": null,
+    "created_at": "2026-05-04T06:31:23.899729+00:00"
+  },
+  {
+    "id": "d2be8476-a895-430d-bd5c-20e16e23c1e8",
+    "match_id": "a1110001-0000-4000-8000-000000000001",
+    "player_id": "b0000003-0000-4000-8000-000000000003",
+    "club_id": "4fd42b79-ece9-4dc6-936e-3e59d9f58bb1",
+    "event_type": "yellow_card",
+    "minute": 74,
+    "detail": null,
+    "created_at": "2026-05-04T06:31:23.899729+00:00"
+  },
+  {
+    "id": "f53d6829-f1e6-4ff4-8c85-d8eb66c2fed2",
+    "match_id": "4662a5d0-3060-4f6d-ad29-7d97a0565007",
+    "player_id": "b0000004-0000-4000-8000-000000000004",
+    "club_id": "967aaca4-0575-4b74-99ab-3b5c97e8892d",
+    "event_type": "yellow_card",
+    "minute": 21,
+    "detail": null,
+    "created_at": "2026-05-04T06:31:23.899729+00:00"
+  },
+  {
+    "id": "3142a309-5ca8-4258-b926-d94c0a97a8a3",
+    "match_id": "4662a5d0-3060-4f6d-ad29-7d97a0565007",
+    "player_id": "711ddbec-cb6d-4ad9-a557-48e551c2eecf",
+    "club_id": "967aaca4-0575-4b74-99ab-3b5c97e8892d",
+    "event_type": "yellow_card",
+    "minute": 36,
+    "detail": null,
+    "created_at": "2026-05-04T06:31:23.899729+00:00"
+  },
+  {
+    "id": "673a0c53-77ff-4cd1-8ae6-b937f58195ea",
+    "match_id": "a1110002-0000-4000-8000-000000000002",
+    "player_id": "4f2c2a32-947f-4e1e-ae65-7a8d8e798c2b",
+    "club_id": "b6528e69-342e-4b64-8e76-5ee90c16a2ce",
+    "event_type": "goal",
+    "minute": null,
+    "detail": null,
+    "created_at": "2026-05-04T06:31:23.899729+00:00"
+  },
+  {
+    "id": "58a1640e-fa5a-4908-81d1-24eadaa3dd8e",
+    "match_id": "a1110002-0000-4000-8000-000000000002",
+    "player_id": "b0000005-0000-4000-8000-000000000005",
+    "club_id": "6ffe59ba-cb62-483e-b085-decde56c2a38",
+    "event_type": "yellow_card",
+    "minute": null,
+    "detail": null,
+    "created_at": "2026-05-04T06:31:23.899729+00:00"
+  },
+  {
+    "id": "1abbb794-3f88-422c-ab7f-4fcbb988efe9",
+    "match_id": "a1110002-0000-4000-8000-000000000002",
+    "player_id": "71b41077-b842-47da-b5e6-90b91859c5de",
+    "club_id": "6ffe59ba-cb62-483e-b085-decde56c2a38",
+    "event_type": "yellow_card",
+    "minute": null,
+    "detail": null,
+    "created_at": "2026-05-04T06:31:23.899729+00:00"
+  },
+  {
+    "id": "aa72d54d-89be-433e-ab7d-edc5da1c5ee9",
+    "match_id": "a1110002-0000-4000-8000-000000000002",
+    "player_id": "b0000006-0000-4000-8000-000000000006",
+    "club_id": "b6528e69-342e-4b64-8e76-5ee90c16a2ce",
+    "event_type": "yellow_card",
+    "minute": null,
+    "detail": null,
+    "created_at": "2026-05-04T06:31:23.899729+00:00"
+  },
+  {
+    "id": "9a082452-b996-474a-92ef-a07029df814f",
+    "match_id": "a1110002-0000-4000-8000-000000000002",
+    "player_id": "b0000007-0000-4000-8000-000000000007",
+    "club_id": "b6528e69-342e-4b64-8e76-5ee90c16a2ce",
+    "event_type": "yellow_card",
+    "minute": null,
+    "detail": null,
+    "created_at": "2026-05-04T06:31:23.899729+00:00"
+  },
+  {
+    "id": "14529a5c-e15e-4347-b40d-5fdd7a6771ac",
+    "match_id": "e90701f0-1ddc-4e7a-95e2-964d0459c433",
+    "player_id": "6ae4236b-d547-4c27-b872-77a51c7670eb",
+    "club_id": "8fac8000-d53c-4f5b-9ebc-9816f8f46b64",
+    "event_type": "goal",
+    "minute": 3,
+    "detail": null,
+    "created_at": "2026-05-04T06:31:23.899729+00:00"
+  },
+  {
+    "id": "9fb1bfa6-a9f7-48aa-b92a-709e3c658c9c",
+    "match_id": "e90701f0-1ddc-4e7a-95e2-964d0459c433",
+    "player_id": "14000ade-ed1a-4f71-84e6-1223d71825cc",
+    "club_id": "8fac8000-d53c-4f5b-9ebc-9816f8f46b64",
+    "event_type": "goal",
+    "minute": 43,
+    "detail": null,
+    "created_at": "2026-05-04T06:31:23.899729+00:00"
+  },
+  {
+    "id": "ddc666a9-5617-48d3-93b6-97199aeff726",
+    "match_id": "e90701f0-1ddc-4e7a-95e2-964d0459c433",
+    "player_id": "75ee544b-6d58-4e10-ab1f-5d228a537452",
+    "club_id": "8fac8000-d53c-4f5b-9ebc-9816f8f46b64",
+    "event_type": "goal",
+    "minute": 46,
+    "detail": null,
+    "created_at": "2026-05-04T06:31:23.899729+00:00"
+  },
+  {
+    "id": "342dc87c-52c5-48f6-8d16-3933008d744c",
+    "match_id": "e90701f0-1ddc-4e7a-95e2-964d0459c433",
+    "player_id": "75ee544b-6d58-4e10-ab1f-5d228a537452",
+    "club_id": "8fac8000-d53c-4f5b-9ebc-9816f8f46b64",
+    "event_type": "goal",
+    "minute": 60,
+    "detail": null,
+    "created_at": "2026-05-04T06:31:23.899729+00:00"
+  },
+  {
+    "id": "75cd177b-02e1-47bd-b1c2-318cf1ea22d8",
+    "match_id": "e90701f0-1ddc-4e7a-95e2-964d0459c433",
+    "player_id": "b000000a-0000-4000-8000-00000000000a",
+    "club_id": "b2e5a0cc-fec1-40ae-94f1-f2260785c6b2",
+    "event_type": "goal",
+    "minute": 16,
+    "detail": null,
+    "created_at": "2026-05-04T06:31:23.899729+00:00"
+  },
+  {
+    "id": "277b90d9-3134-4279-ad0e-7e41128e24eb",
+    "match_id": "e90701f0-1ddc-4e7a-95e2-964d0459c433",
+    "player_id": "fb5e9656-2d09-4463-9567-565663fb772e",
+    "club_id": "b2e5a0cc-fec1-40ae-94f1-f2260785c6b2",
+    "event_type": "goal",
+    "minute": 68,
+    "detail": null,
+    "created_at": "2026-05-04T06:31:23.899729+00:00"
+  },
+  {
+    "id": "cd05c2e6-11e6-4edc-a934-7e87e3b42abe",
+    "match_id": "e90701f0-1ddc-4e7a-95e2-964d0459c433",
+    "player_id": "b0000009-0000-4000-8000-000000000009",
+    "club_id": "8fac8000-d53c-4f5b-9ebc-9816f8f46b64",
+    "event_type": "yellow_card",
+    "minute": 43,
+    "detail": null,
+    "created_at": "2026-05-04T06:31:23.899729+00:00"
+  },
+  {
+    "id": "723ec64e-9424-48f3-b722-d6efaeb58a3d",
+    "match_id": "e90701f0-1ddc-4e7a-95e2-964d0459c433",
+    "player_id": "0a85a851-8926-48b7-acce-fc462977838a",
+    "club_id": "8fac8000-d53c-4f5b-9ebc-9816f8f46b64",
+    "event_type": "yellow_card",
+    "minute": 68,
+    "detail": null,
+    "created_at": "2026-05-04T06:31:23.899729+00:00"
+  },
+  {
+    "id": "2688685f-99eb-4c22-9a2f-2272cfb3c587",
+    "match_id": "e90701f0-1ddc-4e7a-95e2-964d0459c433",
+    "player_id": "75ee544b-6d58-4e10-ab1f-5d228a537452",
+    "club_id": "8fac8000-d53c-4f5b-9ebc-9816f8f46b64",
+    "event_type": "yellow_card",
+    "minute": 80,
+    "detail": null,
+    "created_at": "2026-05-04T06:31:23.899729+00:00"
+  },
+  {
+    "id": "6eef2496-b15f-4c45-9e2f-8d26abff675f",
+    "match_id": "e90701f0-1ddc-4e7a-95e2-964d0459c433",
+    "player_id": "24f7425c-e168-46a0-9f2b-783d794c7e1d",
+    "club_id": "8fac8000-d53c-4f5b-9ebc-9816f8f46b64",
+    "event_type": "yellow_card",
+    "minute": 82,
+    "detail": null,
+    "created_at": "2026-05-04T06:31:23.899729+00:00"
+  },
+  {
+    "id": "df88dd72-dde3-4c84-b4d3-8d0cf8e41047",
+    "match_id": "e90701f0-1ddc-4e7a-95e2-964d0459c433",
+    "player_id": "b000000b-0000-4000-8000-00000000000b",
+    "club_id": "b2e5a0cc-fec1-40ae-94f1-f2260785c6b2",
+    "event_type": "yellow_card",
+    "minute": 76,
+    "detail": null,
+    "created_at": "2026-05-04T06:31:23.899729+00:00"
+  },
+  {
+    "id": "68b97479-87ff-411d-9367-459c3a25c46c",
+    "match_id": "e90701f0-1ddc-4e7a-95e2-964d0459c433",
+    "player_id": null,
+    "club_id": "8fac8000-d53c-4f5b-9ebc-9816f8f46b64",
+    "event_type": "yellow_card",
+    "minute": 26,
+    "detail": null,
+    "created_at": "2026-05-04T06:31:23.899729+00:00"
+  }
+]

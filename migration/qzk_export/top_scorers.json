@@ -1,0 +1,1512 @@
+[
+  {
+    "id": "f2b46bf5-6853-4b5d-a89c-791553577cc7",
+    "name": "ธีรศักดิ์ ทุมมี",
+    "club_code": "NDFC",
+    "goals": 7,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "03b88a6d-2f13-4437-9fe4-49ec959a1dc8",
+    "name": "ศราวุฒิ แทนลึง",
+    "club_code": "SUTD",
+    "goals": 6,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "d8e3cfc7-cf31-429c-a31b-2b6eb921a9ef",
+    "name": "ภาวัติ สกุลกัญจนา",
+    "club_code": "SUTD",
+    "goals": 5,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "b8a0f61d-aae0-4704-8aa5-7f3f6845282e",
+    "name": "วรชิต ป่วงกลาง",
+    "club_code": "PMFC",
+    "goals": 5,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "c20131b5-b8d2-4f10-a5d3-2d49494104a7",
+    "name": "เดวิด กาเลป",
+    "club_code": "PMFC",
+    "goals": 5,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "ab6c4d08-b974-4871-a420-f2413857ad82",
+    "name": "นันทวัฒน์ ซื่อตรง",
+    "club_code": "PMFC",
+    "goals": 4,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "a685d647-34b7-462d-af36-fe62e5e21464",
+    "name": "ปฎิภาณ แหวนครบุรี",
+    "club_code": "SUTD",
+    "goals": 4,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "0f0b1b60-b913-443e-9495-0552a72897ea",
+    "name": "ณัฐพงศ์ สุจิบาล",
+    "club_code": "PUTD",
+    "goals": 4,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "8922d802-ab28-4e46-a27b-456b14874979",
+    "name": "เจษฎาพันธ์ ฝอยกระโทก",
+    "club_code": "KBFC",
+    "goals": 4,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "3a07b3e2-4ccd-44b6-9f9e-3289b121532e",
+    "name": "ศิริศักดื์ กายแก้ว",
+    "club_code": "PMFC",
+    "goals": 4,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "e272d9d3-4125-4bc7-93dc-028974d68d26",
+    "name": "กฤษณกร หย่นครบุรี",
+    "club_code": "SNFC",
+    "goals": 3,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "00999595-fa58-4157-b641-456f3c3ffe37",
+    "name": "วิศรุต เจิมขุนทด",
+    "club_code": "UNKR",
+    "goals": 3,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "e6b368ca-979a-421a-a559-7ef9ff9d65d6",
+    "name": "ธีรพัฒน์ แผลกระโทก",
+    "club_code": "PUTD",
+    "goals": 3,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "7233b8e2-c373-49bb-bd50-14274e6e4372",
+    "name": "ศิริศักดิ์ โชติเมืองปัก",
+    "club_code": "PUTD",
+    "goals": 3,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "f0ed21ba-aa08-4966-a2f8-a32b7d1c0d4c",
+    "name": "สมพร อินจันทร์",
+    "club_code": "SNFC",
+    "goals": 3,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "8b73b953-447f-4d5d-bc7f-f9091ca815c2",
+    "name": "อัครวัชร์ ภูมินอก",
+    "club_code": "NDFC",
+    "goals": 3,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "c7c3d3f9-695f-463c-a1f9-0d0652403719",
+    "name": "นพดล พยัคฆ์กุล",
+    "club_code": "PMFC",
+    "goals": 2,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "3c20cb06-22d4-42ab-a476-ca20cc040915",
+    "name": "ธวัชชัย ผิวพรรณ์",
+    "club_code": "SUTD",
+    "goals": 2,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "6b2bdbd8-db90-41d1-bed9-1e8bb2564d77",
+    "name": "สมิต นิเวศกุล",
+    "club_code": "SUTD",
+    "goals": 2,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "d9095478-1a41-4bb6-b22a-7be0c95900ec",
+    "name": "ธวัชชัย ผาวเหลือง",
+    "club_code": "SUTD",
+    "goals": 2,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "b24387fd-4d4c-4182-8d80-5c40c52c5928",
+    "name": "ไตรภพ คล่องใจ",
+    "club_code": "PMFC",
+    "goals": 2,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "c27cb40b-8a23-4aac-a231-c8457f93a10b",
+    "name": "กรวิชญ์ เอื้อฐานะดิษย์",
+    "club_code": "SNFC",
+    "goals": 2,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "dff8f693-e777-4a8e-a04e-1a83766013be",
+    "name": "ชลสิทธิ์ โคตรสุวรรณ",
+    "club_code": "SNFC",
+    "goals": 2,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "0e49b323-2da5-4c53-867d-1bd76238b73b",
+    "name": "สิทธิชัย แพทย์กระโทก",
+    "club_code": "PMFC",
+    "goals": 2,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "86d83464-802b-40d9-8c5f-ed383fa2f93b",
+    "name": "ณัฐวุฒิ ลุนแก้ว",
+    "club_code": "SUTD",
+    "goals": 2,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "1e103d5b-103a-4437-8d2c-dca79dd54e6f",
+    "name": "จักรกฤษ วัชรเศรษฐากุล",
+    "club_code": "UNKR",
+    "goals": 2,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "84d70384-f863-4450-a03d-84c0f22f5847",
+    "name": "มูฮัมหมัดอารัย์ ฉิมชาติ",
+    "club_code": "KSFC",
+    "goals": 2,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "978cb3f0-1bca-4f27-8aa3-d4f8e9108e8f",
+    "name": "ชานนท์ ฉิมานนท์วิทย์",
+    "club_code": "PUTD",
+    "goals": 2,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "95511448-b1f3-4abc-8cb2-49b50eaf6492",
+    "name": "วัชระ ปทุมทอง",
+    "club_code": "SUTD",
+    "goals": 2,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "9d95892c-0cba-4c97-b1b0-4884dc9f75a2",
+    "name": "จุลจักร มินพิมาย",
+    "club_code": "PMFC",
+    "goals": 2,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "4d11fc78-e41a-45a3-b0ca-332661e1229f",
+    "name": "ฐิติวัฒน์ ไตรจะโปะ",
+    "club_code": "SNFC",
+    "goals": 2,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "8772386c-6ef3-4fd8-916c-576b71d25d2d",
+    "name": "กมุด พุดสระน้อย",
+    "club_code": "PUTD",
+    "goals": 2,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "e874158b-0936-4d41-98bb-6cb1a4120ed5",
+    "name": "ภาณุพงศ์ อักษรพรมราช",
+    "club_code": "PUTD",
+    "goals": 2,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "a4f655e1-1fcb-4b2a-9dea-a9cdaa1523be",
+    "name": "รชต โลกวิทย์",
+    "club_code": "SNFC",
+    "goals": 2,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "29fcad43-afeb-4031-84b8-aa6f89cc3021",
+    "name": "จักรพันธ์ ผ่องศรี",
+    "club_code": "UNKR",
+    "goals": 2,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "f443c41c-064d-4946-a2bf-3b37ba37178d",
+    "name": "กฤษกร สุดสายตา",
+    "club_code": "NDFC",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "b3c7ac87-a145-4eb8-a3a2-517321bf2fad",
+    "name": "ณัฐวุฒิ สนิทชัย",
+    "club_code": "SUTD",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "a682abe6-f051-46cb-aa85-82c8fd74da83",
+    "name": "ปัณณฑร สีลาย",
+    "club_code": "SNFC",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "97d9ed5a-ca41-41fe-a249-3f3bcac26213",
+    "name": "วงศกร เจริญสุข",
+    "club_code": "SNFC",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "813bde06-9f77-4e92-89ba-8b08955f69ff",
+    "name": "ณัฐนนท์ ชาทิพย์พาที",
+    "club_code": "UNKR",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "75e4a0d6-7d22-4cf7-979f-a3c2a39efbb0",
+    "name": "วราวุฒิ จันทราโพ",
+    "club_code": "PUTD",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "001ea1bd-bce1-4886-b851-80bf6124b5e1",
+    "name": "ภูวนัย ชาญโพธิ์",
+    "club_code": "PUTD",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "d866733c-0d7c-4587-bbdb-526e54744ef9",
+    "name": "คณานาท พยัฆกุล",
+    "club_code": "PMFC",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "9f144a05-581d-41af-adaf-1dcffe03ed78",
+    "name": "รุ่งโรจน์ หมื่นกูด",
+    "club_code": "SUTD",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "8841618a-58a6-4c78-b479-e7540aa0f07e",
+    "name": "จีรวัฒน์ ธงภักดิ์",
+    "club_code": "NDFC",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "21be6610-6052-4ddf-bee1-c0314b17d125",
+    "name": "สหรัฐ เลิศตะคุ",
+    "club_code": "PUTD",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "d93c5154-3d4c-4d70-a84b-d4ab02f38f17",
+    "name": "ธวัชชัย หวังอ้อมกลาง",
+    "club_code": "KSFC",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "4cc34495-8e88-49d6-a6d2-9015e9dfabfe",
+    "name": "อนิรุจน์ ลังด่านจาก",
+    "club_code": "KSFC",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "5998a87a-a6cc-4033-9986-ff2fbcc1b226",
+    "name": "ณัฐดนัย ยกสันเทียะ",
+    "club_code": "NDFC",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "ae5b8087-4e6c-431e-974d-c0681362b751",
+    "name": "วุฒิไกร ปิตุสมบัติ",
+    "club_code": "PMFC",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "17c95ec7-8bff-4031-945f-9471ed47feeb",
+    "name": "ชัยวัฒน์ ทองคำ",
+    "club_code": "SUTD",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "6e279432-67ad-4bfa-95a7-7074c8c858cd",
+    "name": "ทักษิณาธาร นอบไทย",
+    "club_code": "PUTD",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "8673033f-b4a1-4a8c-bd93-c058b6f7c507",
+    "name": "จิตติพัฒน์ จันทะมาตย์",
+    "club_code": "UNKR",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "9f106942-ea95-443f-98ab-c1cca5f244c2",
+    "name": "จิตติกรณ์ ทรัพย์ประเสริฐ",
+    "club_code": "NDFC",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "f0c9f077-411f-47da-b7e5-3033787f8c69",
+    "name": "พิเชษฐ บุตรศรีภูมิ",
+    "club_code": "TBC",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "3aeaaced-918f-4125-acdd-02531220c670",
+    "name": "หนึ่งเดียว ดีจอหอ",
+    "club_code": "TBC",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "4362f189-d2ba-43c5-8704-917a1941a645",
+    "name": "ธนากร ชุมเกษม",
+    "club_code": "KBFC",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "afd0dd91-d03a-4bbc-aed1-5592b1207b1e",
+    "name": "อโนมา พุฒนอก",
+    "club_code": "KSFC",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "8a607313-c99e-4cd6-ad2b-280d69a0798d",
+    "name": "สัญญา ชำนาญกุล",
+    "club_code": "KSFC",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "dcfb60da-a028-4d43-9aec-6a0a9382ee37",
+    "name": "รพีภัทร พุทไธสง",
+    "club_code": "KBFC",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "284a4c16-2166-4f67-8fd4-2bd2a6c9081f",
+    "name": "ธีรเมธ จันทร์สระน้อย",
+    "club_code": "PUTD",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "a44446f1-7ede-4119-b029-01479dd7a5ab",
+    "name": "รพีพงษ์ วอกลาง",
+    "club_code": "KSFC",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "c82dfe3f-0729-405a-a249-5b68a0ca19e0",
+    "name": "ฑศยะชัย พลีขันธ์",
+    "club_code": "SUTD",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "e71e31ff-f6b6-4b0a-984e-b1427a28f149",
+    "name": "สิริพันธ์ อรมสุข",
+    "club_code": "SUTD",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "9d5b0fa0-1fe9-4ee7-ae34-2e9c15c696fc",
+    "name": "ศตวรรษ กองกระโทก",
+    "club_code": "SUTD",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "2027efaa-27c5-48c3-9875-5658ef498a2f",
+    "name": "มณฑล ขำพะเนาว์",
+    "club_code": "KBFC",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "15ee2b39-81ad-404e-b6e0-5f3489a4e106",
+    "name": "กล้าณรงค์ กล้ากระโทก",
+    "club_code": "KSFC",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "1b90a3c7-64a3-4277-9ff4-6ec0981ec4e3",
+    "name": "ประณต ตากิ่มนอก",
+    "club_code": "KBFC",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "9fed4717-8318-4291-8e15-fbff379d63d9",
+    "name": "ศรายุทธ ทรวงดอน",
+    "club_code": "PUTD",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "1aa7bac2-a2a3-4f24-9d8e-07b8f197e1a3",
+    "name": "พีรพัฒน์ เคนน้ำเที่ยง",
+    "club_code": "SNFC",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "bb495f81-2457-4f48-a6f9-59d0bc1543bb",
+    "name": "พงศกร คุ้มทอง",
+    "club_code": "UNKR",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "27604927-0c52-441e-86d7-9749ad7d8505",
+    "name": "ณัฐวัตร โสจันทร์",
+    "club_code": "UNKR",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "1fb903ae-7ea3-4b39-8ac7-fcf64f6cac48",
+    "name": "ประวิทย์ เวชยันต์",
+    "club_code": "SUTD",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "b4f34d9b-746d-42c7-85e6-2185f1761fbb",
+    "name": "ธนาศักดิ์ เทมี",
+    "club_code": "SUTD",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "3df5f9cc-f0bc-4399-beb4-fbd543dc2734",
+    "name": "ภาณุวิชญ์ สารพันธ์",
+    "club_code": "SUTD",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "bef334a6-66b3-4d61-a762-23bd91ff9372",
+    "name": "ญาณวุฒิ เครื่องกลาง",
+    "club_code": "KSFC",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "160a7846-f6e6-4a6a-9c43-5c3c0b10e5cf",
+    "name": "อนิรุจ จันทวงศ์",
+    "club_code": "UNKR",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "954bccff-58f7-418d-93e4-a1da8fd279aa",
+    "name": "ภูมิน อินชัยบูรณ์",
+    "club_code": "PMFC",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "042d559d-8201-42c6-ba89-0b2cc34c4caa",
+    "name": "ธีรพงษ์ เยาะเย้ย",
+    "club_code": "PMFC",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "d4dd49d1-5aed-4473-8300-aa4fb7220b5d",
+    "name": "คมกริช ชิขุนทด",
+    "club_code": "PMFC",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "7996e06d-65a4-4f04-9b93-c0846f60ea31",
+    "name": "สนธยา วงเมือง",
+    "club_code": "SUTD",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "5b69a766-6722-4ab5-8a9a-7a518a982ae4",
+    "name": "กันต์ตพัทธ์ เพียรธรรม",
+    "club_code": "UNKR",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "0651a69d-7474-47eb-ba08-1080362cb6af",
+    "name": "ชนัสถ์นันท์ หวังเจือกลาง",
+    "club_code": "KSFC",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "b0b0450d-fca9-40e6-a89d-14acf526c13c",
+    "name": "สุนทร สนิทนอก",
+    "club_code": "SNFC",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "64ea72be-d204-46ac-8f7b-f6c392fe97ee",
+    "name": "นวพล แอบผักแว่น",
+    "club_code": "KBFC",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "39662661-17c0-4811-ae7f-d42c4ef59e67",
+    "name": "ปัธธวัฒน์ แสงแก้ว",
+    "club_code": "KBFC",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "77ca66f3-e5a9-42f5-97dd-a3cbcbb5495c",
+    "name": "ปรเมธ เคียงพิมาย",
+    "club_code": "PMFC",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "d9dd2cf5-bfc2-4fea-b567-59d7051f0618",
+    "name": "ปณิธิ เปลี่ยนกระโทก",
+    "club_code": "UNKR",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "7207d1c4-3371-4932-8aac-36da59c3c9e7",
+    "name": "ฉลอง นาดี",
+    "club_code": "PMFC",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "d9010c74-da56-46e4-aa83-63e29e4c9882",
+    "name": "ภูวดล กรานวงศ์",
+    "club_code": "SNFC",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "a96bdede-2588-4634-8511-69b91ddc03b5",
+    "name": "เกียรติคุณ วงศ์อินอยู่",
+    "club_code": "SUTD",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "7257a360-583f-48a6-b872-93c953f2aac6",
+    "name": "ศิรวิทย์ พันธนาม",
+    "club_code": "SUTD",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "48decace-05f5-4b44-be6e-06d0e59f5a8d",
+    "name": "พิริยะ เปี่ยมอุดมศิริ",
+    "club_code": "PMFC",
+    "goals": 1,
+    "category": "senior",
+    "season": 2026,
+    "created_at": "2026-05-23T06:34:56.117279+00:00",
+    "updated_at": "2026-05-23T06:34:56.117279+00:00"
+  },
+  {
+    "id": "844e9525-3d49-4a40-9b10-da9b468b4bbd",
+    "name": "สุเมธ จิภักดี",
+    "club_code": "SNR",
+    "goals": 6,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "929d79bd-70e4-4479-8d55-b5c7998af881",
+    "name": "อัมรินทร์ บัวบาน",
+    "club_code": "SNR",
+    "goals": 3,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "e123c42e-1e28-4f19-8998-914e5c04d7ca",
+    "name": "ชัยรวัช โจกตะคุ",
+    "club_code": "SNR",
+    "goals": 3,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "8bd56cc6-ba98-4180-a73c-edffcb12d403",
+    "name": "ปณิธาน เซนดอร์ฟ",
+    "club_code": "SNR",
+    "goals": 2,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "847c9e3b-f311-4e27-be96-d354cad83ac1",
+    "name": "ศุภกฤษฏ์ คามตะสิลา",
+    "club_code": "SNR",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "c43ed2f5-8d0b-47e7-a432-edc05a903738",
+    "name": "กฤษณกร หย่อนครบุรี",
+    "club_code": "SNR",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "7892a506-fa0a-46d8-99d7-c86c647b437c",
+    "name": "วัชรวิชญ์ ลุนพุฒ",
+    "club_code": "SNR",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "cab5c3a2-e98c-4371-a605-62b3681d2fb8",
+    "name": "วีรพัทธ์ ธนะปรีดาชัย",
+    "club_code": "SNR",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "0134087c-2217-49fb-b5af-9d431282313d",
+    "name": "พรชัย สุราแป๊ะตั้ง",
+    "club_code": "SNR",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "3957e6bb-1b22-4e64-9418-970f87ae7711",
+    "name": "รัตนบดินทร์ พิณทอง",
+    "club_code": "SNR",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "1899438a-120f-4a33-8fb7-8ca9ad3f1da9",
+    "name": "ธราเทพ เดอะอะลีอัน",
+    "club_code": "SNR",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "e3616827-b409-416b-9bb5-801429aa87f1",
+    "name": "พันธุ์กรณ์ เสือสูงเนิน",
+    "club_code": "SNR",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "7f4800bc-1738-48d0-88d4-a2b64ea31a5c",
+    "name": "วชิรวิทย์ ลุนพุฒ",
+    "club_code": "SNR",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "bbd72bf7-192d-4c33-a860-ee10f9e6b1b3",
+    "name": "ยุติวิชญ์ รูปชัยภูมิ",
+    "club_code": "SNR",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "722c6cdd-065c-414d-81d8-7092058c0701",
+    "name": "ธนากร มุ่งเปลี่ยนกลาง",
+    "club_code": "KSK",
+    "goals": 4,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "1f4c310a-501b-41db-b457-2a79635193dd",
+    "name": "อัตพล จี่พิมาย",
+    "club_code": "KSK",
+    "goals": 2,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "e0b5bb63-7828-41e9-8d95-e2fd14a4dcd7",
+    "name": "เจริญสุข ยาวะยืน",
+    "club_code": "KSK",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "522d8c9f-1794-4fd6-b7d5-2f2bf58705fe",
+    "name": "ชนพล หวังภูกลาง",
+    "club_code": "KSK",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "0b16422c-45a3-45fb-9c7f-c3e00b17122d",
+    "name": "วีรเทพ กรวดนอก",
+    "club_code": "KSK",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "f1c2a908-1315-4d4e-89e7-732b8a5acc90",
+    "name": "ศิริวิทย์ หวังปรุงกลาง",
+    "club_code": "KSK",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "f93c657f-f4b5-49a0-b88c-f7786cef5198",
+    "name": "วัฒน์ชัย โบงูเหลือม",
+    "club_code": "KSK",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "c3d8aae9-f638-4f6b-9750-b492f8889090",
+    "name": "คมกริช ชิขุนทด",
+    "club_code": "PMI",
+    "goals": 3,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "19d83159-a9b8-4b41-98e1-f3ec5e7ba2eb",
+    "name": "จิรพัชร อุ่นสะอาด",
+    "club_code": "PMI",
+    "goals": 2,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "34062cf8-4d10-4ccf-8286-9a55ae2cc598",
+    "name": "ชยพล หารดี",
+    "club_code": "PMI",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "f6e9acf9-39e2-4527-bb87-aeb5e6f4ef38",
+    "name": "นพดล แจ้งใจดี",
+    "club_code": "PMI",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "c396493d-287c-4efb-b89c-85b39975df1d",
+    "name": "ยศภัทร ชาญอนงค์สุข",
+    "club_code": "PMI",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "0b53761d-15a1-45f4-9a98-2657e790fbd3",
+    "name": "นัชชานนท์ พงษ์พิริยะกุล",
+    "club_code": "PMI",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "6a54c4d6-9525-450a-80f5-22022b9b2a2d",
+    "name": "สุวิทัส สว่างพลกรัง",
+    "club_code": "PMI",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "4c681655-5c1c-48dd-9695-095460dbc0ce",
+    "name": "กมลวัฒน์ พันข้าว",
+    "club_code": "PMI",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "090a8e13-ae19-4926-9b2b-15638b6560fe",
+    "name": "อภิวัฒน์ บุญสุข",
+    "club_code": "PMI",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "e049fea4-3a76-49ea-82d0-8137a091c831",
+    "name": "อรินัย มูลพิมาย",
+    "club_code": "PMI",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "fbb7cc86-3463-438a-a2b9-fee75ae32b50",
+    "name": "ภัควัฒน์ ยิ่งแก้ว",
+    "club_code": "PMI",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "a18e4d2b-7da1-4cfa-a857-239d42096908",
+    "name": "วงศกร ขันชัยภูมิ",
+    "club_code": "KBR",
+    "goals": 3,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "1ca7ba1b-9427-4b0d-9f86-f4293703775d",
+    "name": "ทิพภากรณ์ กาลินครบุรี",
+    "club_code": "KBR",
+    "goals": 2,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "9e94e682-ef01-40df-9776-0d0347986d1a",
+    "name": "คุณานนท์ พันภูมิ",
+    "club_code": "KBR",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "f899a25c-c242-4387-91d2-c6d16f43eca9",
+    "name": "ภัทรกฤติ ก้องเสนาะ",
+    "club_code": "KBR",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "e821051d-1be5-493a-a7ca-b3f28feab7f5",
+    "name": "ธีรภัทร ขุนศรี",
+    "club_code": "KBR",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "46a61059-6e0b-47bc-b3a3-09be538f5322",
+    "name": "รัฐสิน สวัสดีลาภา",
+    "club_code": "KBR",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "c4aaadab-e5bd-4958-a310-5eaaceb2ae7d",
+    "name": "จิรศักดิ์ นินด่านจาก",
+    "club_code": "KBR",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "a97753f7-62d8-4831-bfa2-cefb47e9a0df",
+    "name": "จรูญ คูณจังหรีด",
+    "club_code": "PTU",
+    "goals": 3,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "827ed653-0ef6-4c61-a214-3c4ec878a0ac",
+    "name": "ธนกฤต มงคลขจร",
+    "club_code": "PTU",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "2964221d-91c6-4c86-a115-dfce455d41fa",
+    "name": "ชนาวีร์ สีสุวัฒน์",
+    "club_code": "PTU",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "f83a8d42-95b4-40d5-a580-58655c7f9332",
+    "name": "อนันตชัย วิเวกกิ่ง",
+    "club_code": "PTU",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "e70812ee-c151-4199-8e9b-9cf0c78b1de4",
+    "name": "ศิริชัย ชุ่มผักแว่น",
+    "club_code": "PTU",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "d71cd22a-c589-47fb-bd8d-8326187c5563",
+    "name": "วชิรวิทย์ เชยสระน้อย",
+    "club_code": "PTU",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "76f1b37a-f43f-4e6a-bca3-18bca9a38ffd",
+    "name": "เจริญ คูณจังหรีด",
+    "club_code": "PTU",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "4737edee-8c7d-420f-a9cb-dd96b563d75c",
+    "name": "พงษ์ระวี ลบนองบัว",
+    "club_code": "PTU",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "ccb0df5d-dbb5-4ff0-aec9-aa55cfd18715",
+    "name": "ณัฐดนัย เริงสูงเนิน",
+    "club_code": "PTU",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "6bb9877f-0925-4f0a-87aa-2d86254fb846",
+    "name": "กวินท์ สดใส",
+    "club_code": "UKR",
+    "goals": 2,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "62e6800f-8548-43b7-828c-6cac965479a0",
+    "name": "วรกันต์ ทองคำ",
+    "club_code": "UKR",
+    "goals": 2,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "a063b32f-5230-406b-abe6-88251a3505d2",
+    "name": "รัฐพล เอี่ยมสว่าง",
+    "club_code": "UKR",
+    "goals": 2,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "7ba7f36a-bdc0-4a7a-888a-f076f1084fd6",
+    "name": "สุรเชษฐ์ ชัยชนะ",
+    "club_code": "UKR",
+    "goals": 2,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "8969e207-3636-4696-bcbf-274942441c62",
+    "name": "ธีรพัฒน์ โสบกระโทก",
+    "club_code": "UKR",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "8b821336-4d04-481a-8ab2-bd887d487af6",
+    "name": "ภูวิศิษฏ์ พงค์ศิริสกุล",
+    "club_code": "UKR",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "4e3e5418-945c-49ce-91b5-5e3a9e2d8298",
+    "name": "ปภาวิน กล้าหาญ",
+    "club_code": "UKR",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "12da6eb2-0a4b-45c9-9b5b-8282b52050f0",
+    "name": "ณัฐวุฒิ จอมใจ",
+    "club_code": "UKR",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "f7db0e5e-62b1-4215-8174-77d8514e8df7",
+    "name": "ณัฐกรณ์ อินทร์กลาง",
+    "club_code": "UKR",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  },
+  {
+    "id": "803807f7-a4c6-48e3-9f1d-ac7da392f56b",
+    "name": "ธวัชชัย กล้ากระโทก",
+    "club_code": "UKR",
+    "goals": 1,
+    "category": "u16",
+    "season": 2026,
+    "created_at": "2026-06-01T08:29:36.332284+00:00",
+    "updated_at": "2026-06-01T08:29:36.332284+00:00"
+  }
+]

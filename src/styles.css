@@ -1,0 +1,175 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-asphalt: var(--asphalt);
+  --color-concrete: var(--concrete);
+  --color-korat-red: var(--korat-red);
+  --color-korat-red-deep: var(--korat-red-deep);
+  --color-korat-gold: var(--korat-gold);
+  --color-poster-tan: var(--poster-tan);
+  --color-success: var(--success);
+  --font-display: 'Barlow Condensed', 'Kanit', sans-serif;
+  --font-body: 'Sarabun', 'Prompt', sans-serif;
+  --font-stencil: 'Bebas Neue', sans-serif;
+}
+
+:root {
+  --radius: 0.25rem;
+
+  /* Brand palette — Korat Super League (Thai football club style) */
+  --asphalt: #0a1628;
+  --asphalt-deep: #060f1e;
+  --concrete: #ffffff;
+  --korat-red: #cc0000;
+  --korat-red-deep: #8b0000;
+  --korat-gold: #f0b429;
+  --poster-tan: #e0e0e0;
+
+  --background: #0a1628;
+  --foreground: #ffffff;
+  --card: #111f35;
+  --card-foreground: #ffffff;
+  --popover: #111f35;
+  --popover-foreground: #ffffff;
+  --primary: #cc0000;
+  --primary-foreground: #ffffff;
+  --secondary: #1a2942;
+  --secondary-foreground: #e0e0e0;
+  --muted: #1a2942;
+  --muted-foreground: #9aa6b8;
+  --accent: #cc0000;
+  --accent-foreground: #ffffff;
+  --destructive: #cc0000;
+  --destructive-foreground: #ffffff;
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.08);
+  --ring: #cc0000;
+  --success: #2e9d6a;
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+  }
+  .font-stencil {
+    font-family: var(--font-stencil);
+    letter-spacing: 0;
+  }
+}
+
+@layer utilities {
+  .poster-shadow {
+    box-shadow: 8px 8px 0 0 #000;
+  }
+  .poster-shadow-red {
+    box-shadow: 8px 8px 0 0 var(--korat-red);
+  }
+  .card-shadow {
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.4), 0 8px 24px -8px rgba(0,0,0,0.5);
+  }
+  .card-shadow-hover {
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5), 0 16px 40px -12px rgba(0,0,0,0.6), 0 0 0 1px rgba(204,0,0,0.35);
+  }
+  .text-outline {
+    -webkit-text-stroke: 1.5px rgba(255,255,255,0.25);
+    color: transparent;
+  }
+  .skew-tag { display: inline-block; transform: skewX(-12deg); }
+  .skew-tag > * { display: inline-block; transform: skewX(12deg); }
+  .medal-gold { border-left: 4px solid #f0b429; }
+  .medal-silver { border-left: 4px solid #c0c8d4; }
+  .medal-bronze { border-left: 4px solid #c87a3b; }
+  .medal-none { border-left: 4px solid transparent; }
+
+  /* Section reveal */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .reveal-on-scroll { opacity: 0; }
+  .reveal-on-scroll.is-visible { animation: fadeInUp 0.7s ease-out forwards; }
+
+  /* Card hover lift */
+  .lift-on-hover { transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+  .lift-on-hover:hover { transform: translateY(-3px); box-shadow: 0 18px 40px -16px rgba(204,0,0,0.45); }
+
+  /* News ticker */
+  @keyframes ticker-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .ticker-track {
+    display: inline-flex;
+    gap: 3rem;
+    padding-left: 3rem;
+    white-space: nowrap;
+    animation: ticker-scroll 30s linear infinite;
+    will-change: transform;
+  }
+  .ticker-track:hover { animation-play-state: paused; }
+
+  /* Stadium silhouette backdrop */
+  .stadium-bg {
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% 100%, rgba(204,0,0,0.18), transparent 60%),
+      linear-gradient(180deg, #0a1628 0%, #0a1628 60%, #060f1e 100%),
+      repeating-linear-gradient(90deg, rgba(255,255,255,0.04) 0 2px, transparent 2px 80px);
+  }
+
+  /* Glassmorphism chip used in the hero */
+  .hero-glass {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  /* Hero stencil title with metallic gradient + subtle stroke */
+  .hero-title {
+    font-weight: 900;
+    background-image: linear-gradient(180deg, #ffffff 0%, #d6dde8 55%, #8a96ad 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255,255,255,0.08);
+    text-shadow: 0 6px 30px rgba(0,0,0,0.45);
+  }
+}

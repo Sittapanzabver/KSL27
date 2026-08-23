@@ -1,0 +1,66 @@
+[
+  {
+    "id": "8d6c69c7-2dca-4bbf-acf1-e238cc9fcab1",
+    "club_id": null,
+    "display_name": "ด่านเกวียน เอฟซี",
+    "short_name": "DKW",
+    "logo_url": null,
+    "primary_color": "#b45309",
+    "founded_year": 2023,
+    "dissolved_year": 2024,
+    "years_active": "2024",
+    "achievements": [
+      "เข้าร่วมฤดูกาลแรกของ Korat Super League"
+    ],
+    "farewell_message": "ขอบคุณสำหรับการเป็นส่วนหนึ่งของฤดูกาลแรก จะอยู่ในความทรงจำของแฟนบอลโคราชตลอดไป",
+    "history_text": "สโมสรจากตำบลด่านเกวียน เข้าร่วมฤดูกาลแรกของลีกในปี 2024 ก่อนยุติการแข่งขันในฤดูกาลถัดมา",
+    "photos": [],
+    "status": "inactive",
+    "display_order": 1,
+    "created_at": "2026-05-04T06:02:31.361237+00:00",
+    "updated_at": "2026-05-04T06:02:31.361237+00:00"
+  },
+  {
+    "id": "d6dcdf82-7a2a-4bdb-9c3b-3e88f4c602cb",
+    "club_id": null,
+    "display_name": "ธารปราสาทเพชร เอฟซี / GSL",
+    "short_name": "GSL",
+    "logo_url": null,
+    "primary_color": "#65a30d",
+    "founded_year": 2023,
+    "dissolved_year": 2025,
+    "years_active": "2024 - 2025",
+    "achievements": [
+      "เข้าร่วม 2 ฤดูกาลติดต่อกัน",
+      "เปลี่ยนชื่อเป็น GSL ธารปราสาทเพชร ในฤดูกาล 2025"
+    ],
+    "farewell_message": "สองฤดูกาลแห่งความทรงจำ ขอบคุณนักเตะและทีมงานทุกคน",
+    "history_text": "สโมสรชุมชนจากธารปราสาทเพชร ที่อยู่กับลีกตั้งแต่ฤดูกาลแรก ก่อนรีแบรนด์เป็น GSL และยุติการแข่งขันหลังฤดูกาล 2025",
+    "photos": [],
+    "status": "dissolved",
+    "display_order": 2,
+    "created_at": "2026-05-04T06:02:31.361237+00:00",
+    "updated_at": "2026-05-04T06:02:31.361237+00:00"
+  },
+  {
+    "id": "9f1a8eae-c22b-445f-b4b6-59abfeffbb63",
+    "club_id": null,
+    "display_name": "เพชรน้ำหนึ่ง หนองบุญมาก ยูไนเต็ด",
+    "short_name": "PNN",
+    "logo_url": null,
+    "primary_color": "#7f1d1d",
+    "founded_year": 2024,
+    "dissolved_year": 2025,
+    "years_active": "2025",
+    "achievements": [
+      "เข้าร่วมฤดูกาล 2025 เป็นฤดูกาลเดียว"
+    ],
+    "farewell_message": "ขอบคุณสำหรับฤดูกาลแห่งการต่อสู้ จะกลับมาแข็งแกร่งกว่าเดิม",
+    "history_text": "สโมสรจากอำเภอหนองบุญมาก เข้าร่วมเพียงฤดูกาลเดียวก่อนยุติการแข่งขัน",
+    "photos": [],
+    "status": "dissolved",
+    "display_order": 3,
+    "created_at": "2026-05-04T06:02:31.361237+00:00",
+    "updated_at": "2026-05-04T06:02:31.361237+00:00"
+  }
+]

@@ -1,0 +1,21 @@
+# KSL Hub — .gitignore เฉพาะโฟลเดอร์ (กันไม่ให้ secret/build เข้า repo)
+node_modules/
+dist/
+dist-ssr/
+.output/
+.vercel/
+.vinxi/
+.tanstack/
+.nitro/
+
+# Secrets — ห้าม commit เด็ดขาด
+.env
+.env.local
+.env.*.local
+.dev.vars
+
+# Wrangler / Cloudflare
+.wrangler/
+
+# Logs
+*.log

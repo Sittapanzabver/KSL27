@@ -1,0 +1,8 @@
+UPDATE public.standings SET played=14, won=8, drawn=4, lost=2, goals_for=36, goals_against=18, points=28 WHERE club_id=(SELECT id FROM public.clubs WHERE slug='soengsang-united');
+UPDATE public.standings SET played=14, won=8, drawn=4, lost=2, goals_for=18, goals_against=9, points=28 WHERE club_id=(SELECT id FROM public.clubs WHERE slug='nondaeng-fc');
+UPDATE public.standings SET played=14, won=8, drawn=3, lost=3, goals_for=35, goals_against=13, points=27 WHERE club_id=(SELECT id FROM public.clubs WHERE slug='phimai-fc');
+UPDATE public.standings SET played=14, won=7, drawn=2, lost=5, goals_for=27, goals_against=22, points=23 WHERE club_id=(SELECT id FROM public.clubs WHERE slug='pakthongchai-united');
+UPDATE public.standings SET played=14, won=4, drawn=3, lost=7, goals_for=20, goals_against=20, points=15 WHERE club_id=(SELECT id FROM public.clubs WHERE slug='suranaree-fc');
+UPDATE public.standings SET played=14, won=4, drawn=2, lost=8, goals_for=14, goals_against=22, points=14 WHERE club_id=(SELECT id FROM public.clubs WHERE slug='union-korat');
+UPDATE public.standings SET played=14, won=3, drawn=2, lost=9, goals_for=11, goals_against=29, points=11 WHERE club_id=(SELECT id FROM public.clubs WHERE slug='khamsakaesaeng-fc');
+UPDATE public.standings SET played=14, won=2, drawn=1, lost=11, goals_for=11, goals_against=39, points=7 WHERE club_id=(SELECT id FROM public.clubs WHERE slug='khonburi-fc');

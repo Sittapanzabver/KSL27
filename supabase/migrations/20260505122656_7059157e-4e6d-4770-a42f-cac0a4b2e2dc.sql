@@ -1,0 +1,1 @@
+REVOKE ALL ON FUNCTION public.register_fan(text, text, uuid, text, text) FROM PUBLIC, anon, authenticated;

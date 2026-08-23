@@ -1,0 +1,29 @@
+[
+  {
+    "id": "423c1997-b247-4db6-ac40-7b01ca536b1d",
+    "name": "2026 Super League",
+    "year": 2026,
+    "is_active": true,
+    "start_date": "2026-01-15",
+    "end_date": "2026-12-15",
+    "created_at": "2026-04-30T05:43:30.413901+00:00"
+  },
+  {
+    "id": "c7a564ea-7656-4393-8289-b47d0fec56ee",
+    "name": "2025 Super League",
+    "year": 2025,
+    "is_active": false,
+    "start_date": null,
+    "end_date": null,
+    "created_at": "2026-05-04T06:01:38.519009+00:00"
+  },
+  {
+    "id": "bbdce67d-0e12-4d2b-8745-309aeb405f68",
+    "name": "2024 Super League",
+    "year": 2024,
+    "is_active": false,
+    "start_date": null,
+    "end_date": null,
+    "created_at": "2026-05-04T06:01:38.519009+00:00"
+  }
+]
