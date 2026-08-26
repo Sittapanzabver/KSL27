@@ -3,8 +3,5 @@
   "buildCommand": "npm run build",
   "installCommand": "npm install",
   "framework": "vite",
-  "outputDirectory": ".vercel/output",
-  "functions": {
-    "api/**": { "maxDuration": 60 }
-  }
+  "outputDirectory": ".vercel/output"
 }
