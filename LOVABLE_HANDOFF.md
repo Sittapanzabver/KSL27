@@ -1,8 +1,9 @@
 # LOVABLE_HANDOFF — อัปโค้ด KSL 2027 ขึ้น Lovable (ทางเดียว)
 
-> **Owner:** Sp1cyP · **Date:** 22/08/2026 · **สถานะ:** 🔵 พร้อมทำตามขั้นตอนนี้
-> **หลักการ:** KSL อยู่ **Lovable ทางเดียว** (อนุมัติ 22/08) — deploy + SQL Editor + DB `qzksqhlrkpqnbavjpieq` · deployment Vercel เก่า (`koratsuperleague.vercel.app`) = ปิด/ลบ
-> **อ่านคู่กับ:** `DEPLOYMENT_DIRECTIVE.md` (Change Log 22/08) · `SKILL.md` · `supabase/seed_2027_structure.sql`
+> **Owner:** Sp1cyP · **Date:** 22/08/2026 · **สถานะ:** ❌ **ยกเลิกการใช้ (24/08/2026)** — Owner ยืนยัน: KSL 2027 = **Vercel**
+> **หลักการเดิม:** KSL อยู่ Lovable ทางเดียว (อนุมัติ 22/08 เช้า) — deploy + SQL Editor + DB `qzksqhlrkpqnbavjpieq`
+> ⚠️ **24/08/2026 — Owner: "ยกเลิก handoff Lovable และจัดทำเส้นทาง Vercel"** → ใช้ **`VERCEL_DEPLOY_GUIDE.md` §A–E** แทนทั้งฉบับ · เอกสารนี้เก็บไว้เป็นประวัติ (G5) · ห้ามทำตาม Step 1–3 ด้านล่าง
+> **อ่านคู่กับ:** `DEPLOYMENT_DIRECTIVE.md` (Change Log 24/08) · `VERCEL_DEPLOY_GUIDE.md` (คู่มือใช้จริง) · `SKILL.md` · `supabase/seed_2027_structure.sql`
 
 ---
 
