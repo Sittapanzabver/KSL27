@@ -31,7 +31,7 @@ export function OfficialPartnersSection() {
               Official Title Sponsor
             </span>
             <h3 className="text-3xl md:text-5xl font-black tracking-tight text-foreground leading-none mb-3">
-              Meinhard Sports
+              Korat Super League
             </h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
               สนับสนุนหลักประจำฤดูกาล {SITE_YEAR} · ปรากฏในทุกจุดสัมผัสของลีก
@@ -41,7 +41,7 @@ export function OfficialPartnersSection() {
 
           <div className="flex-shrink-0 w-40 h-24 border-2 border-korat-red/40 flex items-center justify-center bg-korat-red/5">
             <span className="text-[11px] font-black tracking-[0.2em] text-korat-red/70 uppercase">
-              Meinhard
+              KSL
             </span>
           </div>
         </div>

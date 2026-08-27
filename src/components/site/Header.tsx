@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useI18n } from "@/lib/i18n";
+import { SITE_YEAR } from "@/lib/site";
 
 type NavItem =
   | { type: "link"; to: string; key: string }
@@ -49,17 +50,17 @@ export function Header() {
           <Link to="/" className="flex items-center gap-3 group">
             <div className="shrink-0">
               <img
-                src="https://qzksqhlrkpqnbavjpieq.supabase.co/storage/v1/object/public/assets/ksl-logo.png"
-                alt="KSL Logo"
-                className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-110 drop-shadow-[0_0_10px_rgba(204,0,0,0.5)]"
+                src="/ksl-logo-2027.jpg"
+                alt="KSL 2027 Logo"
+                className="h-11 w-11 rounded-xl object-cover ring-1 ring-white/15 shadow-lg transition-transform duration-300 group-hover:scale-110 drop-shadow-[0_0_14px_rgba(204,0,0,0.4)]"
               />
             </div>
             <div className="hidden sm:block leading-none">
-              <div className="font-display font-extrabold text-base tracking-tight text-white group-hover:text-korat-red transition-colors">
-                MEINHARD SPORTS
+              <div className="font-display font-extrabold text-lg tracking-tight text-white group-hover:text-korat-red transition-colors">
+                KORAT SUPER LEAGUE
               </div>
-              <div className="text-[10px] text-muted-foreground tracking-[0.25em] uppercase mt-1">
-                Korat Super League
+              <div className="text-[10px] text-korat-gold tracking-[0.3em] uppercase mt-1">
+                Season {SITE_YEAR}
               </div>
             </div>
           </Link>

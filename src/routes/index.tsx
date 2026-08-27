@@ -32,7 +32,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          `ติดตามตารางคะแนน ผลการแข่งขัน และข่าวสารล่าสุดของ Meinhard Sports Korat Super League ${SITE_YEAR}`,
+          `ติดตามตารางคะแนน ผลการแข่งขัน และข่าวสารล่าสุดของ Korat Super League ${SITE_YEAR}`,
       },
     ],
   }),

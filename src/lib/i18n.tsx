@@ -27,7 +27,7 @@ const dict = {
     th: "พร้อมลุยศึก Korat Super League ฤดูกาล 2027\n8 สโมสร · 32 อำเภอ · หนึ่งลีกของคนโคราช",
     en: "Get ready for Korat Super League 2027\n8 clubs · 32 districts · one league for Korat.",
   },
-  "home.champLabel": { th: `Meinhard Sports Korat Super League ${SITE_YEAR}`, en: `Meinhard Sports Korat Super League ${SITE_YEAR}` },
+  "home.champLabel": { th: `Korat Super League ${SITE_YEAR}`, en: `Korat Super League ${SITE_YEAR}` },
   "home.champTeam": { th: "รอติดตามทีมแชมป์ 2027", en: "Champions TBD" },
   "home.playoff": { th: "เพลย์ออฟ", en: "Play-off" },
   "home.champBadge": { th: "แชมป์", en: "Champion" },

@@ -25,7 +25,7 @@ export const Route = createFileRoute("/clubs")({
   head: () =>
     buildHead(
       "สโมสร",
-      `ทำความรู้จัก 8 สโมสรในศึก Meinhard Sports Korat Super League ${SITE_YEAR}`,
+      `ทำความรู้จัก 8 สโมสรในศึก Korat Super League ${SITE_YEAR}`,
       "/clubs"
     ),
 });

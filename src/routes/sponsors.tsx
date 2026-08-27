@@ -13,7 +13,7 @@ export const Route = createFileRoute("/sponsors")({
   head: () =>
     buildHead(
       "สปอนเซอร์",
-      `แพ็กเกจสนับสนุนและพันธมิตรอย่างเป็นทางการของ Meinhard Sports Korat Super League ${SITE_YEAR}`,
+      `แพ็กเกจสนับสนุนและพันธมิตรอย่างเป็นทางการของ Korat Super League ${SITE_YEAR}`,
       "/sponsors"
     ),
 });
@@ -47,7 +47,7 @@ function SponsorsPage() {
             <span className="text-korat-gold">อนาคตโคราช</span>
           </h1>
           <p className="text-base md:text-lg text-white/65 max-w-2xl leading-relaxed">
-            สนับสนุน Meinhard Sports Korat Super League และ KSL Academy U-16
+            สนับสนุน Korat Super League และ KSL Academy U-16
             — แบรนด์ของคุณเข้าถึงชุมชนฟุตบอล 8 อำเภอ ผู้ชม 275,000+ คน
           </p>
         </div>

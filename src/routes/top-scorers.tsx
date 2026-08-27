@@ -23,7 +23,7 @@ export const Route = createFileRoute("/top-scorers")({
   head: () =>
     buildHead(
       "ดาวซัลโว",
-      `อันดับดาวซัลโว Meinhard Sports Korat Super League ${SITE_YEAR} ทั้งชุดใหญ่และ U-16`,
+      `อันดับดาวซัลโว Korat Super League ${SITE_YEAR} ทั้งชุดใหญ่และ U-16`,
       "/top-scorers"
     ),
 });
@@ -141,7 +141,7 @@ function TopScorersPage() {
       <PageHeader
         eyebrow="Top Scorers"
         title="ดาวซัลโวประจำลีก"
-        subtitle={`อันดับนักเตะที่ยิงประตูได้มากที่สุดในศึก Meinhard Sports Korat Super League ${SITE_YEAR}`}
+        subtitle={`อันดับนักเตะที่ยิงประตูได้มากที่สุดในศึก Korat Super League ${SITE_YEAR}`}
       />
 
       <DivisionTab active={division} onChange={setDivision} />

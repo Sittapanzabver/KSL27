@@ -8,8 +8,7 @@ import { SITE_YEAR } from "@/lib/site";
 const championNewsImg =
   "https://hjljnwpfjbvrlvjpjhfv.supabase.co/storage/v1/object/public/media/688558213_924988373927230_9009227473837225459_n.jpg";
 
-const seasonHeroImg =
-  "https://hjljnwpfjbvrlvjpjhfv.supabase.co/storage/v1/object/public/media/u-16hero.jpg";
+const seasonHeroImg = "/cover-ksl-2027.jpg";
 
 function HeroStat({ value, label, className = "" }: { value: string; label: string; className?: string }) {
   return (
@@ -131,16 +130,33 @@ export function HeroSection({ news }: { news: any[] }) {
           </div>
 
           <div className="hidden md:block md:col-span-5 lg:col-span-5 relative">
-            <div className="relative aspect-square max-w-[420px] ml-auto">
-              <div className="absolute inset-0 rounded-full bg-korat-red/30 blur-3xl animate-pulse" />
-              <div className="absolute inset-6 rounded-full border border-korat-gold/30" />
-              <div className="absolute inset-12 rounded-full border border-white/10" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <Trophy className="size-32 lg:size-40 text-korat-gold mx-auto drop-shadow-[0_0_40px_rgba(240,180,41,0.6)]" strokeWidth={1.2} />
-                  <p className="mt-4 font-stencil text-3xl lg:text-4xl text-white tracking-[0.15em]">KSL · {SITE_YEAR}</p>
-                  <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.4em] text-korat-gold">Champions Trophy</p>
+            <div className="relative max-w-[420px] ml-auto">
+              <div className="absolute -inset-8 rounded-[2.5rem] bg-korat-red/25 blur-3xl animate-pulse" />
+              <div className="relative bg-gradient-to-b from-asphalt-deep to-asphalt rounded-2xl border border-white/10 p-3 shadow-2xl">
+                <div className="flex items-center gap-3 mb-3 px-1">
+                  <img
+                    src="/ksl-logo-2027.jpg"
+                    alt="KSL 2027"
+                    className="h-14 w-14 rounded-xl object-cover ring-1 ring-white/15 shadow-lg"
+                  />
+                  <div>
+                    <div className="font-stencil text-3xl text-white tracking-[0.08em] leading-none">KSL · {SITE_YEAR}</div>
+                    <div className="text-[9px] font-bold text-korat-gold tracking-[0.35em] uppercase mt-1.5">
+                      Season Opener
+                    </div>
+                  </div>
                 </div>
+                <div className="rounded-xl overflow-hidden bg-white ring-1 ring-white/20 shadow-inner">
+                  <img
+                    src="/cover-ksl-2027.jpg"
+                    alt={`Korat Super League ${SITE_YEAR}`}
+                    loading="lazy"
+                    className="w-full aspect-[16/10] object-cover"
+                  />
+                </div>
+                <p className="mt-3 text-center text-[9px] font-bold text-muted-foreground tracking-[0.3em] uppercase">
+                  8 Clubs · 32 Districts · One League
+                </p>
               </div>
             </div>
           </div>

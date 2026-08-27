@@ -49,7 +49,7 @@ export function SponsorHero() {
           ลีกฟุตบอลชุมชนที่เข้าถึงคนโคราชมากที่สุดในรอบหลายปี · {SEASON.matches} แมตช์เดย์ · {SEASON.clubs} สโมสรทั่วจังหวัด
           <br />
           <span className="text-white/40">
-            Meinhard Sports · Korat Super League {SITE_YEAR}
+            Korat Super League {SITE_YEAR}
           </span>
         </p>
 

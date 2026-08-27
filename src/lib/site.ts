@@ -2,7 +2,7 @@
 // (og:image / canonical ต้องเป็น URL เต็มสำหรับ social crawlers)
 
 export const SITE_URL = "https://koratsuperleague.lovable.app";
-export const SITE_NAME = "Meinhard Sports Korat Super League";
+export const SITE_NAME = "Korat Super League";
 export const SITE_YEAR = "2027"; // ← SSOT ปีที่แสดงหลัก (แก้จุดเดียวตอนขึ้น season ใหม่ เช่น 2027)
 export const SITE_DESC =
   `ลีกฟุตบอลท้องถิ่นจังหวัดนครราชสีมา ติดตามผลคะแนน โปรแกรมแข่งขัน และข่าวสารของ Korat Super League ${SITE_YEAR}`;

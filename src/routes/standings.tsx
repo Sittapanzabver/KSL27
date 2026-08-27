@@ -13,7 +13,7 @@ export const Route = createFileRoute("/standings")({
   head: () =>
     buildHead(
       "ตารางคะแนน",
-      `ตารางคะแนนล่าสุดของ Meinhard Sports Korat Super League ${SITE_YEAR} และ Korat Super Youth League U-16 พร้อมสถิติทั้งหมดของแต่ละสโมสร`,
+      `ตารางคะแนนล่าสุดของ Korat Super League ${SITE_YEAR} และ Korat Super Youth League U-16 พร้อมสถิติทั้งหมดของแต่ละสโมสร`,
       "/standings"
     ),
 });
@@ -39,8 +39,8 @@ function StandingsPage() {
   const isU16 = division === "U16" || current?.name === "U-16";
 
   const subtitle = isU16
-    ? `Meinhard Sports Korat Super Youth League ${SITE_YEAR} — ระดับ U-16`
-    : `ตารางคะแนนอัปเดตอัตโนมัติจากผลการแข่งขัน — Meinhard Sports Korat Super League ${SITE_YEAR}`;
+    ? `Korat Super Youth League ${SITE_YEAR} — ระดับ U-16`
+    : `ตารางคะแนนอัปเดตอัตโนมัติจากผลการแข่งขัน — Korat Super League ${SITE_YEAR}`;
 
   return (
     <div className="max-w-7xl mx-auto px-4 md:px-6 py-10 md:py-16">

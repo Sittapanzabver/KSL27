@@ -9,11 +9,11 @@ export function Footer() {
         <div className="max-w-sm">
           <div className="bg-white p-1.5 skew-tag inline-block mb-4">
             <span className="font-display font-extrabold text-2xl tracking-tighter text-asphalt">
-              MSK<span className="text-korat-red">{SITE_YEAR.slice(2)}</span>
+              KSL<span className="text-korat-red">{SITE_YEAR.slice(2)}</span>
             </span>
           </div>
           <p className="text-xs text-muted-foreground font-medium tracking-wide leading-relaxed">
-            MEINHARD SPORTS KORAT SUPER LEAGUE {SITE_YEAR}<br />
+            KORAT SUPER LEAGUE {SITE_YEAR}<br />
             ลีกฟุตบอลท้องถิ่นจังหวัดนครราชสีมา<br />
             POWERED BY THE PASSION OF KORAT.
           </p>
@@ -50,7 +50,7 @@ export function Footer() {
       </div>
       <div className="border-t border-border">
         <div className="max-w-7xl mx-auto px-6 py-4 text-[10px] text-muted-foreground tracking-widest uppercase flex justify-between">
-          <span>© {SITE_YEAR} Meinhard Sports Korat Super League</span>
+          <span>© {SITE_YEAR} Korat Super League</span>
           <span className="hidden sm:inline">All matches subject to change</span>
         </div>
       </div>

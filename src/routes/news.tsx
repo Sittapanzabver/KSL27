@@ -10,7 +10,7 @@ export const Route = createFileRoute("/news")({
   head: () =>
     buildHead(
       "ข่าวสาร",
-      `ข่าวสาร บทสัมภาษณ์ ประมวลภาพ และรายงานผลการแข่งขันของ Meinhard Sports Korat Super League ${SITE_YEAR}`,
+      `ข่าวสาร บทสัมภาษณ์ ประมวลภาพ และรายงานผลการแข่งขันของ Korat Super League ${SITE_YEAR}`,
       "/news"
     ),
 });

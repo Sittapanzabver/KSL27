@@ -87,7 +87,7 @@ export function FinalCtaSection() {
       </div>
 
       <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-[10px] text-muted-foreground/60 tracking-[0.16em] uppercase font-bold">
-        <span>Meinhard Sports · Korat Super League {SITE_YEAR}</span>
+        <span>Korat Super League {SITE_YEAR}</span>
         <span className="text-muted-foreground/40">
           koratsuperleague.lovable.app
         </span>

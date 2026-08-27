@@ -54,7 +54,7 @@ function SquadsPage() {
       <PageHeader
         eyebrow="The Squads"
         title="ขุมกำลังนักเตะ"
-        subtitle={`รายชื่อนักเตะของทั้ง 8 สโมสรในศึก Meinhard Sports Korat Super League ${SITE_YEAR}`}
+        subtitle={`รายชื่อนักเตะของทั้ง 8 สโมสรในศึก Korat Super League ${SITE_YEAR}`}
       />
 
       {/* Club filter chips */}

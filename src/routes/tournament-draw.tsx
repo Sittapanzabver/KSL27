@@ -21,7 +21,7 @@ export const Route = createFileRoute("/tournament-draw")({
   head: () => ({
     meta: [
       { title: `จับฉลากทัวร์นาเมนต์ ${PREVIEW_YEAR} — KSL` },
-      { name: "description", content: `ลองจับฉลาก / จับคู่ทัวร์นาเมนต์สมมุติ ${PREVIEW_YEAR} for Meinhard Sports Korat Super League — แพ้คัดออก, พบกันหมด, แบ่งกลุ่ม` },
+      { name: "description", content: `ลองจับฉลาก / จับคู่ทัวร์นาเมนต์สมมุติ ${PREVIEW_YEAR} for Korat Super League — แพ้คัดออก, พบกันหมด, แบ่งกลุ่ม` },
     ],
     links: [],
   }),
