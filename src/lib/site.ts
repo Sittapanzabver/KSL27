@@ -1,7 +1,7 @@
 // ค่าคงที่ของเว็บ — จุดเดียวที่ต้องแก้เมื่อย้าย hosting/domain หรือเปลี่ยน season
 // (og:image / canonical ต้องเป็น URL เต็มสำหรับ social crawlers)
 
-export const SITE_URL = "https://koratsuperleague.lovable.app";
+export const SITE_URL = "https://ksl-27.vercel.app";
 export const SITE_NAME = "Korat Super League";
 export const SITE_YEAR = "2027"; // ← SSOT ปีที่แสดงหลัก (แก้จุดเดียวตอนขึ้น season ใหม่ เช่น 2027)
 export const SITE_DESC =
