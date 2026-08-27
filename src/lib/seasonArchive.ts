@@ -1,5 +1,6 @@
 import season2025 from "@/assets/season-2025.jpg";
 import season2024 from "@/assets/season-2024.jpg";
+import season2026 from "@/assets/soengsang-champion-news.jpg";
 import { SITE_YEAR } from "@/lib/site";
 
 export type ArchiveStanding = {
@@ -56,6 +57,29 @@ const ARCHIVED_FEATURES: SeasonFeatures = {
 
 
 export const SEASON_ARCHIVE: ArchiveSeason[] = [
+  {
+    year: 2026,
+    title: "Korat Super League 2026",
+    cover: season2026,
+    description:
+      "ฤดูกาล 2026 คว้าแชมป์ด้วยผลต่างประตู เสิงสาง ยูไนเต็ด ทำ 28 คะแนนเท่าโนนแดง แต่เหนือกว่าด้วยประตูได้เสีย +18 รวม 14 นัด",
+    champion: "เสิงสาง ยูไนเต็ด",
+    topScorer: undefined,
+    mvp: undefined,
+    matchdays: 14,
+    archived: true,
+    features: ARCHIVED_FEATURES,
+    standings: [
+      { pos: 1, team: "เสิงสาง ยูไนเต็ด", short: "SSU", color: "#16A34A", played: 14, won: 8, drawn: 4, lost: 2, gf: 38, ga: 20, gd: 18, points: 28, form: ["W","D","W","W","D"] },
+      { pos: 2, team: "โนนแดง เอฟซี", short: "NDG", color: "#1E3A8A", played: 14, won: 8, drawn: 4, lost: 2, gf: 18, ga: 9, gd: 9, points: 28, form: ["W","W","D","W","W"] },
+      { pos: 3, team: "พิมาย เอฟซี", short: "PMI", color: "#7C2D12", played: 14, won: 8, drawn: 3, lost: 3, gf: 34, ga: 12, gd: 22, points: 27, form: ["W","W","W","D","W"] },
+      { pos: 4, team: "ปักธงชัย ยูไนเต็ด", short: "PTU", color: "#1D4ED8", played: 14, won: 7, drawn: 2, lost: 5, gf: 27, ga: 22, gd: 5, points: 23, form: ["W","D","W","L","W"] },
+      { pos: 5, team: "สุรนารี เอฟซี", short: "SNR", color: "#DC2626", played: 14, won: 4, drawn: 4, lost: 6, gf: 22, ga: 22, gd: 0, points: 16, form: ["D","L","D","L","W"] },
+      { pos: 6, team: "ยูเนี่ยน โคราช", short: "UKR", color: "#2563EB", played: 14, won: 4, drawn: 2, lost: 8, gf: 15, ga: 23, gd: -8, points: 14, form: ["L","L","W","L","D"] },
+      { pos: 7, team: "ขามสะแกแสง เอฟซี", short: "KSK", color: "#B91C1C", played: 14, won: 2, drawn: 5, lost: 7, gf: 11, ga: 29, gd: -18, points: 11, form: ["L","D","D","L","L"] },
+      { pos: 8, team: "ครบุรี เอฟซี", short: "KBR", color: "#F59E0B", played: 14, won: 1, drawn: 4, lost: 9, gf: 11, ga: 39, gd: -28, points: 7, form: ["L","L","D","L","L"] },
+    ],
+  },
   {
     year: 2025,
     title: "Korat Super League 2025",
