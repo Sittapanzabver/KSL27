@@ -79,6 +79,11 @@ function FounderSection() {
           <h2 className="font-stencil text-[40px] sm:text-[56px] md:text-[64px] leading-[0.85]">
             <span className="text-white">กบ</span> <span className="text-korat-gold">สกินเฮด</span>
           </h2>
+          <img
+            src="/kob-founder.jpg"
+            alt="กบ สกินเฮด ผู้ก่อตั้ง KSL"
+            className="mt-8 mx-auto w-52 h-52 sm:w-60 sm:h-60 rounded-full object-cover ring-2 ring-korat-gold/40 shadow-[0_0_40px_rgba(240,180,41,0.25)]"
+          />
         </div>
 
         <div className="space-y-8 text-sm md:text-base text-concrete/80 leading-relaxed">

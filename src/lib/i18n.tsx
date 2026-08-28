@@ -10,7 +10,7 @@ const dict = {
   "nav.matches": { th: "​ผลการแข่งขัน", en: "Matches" },
   "nav.clubs": { th: "สโมสร", en: "Clubs" },
   "nav.players": { th: "ดาวซัลโว", en: "Top Scorers" },
-  "nav.draw": { th: "จับฉลาก", en: "Draw" },
+  "nav.build": { th: "สร้าง KSL", en: "Build" },
   "nav.squads": { th: "นักเตะ", en: "Players" },
   "nav.clubsAndSquads": { th: "สโมสร & นักเตะ", en: "Clubs & Players" },
   "home.mainSponsor": { th: "สปอนเซอร์หลัก", en: "Main Sponsor" },

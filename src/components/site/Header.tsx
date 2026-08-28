@@ -20,7 +20,7 @@ const navItems: NavItem[] = [
   },
   { type: "link", to: "/clubs", key: "nav.clubsAndSquads" },
   { type: "link", to: "/top-scorers", key: "nav.players" },
-  { type: "link", to: "/tournament-draw", key: "nav.draw" },
+  { type: "link", to: "/billboard", key: "nav.build" },
   { type: "link", to: "/news", key: "nav.news" },
   { type: "link", to: "/sponsors", key: "nav.sponsors" },
 ];
