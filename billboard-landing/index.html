@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KORAT SUPER LEAGUE — ฟุตบอลต้องเริ่มจากชุมชน</title>
+<meta name="description" content="กบ สกินเฮด ผู้ก่อตั้ง KSL · สร้างสโมสรฟุตบอลท้องถิ่นของโคราช">
+<style>
+  :root { --asphalt: #0a0f1a; --asphalt-deep: #060f1e; --card: #111827; --border: rgba(255,255,255,.08); --gold: #f0b429; --red: #cc0000; --concrete: #d4d4d8; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, 'Segoe UI', sans-serif; background: var(--asphalt); color: var(--concrete); line-height: 1.6; }
+  .s { font-family: 'Impact', 'Arial Black', sans-serif; letter-spacing: -.02em; }
+  .tc { text-align: center; }
+  .mx { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+  .mx4 { max-width: 800px; margin: 0 auto; padding: 0 16px; }
+
+  /* Hero */
+  .hero { min-height: 90vh; display: flex; align-items: center; position: relative; overflow: hidden; background: var(--asphalt); }
+  .hero::before { content: ''; position: absolute; top: -160px; left: -160px; width: 600px; height: 600px; border-radius: 50%; background: rgba(204,0,0,.15); filter: blur(140px); }
+  .hero::after { content: ''; position: absolute; bottom: -160px; right: 25%; width: 500px; height: 500px; border-radius: 50%; background: rgba(240,180,41,.1); filter: blur(160px); }
+  .hero-inner { position: relative; z-index: 1; text-align: center; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; }
+  .hero-badge span { display: inline-block; width: 32px; height: 1px; background: var(--gold); }
+  .hero-badge small { font-size: 10px; font-weight: 700; letter-spacing: .3em; color: var(--gold); text-transform: uppercase; }
+  .hero h1 { font-size: clamp(48px, 12vw, 120px); line-height: .85; text-transform: uppercase; margin-bottom: 32px; }
+  .hero h1 .r { color: var(--red); text-shadow: 0 4px 30px rgba(204,0,0,.5); }
+  blockquote.q { font-size: clamp(18px, 3vw, 28px); font-weight: 800; font-style: italic; max-width: 700px; margin: 0 auto 24px; line-height: 1.5; }
+  blockquote.q .g { color: var(--gold); }
+  blockquote.q .dim { color: rgba(255,255,255,.5); }
+  .founder { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 32px; }
+  .founder-icon { width: 40px; height: 40px; border-radius: 50%; background: rgba(204,0,0,.2); border: 1px solid rgba(204,0,0,.3); display: flex; align-items: center; justify-content: center; font-size: 16px; }
+  .founder-name { font-weight: 700; font-size: 14px; color: #fff; }
+  .founder-role { font-size: 10px; color: rgba(255,255,255,.4); text-transform: uppercase; letter-spacing: .15em; }
+
+  /* Founder Section */
+  .section { padding: 64px 0; border-top: 1px solid var(--border); }
+  .section-deep { padding: 64px 0; border-top: 1px solid var(--border); background: var(--asphalt-deep); }
+  .section-title { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 16px; }
+  .section-title span { display: inline-block; width: 32px; height: 1px; background: var(--gold); }
+  .section-title small { font-size: 10px; font-weight: 700; letter-spacing: .3em; color: var(--gold); text-transform: uppercase; }
+  .section h2 { font-size: clamp(40px, 8vw, 64px); line-height: .85; }
+
+  /* Cards */
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; margin-bottom: 16px; }
+  .card-row { display: flex; gap: 16px; align-items: flex-start; }
+  .card-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 18px; }
+  .card-icon.red { background: rgba(204,0,0,.1); border: 1px solid rgba(204,0,0,.2); }
+  .card-icon.gold { background: rgba(240,180,41,.1); border: 1px solid rgba(240,180,41,.2); }
+  .card-icon.cyan { background: rgba(34,211,238,.1); border: 1px solid rgba(34,211,238,.2); }
+  .card h3 { font-weight: 800; font-size: 16px; margin-bottom: 8px; color: #fff; }
+  .card p { font-size: 13px; color: rgba(255,255,255,.6); line-height: 1.7; }
+  .card p strong { color: var(--gold); }
+
+  /* Quote box */
+  .quote-box { background: linear-gradient(to right, rgba(240,180,41,.1), transparent); border: 1px solid rgba(240,180,41,.2); border-radius: 16px; padding: 24px; text-align: center; margin-top: 32px; }
+  .quote-box blockquote { font-size: 16px; font-weight: 800; font-style: italic; line-height: 1.6; }
+  .quote-box cite { display: block; margin-top: 12px; font-size: 12px; color: rgba(255,255,255,.4); font-style: normal; }
+
+  /* Clubs grid */
+  .clubs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; margin-top: 40px; }
+  .club-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 12px; text-align: center; transition: border-color .2s; }
+  .club-card:hover { border-color: var(--red); }
+  .club-crest { width: 56px; height: 56px; border-radius: 50%; margin: 0 auto 12px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 900; color: #fff; border: 2px solid rgba(255,255,255,.15); }
+  .club-name { font-weight: 800; font-size: 12px; color: #fff; line-height: 1.3; }
+  .club-dist { font-size: 10px; color: rgba(255,255,255,.4); margin-top: 4px; }
+
+  /* CTA */
+  .cta { padding: 64px 0; border-top: 1px solid rgba(204,0,0,.3); position: relative; overflow: hidden; }
+  .cta::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, var(--asphalt-deep), #120202, var(--asphalt-deep)); pointer-events: none; }
+  .cta-inner { position: relative; z-index: 1; }
+  .cta-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--red); color: #fff; padding: 16px 32px; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: .2em; text-decoration: none; transition: all .3s; }
+  .cta-btn:hover { box-shadow: 0 0 40px rgba(204,0,0,.7); transform: translateY(-2px); }
+
+  /* Footer */
+  footer { border-top: 1px solid var(--border); background: var(--asphalt-deep); padding: 32px 0; }
+  footer .inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+  footer .brand { font-size: 20px; font-weight: 900; color: #fff; }
+  footer .copy { font-size: 10px; color: rgba(255,255,255,.3); text-transform: uppercase; letter-spacing: .1em; }
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="mx hero-inner">
+    <div class="hero-badge"><span></span><small>Korat Super League · Season 2027</small><span></span></div>
+    <h1 class="s"><span style="color:#fff">KORAT</span><br><span class="r">SUPER</span><br><span style="color:#fff">LEAGUE</span></h1>
+    <blockquote class="q">
+      <span class="g">&ldquo;</span>ฟุตบอลต้องเริ่มจากชุมชน<br>
+      <span class="dim">1 คนจ่าย 100 บาท</span><br>
+      <span class="g">vs 100 คนจ่ายคนละ 1 บาท</span><span class="g">&rdquo;</span>
+    </blockquote>
+    <div class="founder">
+      <div class="founder-icon">❤️</div>
+      <div>
+        <div class="founder-name">กบ สกินเฮด</div>
+        <div class="founder-role">Founder · KSL</div>
+      </div>
+    </div>
+    <p style="font-size:11px;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.15em">สร้างสโมสรฟุตบอลท้องถิ่นของอำเภอคุณ · ครบทั้ง 32 อำเภอ</p>
+  </div>
+</section>
+
+<!-- ประวัติผู้สร้าง -->
+<section class="section-deep">
+  <div class="mx4">
+    <div class="tc" style="margin-bottom:48px">
+      <div class="section-title" style="justify-content:center"><span></span><small>The Founder</small><span></span></div>
+      <h2 class="s"><span style="color:#fff">กบ</span> <span style="color:var(--gold)">สกินเฮด</span></h2>
+    </div>
+
+    <div class="card">
+      <div class="card-row">
+        <div class="card-icon red">🛡️</div>
+        <div>
+          <h3>ผู้ก่อตั้ง KORAT SUPER LEAGUE</h3>
+          <p>กบ สกินเฮด คือผู้ที่ทุ่มเทสร้างลีกฟุตบอลระดับรากหญ้าของโคราช ด้วยวิสัยทัศน์ที่ว่า <strong>&ldquo;สโมสรฟุตบอลท้องถิ่นต้องเริ่มจากฐานแฟนบอลในชุมชน&rdquo;</strong> เขาเชื่อว่าโมเดล &ldquo;1 คนจ่าย 100 บาท vs 100 คนจ่ายคนละ 1 บาท&rdquo; คือเส้นทางสู่ความยั่งยืนที่แท้จริง</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-row">
+        <div class="card-icon gold">🏆</div>
+        <div>
+          <h3>3 ปี 8 สโมสร</h3>
+          <p>KSL เริ่มต้นมาตั้งแต่ปี 2024 จนถึงปัจจุบันมี 8 สโมสรจาก 9 อำเภอ ทุกสโมสรเติบโตจากชุมชน คนในพื้นที่คือเจ้าของร่วม แฟนบอลคือศูนย์กลาง ไม่ใช่กลุ่มทุนภายนอก</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-row">
+        <div class="card-icon cyan">👥</div>
+        <div>
+          <h3>เป้าหมาย: 32 อำเภอ</h3>
+          <p>เป้าหมายสูงสุดคือสร้างสโมสรฟุตบอลท้องถิ่นครบทั้ง 32 อำเภอของนครราชสีมา โดยคนในพื้นที่คือผู้สร้างและผู้พัฒนา พร้อมระบบเยาวชน U10-U16 ป้อนสู่สโมสรอาชีพ</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="quote-box">
+      <p style="font-size:10px;color:var(--gold);text-transform:uppercase;letter-spacing:.15em;font-weight:700;margin-bottom:12px">- quote of the founder -</p>
+      <blockquote class="s">
+        <span style="color:var(--gold)">&ldquo;</span>
+        สโมสรท้องถิ่นต้องเริ่มจากฐานแฟนบอลในชุมชน แล้วค่อยๆใส่เงื่อนไขในการพัฒนาตามลำดับชั้นเข้าไป
+        <span style="color:var(--gold)">&rdquo;</span>
+      </blockquote>
+      <cite>— กบ สกินเฮด, ผู้ก่อตั้ง KSL</cite>
+    </div>
+  </div>
+</section>
+
+<!-- สโมสร -->
+<section class="section">
+  <div class="mx">
+    <div class="tc">
+      <div class="section-title" style="justify-content:center"><span style="background:var(--red)"></span><small style="color:var(--red)">Clubs · Season 2027</small><span style="background:var(--red)"></span></div>
+      <h2 class="s" style="font-size:clamp(40px,8vw,64px)"><span style="color:#fff">สโมสรของเรา</span></h2>
+      <p style="margin-top:12px;font-size:14px;color:rgba(255,255,255,.5)">7 สโมสร · 6 อำเภอ · ยังเปิดรับ 1 อำเภอ · พร้อมเติบโตสู่ 32 อำเภอ</p>
+    </div>
+    <div class="clubs-grid">
+      <div class="club-card"><div class="club-crest" style="background:#1a5276">SUTD</div><div class="club-name">เสิงสาง ยูไนเต็ด</div><div class="club-dist">อ.เสิงสาง</div></div>
+      <div class="club-card"><div class="club-crest" style="background:#cc0000">NDFC</div><div class="club-name">โนนแดง เอฟซี</div><div class="club-dist">อ.โนนแดง</div></div>
+      <div class="club-card"><div class="club-crest" style="background:#7d3c98">PUTD</div><div class="club-name">ปักธงชัย ยูไนเต็ด</div><div class="club-dist">อ.ปักธงชัย</div></div>
+      <div class="club-card"><div class="club-crest" style="background:#d4ac0d">SNFC</div><div class="club-name">สุรนารี เอฟซี</div><div class="club-dist">อ.เมือง</div></div>
+      <div class="club-card"><div class="club-crest" style="background:#2c3e50">UNKR</div><div class="club-name">ยูเนี่ยน โคราช</div><div class="club-dist">อ.เมือง</div></div>
+      <div class="club-card"><div class="club-crest" style="background:#e67e22">KSFC</div><div class="club-name">ขามสะแกแสง เอฟซี</div><div class="club-dist">อ.ขามสะแกแสง</div></div>
+      <div class="club-card"><div class="club-crest" style="background:#27ae60">KBFC</div><div class="club-name">ครบุรี เอฟซี</div><div class="club-dist">อ.ครบุรี</div></div>
+      <div class="club-card" style="border:2px dashed rgba(255,255,255,.15);background:transparent;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:160px"><div class="club-name" style="font-size:24px;color:rgba(255,255,255,.4);font-family:'Impact','Arial Black',sans-serif">+1</div><div class="club-name" style="color:rgba(255,255,255,.4)">ช่องว่างสำหรับ<br>อำเภอของคุณ</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="register">
+  <div class="mx4 tc cta-inner">
+    <p style="font-size:10px;color:var(--gold);text-transform:uppercase;letter-spacing:.3em;font-weight:700;margin-bottom:16px">ผู้สนับสนุนหลัก Season 2027 · ท่านนเทวัญ &amp; โคราช ซิตี้</p>
+    <h2 class="s" style="font-size:clamp(40px,8vw,72px);margin-bottom:16px"><span style="color:#fff">อำเภอยังไม่มีทีม?</span></h2>
+    <p style="font-size:14px;color:rgba(255,255,255,.6);max-width:600px;margin:0 auto 32px;line-height:1.7">เปิดรับสมัครสโมสรฟุตบอลจากทุกอำเภอ สร้างทีมของคนในชุมชน แล้วก้าวเข้าสู่ <strong style="color:var(--gold)">KORAT SUPER LEAGUE</strong></p>
+    <a href="https://www.facebook.com/unionkorat2020" target="_blank" rel="noopener noreferrer" class="cta-btn">ติดต่อสมัครผ่าน Facebook →</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="mx inner">
+    <div style="display:flex;align-items:center;gap:12px">
+      <span class="brand">KSL</span>
+      <span style="width:1px;height:24px;background:rgba(255,255,255,.1)"></span>
+      <span style="font-size:10px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.1em">Korat Super League 2027</span>
+    </div>
+    <span class="copy">&copy; 2027 KSL</span>
+  </div>
+</footer>
+
+</body>
+</html>

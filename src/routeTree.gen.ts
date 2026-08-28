@@ -19,6 +19,7 @@ import { Route as NewsRouteImport } from './routes/news'
 import { Route as MatchesRouteImport } from './routes/matches'
 import { Route as HallOfMemoryRouteImport } from './routes/hall-of-memory'
 import { Route as ClubsRouteImport } from './routes/clubs'
+import { Route as BillboardRouteImport } from './routes/billboard'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as MatchesIndexRouteImport } from './routes/matches.index'
@@ -77,6 +78,11 @@ const ClubsRoute = ClubsRouteImport.update({
   path: '/clubs',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BillboardRoute = BillboardRouteImport.update({
+  id: '/billboard',
+  path: '/billboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdminRoute = AdminRouteImport.update({
   id: '/admin',
   path: '/admin',
@@ -116,6 +122,7 @@ const ClubsSlugRoute = ClubsSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
+  '/billboard': typeof BillboardRoute
   '/clubs': typeof ClubsRouteWithChildren
   '/hall-of-memory': typeof HallOfMemoryRoute
   '/matches': typeof MatchesRouteWithChildren
@@ -135,6 +142,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
+  '/billboard': typeof BillboardRoute
   '/clubs': typeof ClubsRouteWithChildren
   '/hall-of-memory': typeof HallOfMemoryRoute
   '/news': typeof NewsRouteWithChildren
@@ -154,6 +162,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
+  '/billboard': typeof BillboardRoute
   '/clubs': typeof ClubsRouteWithChildren
   '/hall-of-memory': typeof HallOfMemoryRoute
   '/matches': typeof MatchesRouteWithChildren
@@ -175,6 +184,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/admin'
+    | '/billboard'
     | '/clubs'
     | '/hall-of-memory'
     | '/matches'
@@ -194,6 +204,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/admin'
+    | '/billboard'
     | '/clubs'
     | '/hall-of-memory'
     | '/news'
@@ -212,6 +223,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/admin'
+    | '/billboard'
     | '/clubs'
     | '/hall-of-memory'
     | '/matches'
@@ -232,6 +244,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AdminRoute: typeof AdminRoute
+  BillboardRoute: typeof BillboardRoute
   ClubsRoute: typeof ClubsRouteWithChildren
   HallOfMemoryRoute: typeof HallOfMemoryRoute
   MatchesRoute: typeof MatchesRouteWithChildren
@@ -315,6 +328,13 @@ declare module '@tanstack/react-router' {
       path: '/clubs'
       fullPath: '/clubs'
       preLoaderRoute: typeof ClubsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/billboard': {
+      id: '/billboard'
+      path: '/billboard'
+      fullPath: '/billboard'
+      preLoaderRoute: typeof BillboardRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin': {
@@ -405,6 +425,7 @@ const NewsRouteWithChildren = NewsRoute._addFileChildren(NewsRouteChildren)
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AdminRoute: AdminRoute,
+  BillboardRoute: BillboardRoute,
   ClubsRoute: ClubsRouteWithChildren,
   HallOfMemoryRoute: HallOfMemoryRoute,
   MatchesRoute: MatchesRouteWithChildren,
