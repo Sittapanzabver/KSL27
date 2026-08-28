@@ -1,18 +1,16 @@
 // src/routes/clubs.tsx
 import { createFileRoute, Link, Outlet, useMatchRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { fetchClubs, fetchDivisions } from "@/lib/queries";
+import { fetchActiveSeasonClubs, fetchDivisions } from "@/lib/queries";
 import { fetchStandingsFromMatches } from "@/lib/calculateStandings";
 import { ClubCrest } from "@/components/site/ClubCrest";
 import { PageHeader } from "./standings";
 import { Users, GraduationCap } from "lucide-react";
 import { buildHead, SITE_YEAR } from "@/lib/site";
 
-const U16_HERO_URL =
-  "https://hjljnwpfjbvrlvjpjhfv.supabase.co/storage/v1/object/public/media/u-16hero.jpg";
+const U16_HERO_URL = "/u16-hero.jpg";
 
 const U16_CLUBS = new Set([
-  "phimai-fc",
   "pakthongchai-united",
   "khonburi-fc",
   "suranaree-fc",
@@ -25,7 +23,7 @@ export const Route = createFileRoute("/clubs")({
   head: () =>
     buildHead(
       "สโมสร",
-      `ทำความรู้จัก 8 สโมสรในศึก Korat Super League ${SITE_YEAR}`,
+      `ทำความรู้จัก 7 สโมสรในศึก Korat Super League ${SITE_YEAR}`,
       "/clubs"
     ),
 });
@@ -41,7 +39,7 @@ function ClubsPage() {
   const [standings, setStandings] = useState<any[]>([]);
 
   useEffect(() => {
-    fetchClubs().then(setClubs);
+    fetchActiveSeasonClubs().then(setClubs);
     fetchDivisions().then((divs: any[]) => {
       const senior =
         [...divs].sort((a, b) => a.tier - b.tier).find((d) => d.tier === 1) ??
@@ -126,7 +124,7 @@ function ClubsPage() {
         <PageHeader
           eyebrow="The Clubs & Players"
           title="สโมสร & นักเตะ"
-          subtitle={`8 สโมสรชั้นนำที่ลงแข่งในศึก Korat Super League ${SITE_YEAR} — ทุกสโมสรมีทีมเยาวชน U-16 พัฒนาควบคู่กัน`}
+          subtitle={`7 สโมสรชั้นนำที่ลงแข่งในศึก Korat Super League ${SITE_YEAR} — ทุกสโมสรมีทีมเยาวชน U-16 พัฒนาควบคู่กัน`}
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">

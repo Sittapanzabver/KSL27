@@ -11,20 +11,19 @@ import {
 } from "@/lib/draw";
 import { ClubCrest } from "@/components/site/ClubCrest";
 import { PageHeader } from "./standings";
-import { SITE_YEAR } from "@/lib/site";
+import { SITE_YEAR, buildHead } from "@/lib/site";
 
 // หน้า preview การจับฉลาก — ผูกกับ SITE_YEAR (ฤดูกาลหลัก) เช่น 2027
 const PREVIEW_YEAR = Number(SITE_YEAR);
 
 export const Route = createFileRoute("/tournament-draw")({
   component: TournamentDrawPage,
-  head: () => ({
-    meta: [
-      { title: `จับฉลากทัวร์นาเมนต์ ${PREVIEW_YEAR} — KSL` },
-      { name: "description", content: `ลองจับฉลาก / จับคู่ทัวร์นาเมนต์สมมุติ ${PREVIEW_YEAR} for Korat Super League — แพ้คัดออก, พบกันหมด, แบ่งกลุ่ม` },
-    ],
-    links: [],
-  }),
+  head: () =>
+    buildHead(
+      `จับฉลากทัวร์นาเมนต์ ${PREVIEW_YEAR}`,
+      `ลองจับฉลาก / จับคู่ทัวร์นาเมนต์สมมุติ ${PREVIEW_YEAR} for Korat Super League — แพ้คัดออก, พบกันหมด, แบ่งกลุ่ม`,
+      "/tournament-draw",
+    ),
 });
 
 function TournamentDrawPage() {

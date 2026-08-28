@@ -8,7 +8,7 @@ export function FinalCtaSection() {
       {/* U-16 Image Strip */}
       <div className="relative overflow-hidden mb-8 rounded-xl">
         <img
-          src="https://hjljnwpfjbvrlvjpjhfv.supabase.co/storage/v1/object/public/media/u-16hero.jpg"
+          src="/u16-hero.jpg"
           alt="KSL Academy U-16"
           className="w-full h-48 md:h-64 object-cover object-center"
         />

@@ -9,13 +9,16 @@ import {
 } from "@/lib/queries";
 import { fetchStandingsFromMatches } from "@/lib/calculateStandings";
 import { ClubCrest } from "@/components/site/ClubCrest";
-import { SITE_YEAR } from "@/lib/site";
+import { SITE_YEAR, buildHead } from "@/lib/site";
 
 export const Route = createFileRoute("/clubs/$slug")({
   component: ClubDetail,
-  head: ({ params }) => ({
-    meta: [{ title: `${params.slug} — สโมสร Korat Super League` }],
-  }),
+  head: ({ params }) =>
+    buildHead(
+      `${params.slug}`,
+      `สโมสร ${params.slug} — Korat Super League ${SITE_YEAR}`,
+      `/clubs/${params.slug}`,
+    ),
 });
 
 type DivCategory = "senior" | "u16";
@@ -25,7 +28,7 @@ const CLUB_SPONSORS: Record<string, { name: string; logo: string; url: string; t
   "khonburi-fc": [
     {
       name: "Mayor Ka Care Co., Ltd.",
-      logo: "https://hjljnwpfjbvrlvjpjhfv.supabase.co/storage/v1/object/public/logos/Mayor%20Ka%20Care%20.png",
+      logo: "/logo-mayor-ka-care.png",
       url: "https://www.facebook.com/mayorkare",
       tier: "ผู้สนับสนุนหลัก",
     },
@@ -330,6 +333,31 @@ function ClubDetail() {
       </section>
 
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-10 md:py-12 space-y-10 md:space-y-14">
+
+        {/* ── พักฤดูกาล banner (phimai-fc only) ─────────────────── */}
+        {slug === "phimai-fc" && (
+          <div className="relative overflow-hidden border border-korat-gold/30 bg-korat-gold/5 p-6 md:p-8">
+            <div className="absolute inset-0 pointer-events-none">
+              <div className="absolute inset-0 bg-gradient-to-r from-korat-gold/10 to-transparent" />
+            </div>
+            <div className="relative z-10 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <div className="p-3 bg-korat-gold/15 border border-korat-gold/30 rounded-sm shrink-0">
+                <span className="text-2xl">⏸️</span>
+              </div>
+              <div>
+                <p className="text-[10px] font-black uppercase tracking-[0.22em] text-korat-gold mb-1">
+                  พักฤดูกาล {SITE_YEAR}
+                </p>
+                <p className="text-sm font-bold text-foreground">
+                  ขอบคุณแฟนบอล แล้วเจอกันฤดูกาลหน้า
+                </p>
+                <p className="text-xs text-muted-foreground mt-1">
+                  พิมาย เอฟซี พักการแข่งขันในฤดูกาล {SITE_YEAR} — ข้อมูลสโมสรและประวัติยังคงอยู่
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* ── FORM + RECENT RESULTS ──────────────────────────────────── */}
         {recentResults.length > 0 && (

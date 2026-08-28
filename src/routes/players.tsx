@@ -1,16 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { TopScorers } from "@/components/site/TopScorers";
 import { PageHeader } from "./standings";
-import { SITE_YEAR } from "@/lib/site";
+import { SITE_YEAR, buildHead } from "@/lib/site";
 
 export const Route = createFileRoute("/players")({
   component: PlayersPage,
-  head: () => ({
-    meta: [
-      { title: `นักเตะดาวซัลโว — Korat Super League ${SITE_YEAR}` },
-      { name: "description", content: `อันดับดาวซัลโวและนักเตะยอดเยี่ยมของลีก Korat Super League ${SITE_YEAR} ทั้งชุดใหญ่และ U-16` },
-    ],
-  }),
+  head: () =>
+    buildHead(
+      "นักเตะดาวซัลโว",
+      `อันดับดาวซัลโวและนักเตะยอดเยี่ยมของลีก Korat Super League ${SITE_YEAR} ทั้งชุดใหญ่และ U-16`,
+      "/players",
+    ),
 });
 
 function PlayersPage() {

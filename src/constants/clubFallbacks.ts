@@ -17,11 +17,6 @@ export const CLUB_FALLBACKS: Record<string, ClubLite> = {
     name: "โนนแดง เอฟซี",
     short_name: "NDFC",
   },
-  "phimai-fc": {
-    slug: "phimai-fc",
-    name: "พิมาย เอฟซี",
-    short_name: "PMFC",
-  },
   "pakthongchai-united": {
     slug: "pakthongchai-united",
     name: "ปักธงชัย ยูไนเต็ด",

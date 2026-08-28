@@ -4,6 +4,7 @@ import { ArrowLeft, Trophy, Calendar, Archive } from "lucide-react";
 import { getSeason, type ArchiveStanding, CURRENT_SEASON } from "@/lib/seasonArchive";
 import { ClubCrest } from "@/components/site/ClubCrest";
 import { fetchClubSeasonsByYear, type ClubSeason } from "@/lib/archiveQueries";
+import { buildHead } from "@/lib/site";
 
 export const Route = createFileRoute("/season/$year")({
   component: SeasonPage,
@@ -12,14 +13,14 @@ export const Route = createFileRoute("/season/$year")({
     if (!season) throw notFound();
     return { season };
   },
-  head: ({ loaderData }) => ({
-    meta: loaderData
-      ? [
-          { title: `${loaderData.season.title} — Archive` },
-          { name: "description", content: loaderData.season.description },
-        ]
-      : [],
-  }),
+  head: ({ loaderData }) =>
+    loaderData
+      ? buildHead(
+          loaderData.season.title,
+          loaderData.season.description,
+          `/season/${loaderData.season.year}`,
+        )
+      : {},
   notFoundComponent: () => (
     <div className="max-w-3xl mx-auto px-4 py-20 text-center">
       <h1 className="font-display text-5xl font-extrabold mb-3">ไม่พบฤดูกาล</h1>

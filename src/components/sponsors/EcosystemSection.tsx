@@ -18,7 +18,7 @@ export function EcosystemSection({ clubs }: { clubs: any[] }) {
     <section>
       <SectionHeader
         kicker="03 · League Ecosystem"
-        title="8 สโมสร · 1 จังหวัด"
+        title="7 สโมสร · 1 จังหวัด"
         sub="ทุกสโมสรคือประตูสู่ชุมชนท้องถิ่นที่มีฐานแฟนของตัวเอง"
       />
 

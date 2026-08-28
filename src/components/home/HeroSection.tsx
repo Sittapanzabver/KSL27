@@ -5,8 +5,7 @@ import { StatPill } from "./StatPill";
 import GradientWaves from "@/components/GradientWaves/GradientWaves";
 import { SITE_YEAR } from "@/lib/site";
 
-const championNewsImg =
-  "https://hjljnwpfjbvrlvjpjhfv.supabase.co/storage/v1/object/public/media/688558213_924988373927230_9009227473837225459_n.jpg";
+const championNewsImg = "/ksl-champion-news.jpg";
 
 const seasonHeroImg = "/cover-ksl-2027.jpg";
 
@@ -80,7 +79,7 @@ export function HeroSection({ news }: { news: any[] }) {
             Season {SITE_YEAR} · Coming Soon
           </span>
           <span className="hero-glass hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-[0.25em] text-concrete/80">
-            <Trophy className="size-3 text-korat-gold" /> 8 Clubs · 32 Districts
+            <Trophy className="size-3 text-korat-gold" /> 7 Clubs · 32 Districts
           </span>
         </div>
 
@@ -121,7 +120,7 @@ export function HeroSection({ news }: { news: any[] }) {
             </div>
 
             <div className="mt-8 hero-glass inline-flex flex-wrap items-center gap-5 sm:gap-7 px-5 py-3 rounded-md">
-              <HeroStat value="8" label="Clubs" />
+              <HeroStat value="7" label="Clubs" />
               <span className="w-px h-6 bg-white/15" />
               <HeroStat value="32" label="Districts" />
               <span className="w-px h-6 bg-white/15 hidden sm:block" />
@@ -155,7 +154,7 @@ export function HeroSection({ news }: { news: any[] }) {
                   />
                 </div>
                 <p className="mt-3 text-center text-[9px] font-bold text-muted-foreground tracking-[0.3em] uppercase">
-                  8 Clubs · 32 Districts · One League
+                  7 Clubs · 32 Districts · One League
                 </p>
               </div>
             </div>
@@ -209,7 +208,7 @@ export function HeroSection({ news }: { news: any[] }) {
               </h2>
               <div className="flex items-center gap-5 mb-5">
                 <div>
-                  <span className="font-display text-2xl font-extrabold text-korat-red tabular-nums">8</span>
+                  <span className="font-display text-2xl font-extrabold text-korat-red tabular-nums">7</span>
                   <span className="text-[10px] font-bold uppercase tracking-widest text-concrete/60 ml-1.5">สโมสร</span>
                 </div>
                 <div className="border-l border-white/20 pl-5">
@@ -287,7 +286,7 @@ export function HeroSection({ news }: { news: any[] }) {
           </Link>
 
           <div className="ml-auto flex items-center gap-1 flex-wrap justify-end">
-            <StatPill icon={<Users className="size-3.5 text-muted-foreground" />} value="8" label="สโมสร" />
+            <StatPill icon={<Users className="size-3.5 text-muted-foreground" />} value="7" label="สโมสร" />
             <StatPill icon={<MapPin className="size-3.5 text-muted-foreground" />} value="32" label="อำเภอ" />
             <StatPill icon={<Trophy className="size-3.5 text-muted-foreground" />} value="1" label="ลีก" />
           </div>

@@ -24,8 +24,8 @@ const dict = {
   // Home hero
   "home.matchday": { th: `เปิดฤดูกาล ${SITE_YEAR} · กำลังเตรียมโปรแกรมการแข่งขัน`, en: `Season ${SITE_YEAR} · Fixtures Coming Soon` },
   "home.heroDesc": {
-    th: "พร้อมลุยศึก Korat Super League ฤดูกาล 2027\n8 สโมสร · 32 อำเภอ · หนึ่งลีกของคนโคราช",
-    en: "Get ready for Korat Super League 2027\n8 clubs · 32 districts · one league for Korat.",
+    th: "พร้อมลุยศึก Korat Super League ฤดูกาล 2027\n7 สโมสร · 32 อำเภอ · หนึ่งลีกของคนโคราช",
+    en: "Get ready for Korat Super League 2027\n7 clubs · 32 districts · one league for Korat.",
   },
   "home.champLabel": { th: `Korat Super League ${SITE_YEAR}`, en: `Korat Super League ${SITE_YEAR}` },
   "home.champTeam": { th: "รอติดตามทีมแชมป์ 2027", en: "Champions TBD" },

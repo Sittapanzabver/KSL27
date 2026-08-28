@@ -3,15 +3,16 @@ import { useEffect, useState } from "react";
 import { ArrowLeft, Heart, Calendar, Trophy } from "lucide-react";
 import { fetchClubHistory, type ClubHistory } from "@/lib/archiveQueries";
 import { ClubCrest } from "@/components/site/ClubCrest";
+import { buildHead } from "@/lib/site";
 
 export const Route = createFileRoute("/hall-of-memory")({
   component: HallPage,
-  head: () => ({
-    meta: [
-      { title: "Hall of Memory — Korat Super League" },
-      { name: "description", content: "ความทรงจำของสโมสรที่เคยร่วมเส้นทางในศึก Korat Super League" },
-    ],
-  }),
+  head: () =>
+    buildHead(
+      "Hall of Memory",
+      "ความทรงจำของสโมสรที่เคยร่วมเส้นทางในศึก Korat Super League",
+      "/hall-of-memory",
+    ),
 });
 
 function HallPage() {

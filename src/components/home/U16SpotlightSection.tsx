@@ -2,8 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { SITE_YEAR } from "@/lib/site";
 
 
-const U16_HERO_URL =
-  "https://hjljnwpfjbvrlvjpjhfv.supabase.co/storage/v1/object/public/media/u-16hero.jpg";
+const U16_HERO_URL = "/u16-hero.jpg";
 
 export function U16SpotlightSection() {
   return (

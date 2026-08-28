@@ -24,7 +24,7 @@ export const DISTRICT_SLOTS: DistrictSlot[] = [
   { name: "เมืองยาง", x: 79, y: 21 },
   { name: "ลำทะเมนชัย", x: 78, y: 32 },
   { name: "ชุมพวง", x: 82, y: 41 },
-  { name: "พิมาย", x: 65, y: 43, clubSlugs: ["phimai-fc"] },
+  { name: "พิมาย", x: 65, y: 43 },
   { name: "ห้วยแถลง", x: 70, y: 55 },
   { name: "จักราช", x: 58, y: 57 },
   { name: "เฉลิมพระเกียรติ", x: 51, y: 55 },

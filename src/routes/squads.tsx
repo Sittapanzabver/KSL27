@@ -1,22 +1,22 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import { User } from "lucide-react";
-import { fetchAllPlayers, fetchClubs } from "@/lib/queries";
+import { fetchAllPlayers, fetchActiveSeasonClubs } from "@/lib/queries";
 import { ClubCrest } from "@/components/site/ClubCrest";
 import { PageHeader } from "./standings";
-import { SITE_YEAR } from "@/lib/site";
+import { SITE_YEAR, buildHead } from "@/lib/site";
 
 export const Route = createFileRoute("/squads")({
   component: SquadsPage,
   validateSearch: (search: Record<string, unknown>) => ({
     club: typeof search.club === "string" ? search.club : undefined,
   }),
-  head: () => ({
-    meta: [
-      { title: `ขุมกำลังนักเตะ — Korat Super League ${SITE_YEAR}` },
-      { name: "description", content: `รายชื่อนักเตะทั้งหมดของ 8 สโมสรในศึก Korat Super League ${SITE_YEAR}` },
-    ],
-  }),
+  head: () =>
+    buildHead(
+      "ขุมกำลังนักเตะ",
+      `รายชื่อนักเตะทั้งหมดของ 7 สโมสรในศึก Korat Super League ${SITE_YEAR}`,
+      "/squads",
+    ),
 });
 
 function SquadsPage() {
@@ -26,7 +26,7 @@ function SquadsPage() {
   const [activeClub, setActiveClub] = useState<string | "all">("all");
 
   useEffect(() => {
-    fetchClubs().then((cs) => {
+    fetchActiveSeasonClubs().then((cs) => {
       setClubs(cs);
       if (clubSlug) {
         const found = cs.find((c: any) => c.slug === clubSlug);
@@ -54,7 +54,7 @@ function SquadsPage() {
       <PageHeader
         eyebrow="The Squads"
         title="ขุมกำลังนักเตะ"
-        subtitle={`รายชื่อนักเตะของทั้ง 8 สโมสรในศึก Korat Super League ${SITE_YEAR}`}
+        subtitle={`รายชื่อนักเตะของทั้ง 7 สโมสรในศึก Korat Super League ${SITE_YEAR}`}
       />
 
       {/* Club filter chips */}

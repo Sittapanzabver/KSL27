@@ -29,7 +29,7 @@ function SponsorsPage() {
     <main className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <div className="relative overflow-hidden">
         <img
-          src="https://hjljnwpfjbvrlvjpjhfv.supabase.co/storage/v1/object/public/media/u-16hero.jpg"
+          src="/u16-hero.jpg"
           alt="KSL Academy U-16"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />

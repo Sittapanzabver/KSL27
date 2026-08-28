@@ -3,7 +3,6 @@ export const CONTACT_URL = "https://www.facebook.com/KoratSuperLeague";
 export const teams = [
   { name: "เสิงสาง ยูไนเต็ด", code: "SUTD" },
   { name: "โนนแดง เอฟซี", code: "NDFC" },
-  { name: "พิมาย เอฟซี", code: "PMFC" },
   { name: "ปักธงชัย ยูไนเต็ด", code: "PUTD" },
   { name: "สุรนารี เอฟซี", code: "SNFC" },
   { name: "ยูเนี่ยน โคราช", code: "UNKR" },

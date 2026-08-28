@@ -1,10 +1,22 @@
 import { supabase } from "@/integrations/supabase/client";
 import { SITE_YEAR } from "@/lib/site";
+import { DIVISIONS } from "@/lib/divisions";
 
 // Public-safe columns on matches. Excludes financial/viewership columns
 // (live_viewers_*, tickets_*, *_revenue) which are revoked from anon/authenticated.
 export const MATCH_PUBLIC_COLS =
   "id, season_id, division_id, matchweek, home_club_id, away_club_id, kickoff_at, venue, home_score, away_score, status, mvp_player_id, highlights_url, attendance, referee, sponsor_banner_url, notes, created_at";
+
+/**
+ * สโมสรที่พักฤดูกาล 2027 (owner ยืนยัน 28/08) — SSOT ของโค้ด
+ * พิมาย เอฟซี: โค้ชเติ้ลไปช่วยโคราช ซิตี้ → ไม่ส่งทีมลง 2027 (ยังไม่ยุบ อาจกลับมา)
+ * หมายเหตุ: เมื่อย้าย DB ออกจาก Lovable Cloud แล้ว ให้ย้าย logic นี้ไป club_seasons ใน DB
+ */
+export const CLUBS_ON_BREAK_2027 = ["phimai-fc"] as const;
+
+export function isClubOnBreak(slug: string | undefined): boolean {
+  return !!slug && (CLUBS_ON_BREAK_2027 as readonly string[]).includes(slug);
+}
 
 export async function fetchStandings(
   divisionId: string = "bd770ed0-2027-47e0-ab34-901a151e9f7c",
@@ -31,6 +43,23 @@ export async function fetchDivisions() {
 
 export async function fetchClubs() {
   const { data, error } = await supabase.from("clubs").select("*").order("name");
+  if (error) throw error;
+  return data ?? [];
+}
+
+/**
+ * ดึงสโมสรที่ลงแข่งในฤดูกาลปัจจุบัน (division SUPER_LEAGUE 2027)
+ * ใช้กรอง roster ไม่ให้โชว์สโมสรที่พักฤดูกาล (เช่น พิมาย)
+ */
+export async function fetchActiveSeasonClubs() {
+  // Roster ฤดูกาลปัจจุบัน — clubs ที่ไม่ได้พักฤดูกาล
+  // (DB ยังอยู่บน Lovable Cloud และ division_id ยังเป็นของ 2026 — เลยกรองด้วย slug แทน
+  //  เมื่อย้าย DB เป็นของตัวเองแล้ว: เปลี่ยนเป็น .eq("division_id", DIVISIONS.SUPER_LEAGUE.id))
+  const { data, error } = await supabase
+    .from("clubs")
+    .select("*")
+    .not("slug", "in", `(${CLUBS_ON_BREAK_2027.join(",")})`)
+    .order("name");
   if (error) throw error;
   return data ?? [];
 }
