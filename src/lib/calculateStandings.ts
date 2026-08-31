@@ -90,16 +90,18 @@ export function calculateStandings(matches: any[]): StandingRow[] {
   return rows;
 }
 
-export async function fetchStandingsFromMatches(divisionId: string) {
+export async function fetchStandingsFromMatches(divisionId: string, seasonId?: string) {
   const { supabase } = await import("@/integrations/supabase/client");
   const { MATCH_PUBLIC_COLS } = await import("@/lib/queries");
-  const { data, error } = await supabase
+  let q = supabase
     .from("matches")
     .select(
       `${MATCH_PUBLIC_COLS}, home:clubs!matches_home_club_id_fkey(*), away:clubs!matches_away_club_id_fkey(*)`,
     )
     .eq("division_id", divisionId)
     .eq("status", "completed");
+  if (seasonId) q = q.eq("season_id", seasonId);
+  const { data, error } = await q;
   if (error) throw error;
   return calculateStandings(data ?? []);
 }

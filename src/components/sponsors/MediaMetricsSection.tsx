@@ -2,41 +2,40 @@ import { SEASON, matchData, maxLive } from "@/constants/seasonStats";
 import { SectionHeader } from "./SectionHeader";
 import { SITE_YEAR } from "@/lib/site";
 
-
 export function MediaMetricsSection() {
   const cards = [
     {
-      n: `${SEASON.totalLive.toLocaleString()}+`,
-      l: "ผู้ชมไลฟ์สดสะสม",
-      s: `ครบ ${SEASON.matches} แมตช์เดย์`,
+      n: `${(SEASON.totalLive / 1000).toFixed(0)}K+`,
+      l: "ผู้ชมไลฟ์สดสะสม (Projected)",
+      s: `ครบ ${SEASON.matches} แมตช์เดย์ · อิงจากลีกสด ${SEASON.baseYear}`,
       accent: true,
       tag: "Reach",
     },
     {
-      n: SEASON.avgLivePerMatch.toLocaleString(),
-      l: "ผู้ชมออนไลน์เฉลี่ย/นัด",
-      s: "ค่าเฉลี่ยทั้งฤดูกาล",
+      n: `${(SEASON.avgLivePerMatch / 1000).toFixed(1)}K`,
+      l: "ค่าเฉลี่ยผู้ชมต่อนัด (ทุกสโมสร)",
+      s: `ค่าเฉลี่ยรวมทุกสโมสรที่ไลฟ์สด · หารจากยอดรวมทั้งฤดูกาล ${SEASON.matches} นัด`,
       accent: false,
       tag: "Average",
     },
     {
-      n: SEASON.maxLive.toLocaleString(),
+      n: `${(SEASON.maxLive / 1000).toFixed(1)}K`,
       l: "ไลฟ์สดสูงสุด 1 นัด",
-      s: `Match Day ${SEASON.maxLiveMd.replace("MD", "")}`,
+      s: `Projected · Match Day ${SEASON.maxLiveMd.replace("MD", "")}`,
       accent: true,
       tag: "Peak",
     },
     {
-      n: SEASON.totalStadium.toLocaleString(),
+      n: `${(SEASON.totalStadium / 1000).toFixed(1)}K`,
       l: "ผู้ชมในสนามสะสม",
-      s: `เฉลี่ย ${Math.round(SEASON.totalStadium / SEASON.matches).toLocaleString()} คน/นัด`,
+      s: `Projected · เฉลี่ย ~${Math.round(SEASON.totalStadium / SEASON.matches).toLocaleString()} คน/นัด`,
       accent: false,
       tag: "On-Site",
     },
     {
-      n: `฿${SEASON.totalRevenue.toLocaleString()}`,
-      l: "รายได้รวม",
-      s: "บัตร + ของที่ระลึก",
+      n: `฿${(SEASON.totalRevenue / 1000).toFixed(0)}K`,
+      l: "รายได้รวม (Projected)",
+      s: "บัตร + ของที่ระลึก · อิงจากลีกสด 2026",
       accent: true,
       tag: "Revenue",
     },
@@ -54,7 +53,7 @@ export function MediaMetricsSection() {
       <SectionHeader
         kicker="01 · Media Value"
         title="ตัวเลขที่สปอนเซอร์มองหา"
-        sub="Reach, exposure, and engagement — ทุกตัวเลขเก็บจริงจากยอดสะสมของลีกและสถิติฤดูกาลที่ผ่านมา"
+        sub={`Reach, exposure, and engagement — Projected จากข้อมูลจริงลีกสด ${SEASON.baseYear} · ${SEASON.matches} นัด · ${SEASON.clubs} สโมสร`}
       />
 
       <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 mb-8">
@@ -75,11 +74,7 @@ export function MediaMetricsSection() {
               >
                 {c.tag}
               </span>
-              <div
-                className={`h-px w-8 ${
-                  c.accent ? "bg-korat-red/60" : "bg-border"
-                }`}
-              />
+              <div className={`h-px w-8 ${c.accent ? "bg-korat-red/60" : "bg-border"}`} />
             </div>
             <div
               className={`text-3xl md:text-4xl font-black tracking-tight leading-none tabular-nums ${
@@ -91,9 +86,7 @@ export function MediaMetricsSection() {
             <div className="text-[11px] font-bold tracking-[0.12em] text-foreground/80 uppercase mt-3">
               {c.l}
             </div>
-            <div className="text-[11px] text-muted-foreground/60 mt-1 leading-snug">
-              {c.s}
-            </div>
+            <div className="text-[11px] text-muted-foreground/60 mt-1 leading-snug">{c.s}</div>
           </div>
         ))}
       </div>
@@ -123,9 +116,7 @@ export function MediaMetricsSection() {
                     isMax ? "text-korat-red" : "text-muted-foreground"
                   }`}
                 >
-                  {m.live >= 1000
-                    ? `${(m.live / 1000).toFixed(1)}K`
-                    : m.live}
+                  {m.live >= 1000 ? `${(m.live / 1000).toFixed(1)}K` : m.live}
                 </span>
                 <div className="w-full flex items-end" style={{ height: "110px" }}>
                   <div
@@ -156,7 +147,7 @@ export function MediaMetricsSection() {
             </span>
           </div>
           <span className="text-[10px] font-bold tracking-widest text-korat-red uppercase">
-            +94% vs 2024
+            Projected · อิงจากลีกสด {SEASON.baseYear}
           </span>
         </div>
       </div>

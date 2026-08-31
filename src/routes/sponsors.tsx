@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { fetchClubs } from "@/lib/queries";
+import { fetchActiveSeasonClubs } from "@/lib/queries";
 import { MediaMetricsSection } from "@/components/sponsors/MediaMetricsSection";
 import { PackagesSection } from "@/components/sponsors/PackagesSection";
 import { EcosystemSection } from "@/components/sponsors/EcosystemSection";
@@ -14,7 +14,7 @@ export const Route = createFileRoute("/sponsors")({
     buildHead(
       "สปอนเซอร์",
       `แพ็กเกจสนับสนุนและพันธมิตรอย่างเป็นทางการของ Korat Super League ${SITE_YEAR}`,
-      "/sponsors"
+      "/sponsors",
     ),
 });
 
@@ -22,7 +22,7 @@ function SponsorsPage() {
   const [clubs, setClubs] = useState<any[]>([]);
 
   useEffect(() => {
-    fetchClubs().then(setClubs);
+    fetchActiveSeasonClubs().then(setClubs);
   }, []);
 
   return (
@@ -47,8 +47,8 @@ function SponsorsPage() {
             <span className="text-korat-gold">อนาคตโคราช</span>
           </h1>
           <p className="text-base md:text-lg text-white/65 max-w-2xl leading-relaxed">
-            สนับสนุน Korat Super League และ KSL Academy U-16
-            — แบรนด์ของคุณเข้าถึงชุมชนฟุตบอล 8 อำเภอ ผู้ชม 275,000+ คน
+            สนับสนุน Korat Super League และ KSL Academy U-16 — แบรนด์ของคุณเข้าถึงชุมชนฟุตบอล 7
+            อำเภอ ผู้ชมไลฟ์สดสะสม projected 315,000+ คน
           </p>
         </div>
       </div>

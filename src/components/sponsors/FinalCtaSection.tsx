@@ -1,7 +1,6 @@
 import { CONTACT_URL } from "@/constants/sponsorTiers";
 import { SITE_YEAR } from "@/lib/site";
 
-
 export function FinalCtaSection() {
   return (
     <section>
@@ -21,7 +20,7 @@ export function FinalCtaSection() {
             ร่วมสร้างอนาคตฟุตบอลเยาวชนโคราช
           </h3>
           <p className="text-sm md:text-base text-white/70">
-            120+ เยาวชนนักเตะ · 8 อำเภอ · ทีม U-16 ครบทุกสโมสร
+            120+ เยาวชนนักเตะ · 7 อำเภอ · ทีม U-16 ครบทุกสโมสร
           </p>
         </div>
       </div>
@@ -63,10 +62,9 @@ export function FinalCtaSection() {
               <span className="text-white/80">ในฤดูกาลถัดไป</span>
             </h2>
             <p className="text-sm md:text-base text-white/85 max-w-md leading-relaxed">
-              เข้าถึงแฟนบอลกว่า{" "}
-              <span className="font-black text-white">275,000 คน</span>{" "}
-              ผ่านแพลตฟอร์มดิจิทัลและสื่อชุมชนของลีก
-              ติดต่อเพื่อรับ Media Kit ฉบับเต็มและข้อเสนอที่เหมาะกับธุรกิจของคุณ
+              เข้าถึงแฟนบอลกว่า <span className="font-black text-white">315,000 คน</span>{" "}
+              ผ่านแพลตฟอร์มดิจิทัลและสื่อชุมชนของลีก (Projected จากลีกสด 2026) ติดต่อเพื่อรับ Media
+              Kit ฉบับเต็มและข้อเสนอที่เหมาะกับธุรกิจของคุณ
             </p>
           </div>
 
@@ -88,9 +86,7 @@ export function FinalCtaSection() {
 
       <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-[10px] text-muted-foreground/60 tracking-[0.16em] uppercase font-bold">
         <span>Korat Super League {SITE_YEAR}</span>
-        <span className="text-muted-foreground/40">
-          koratsuperleague.lovable.app
-        </span>
+        <span className="text-muted-foreground/40">koratsuperleague.lovable.app</span>
       </div>
     </section>
   );

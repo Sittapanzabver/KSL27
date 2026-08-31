@@ -34,105 +34,24 @@ export function SponsorsSection({ sponsors }: { sponsors: any[] }) {
           </Link>
         </div>
 
-        {titleSponsors.length > 0 && (
-          <div className="mb-6">
-            {titleSponsors.map((s) => (
-              <a
-                key={s.id}
-                href={s.website || "#"}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative overflow-hidden rounded-xl border border-white/[0.05] bg-white/[0.02] backdrop-blur-sm flex flex-col md:flex-row items-center justify-between gap-6 px-8 py-7 transition-all duration-300 hover:scale-[1.01] hover:border-korat-red/30 hover:shadow-[0_0_25px_rgba(239,68,68,0.08)] block"
-              >
-                <div className="relative flex items-center gap-5">
-                  <span className="inline-block text-[9px] font-black tracking-[0.2em] bg-korat-red text-white px-2.5 py-1 uppercase shrink-0">
-                    Title Sponsor
-                  </span>
-                  <span className="font-display text-xl md:text-2xl font-extrabold tracking-tight group-hover:text-korat-red transition-colors">
-                    {s.name}
-                  </span>
-                </div>
-                <div className="relative w-36 h-14 flex items-center justify-center shrink-0">
-                  {s.logo_url ? (
-                    <img
-                      src={s.logo_url}
-                      alt={s.name}
-                      loading="lazy"
-                      className="max-h-full max-w-full object-contain opacity-50 grayscale transition-all duration-500 group-hover:opacity-100 group-hover:grayscale-0"
-                    />
-                  ) : (
-                    <span className="text-[10px] font-black tracking-widest text-muted-foreground uppercase">
-                      {s.name}
-                    </span>
-                  )}
-                </div>
-              </a>
-            ))}
-          </div>
-        )}
-
-        {otherSponsors.length > 0 && (
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 mb-6">
-            {otherSponsors.map((s) => (
-              <a
-                key={s.id}
-                href={s.website || "#"}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`group relative flex items-center justify-center overflow-hidden rounded-xl border bg-white/[0.02] backdrop-blur-sm p-5 aspect-[3/2] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_25px_rgba(239,68,68,0.08)]
-                ${
-                  s.tier === "gold"
-                    ? "border-yellow-600/20 hover:border-yellow-500/50"
-                    : "border-white/[0.05] hover:border-korat-red/30"
-                }`}
-              >
-                {s.tier === "gold" && (
-                  <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-yellow-500/60" />
-                )}
-                {s.logo_url ? (
-                  <img
-                    src={s.logo_url}
-                    alt={s.name}
-                    loading="lazy"
-                    className="max-h-full max-w-full object-contain opacity-50 grayscale transition-all duration-500 group-hover:opacity-100 group-hover:grayscale-0"
-                  />
-                ) : (
-                  <span className="font-display font-bold text-center text-sm leading-tight text-muted-foreground group-hover:text-korat-red transition-colors">
-                    {s.name}
-                  </span>
-                )}
-              </a>
-            ))}
-          </div>
-        )}
-
-        {sponsors.length === 0 && (
-          <div className="border border-dashed border-white/[0.08] rounded-xl p-12 text-center bg-white/[0.02] backdrop-blur-sm">
-            <p className="text-[11px] text-muted-foreground/50 tracking-wide">
-              กำลังเปิดรับพันธมิตรอย่างเป็นทางการสำหรับ KSL {SITE_YEAR}
-            </p>
-            <Link
-              to="/sponsors"
-              className="inline-block mt-4 text-[11px] font-bold tracking-widest uppercase text-korat-red hover:underline"
-            >
-              ดูแพ็กเกจสปอนเซอร์ →
-            </Link>
-          </div>
-        )}
-
-        {sponsors.length > 0 && (
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 border border-white/[0.05] rounded-xl bg-white/[0.02] backdrop-blur-sm px-6 py-5">
-            <p className="text-[11px] text-muted-foreground/60 text-center sm:text-left">
-              สนใจเป็นพันธมิตรอย่างเป็นทางการกับ KSL {SITE_YEAR}?
-            </p>
-            <Link
-              to="/sponsors"
-              className="text-[11px] font-black tracking-widest uppercase text-korat-red hover:underline flex items-center gap-1 shrink-0"
-            >
-              ดูแพ็กเกจ <ArrowRight className="size-3" />
-            </Link>
-          </div>
-        )}
+        {/* 2027 — ยังไม่ประกาศพันธมิตร แสดงเฉพาะ CTA */}
+        <div className="border border-dashed border-white/[0.08] rounded-xl p-12 text-center bg-white/[0.02] backdrop-blur-sm">
+          <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-korat-gold mb-3">
+            Coming Soon · KSL {SITE_YEAR}
+          </p>
+          <p className="text-sm text-muted-foreground/70 tracking-wide mb-1">
+            พันธมิตรอย่างเป็นทางการประจำฤดูกาล {SITE_YEAR}
+          </p>
+          <p className="text-[11px] text-muted-foreground/40 tracking-wide">
+            กำลังอยู่ระหว่างการประกาศ — เปิดรับพันธมิตรแล้ววันนี้
+          </p>
+          <Link
+            to="/sponsors"
+            className="inline-block mt-5 text-[11px] font-bold tracking-widest uppercase text-korat-red hover:underline"
+          >
+            ดูแพ็กเกจสปอนเซอร์ →
+          </Link>
+        </div>
       </div>
     </section>
   );

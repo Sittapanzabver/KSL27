@@ -1,7 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { SITE_YEAR } from "@/lib/site";
 
-
 const U16_HERO_URL = "/u16-hero.jpg";
 
 export function U16SpotlightSection() {
@@ -32,9 +31,7 @@ export function U16SpotlightSection() {
         <div className="text-[10px] font-black text-korat-gold tracking-widest">
           🎓 Academy Sponsor
         </div>
-        <div className="text-xs text-white/60 mt-0.5">
-          ร่วมสนับสนุนโครงการ
-        </div>
+        <div className="text-xs text-white/60 mt-0.5">ร่วมสนับสนุนโครงการ</div>
       </Link>
 
       {/* Bottom-left content */}
@@ -52,9 +49,7 @@ export function U16SpotlightSection() {
         </h2>
 
         {/* Sub */}
-        <p className="text-sm text-white/70 mt-3">
-          เยาวชนนักเตะจาก 8 อำเภอ · ฤดูกาล {SITE_YEAR}
-        </p>
+        <p className="text-sm text-white/70 mt-3">เยาวชนนักเตะจาก 7 อำเภอ · ฤดูกาล {SITE_YEAR}</p>
 
         {/* CTAs */}
         <div className="flex gap-3 mt-6">

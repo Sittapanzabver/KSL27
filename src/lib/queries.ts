@@ -18,9 +18,7 @@ export function isClubOnBreak(slug: string | undefined): boolean {
   return !!slug && (CLUBS_ON_BREAK_2027 as readonly string[]).includes(slug);
 }
 
-export async function fetchStandings(
-  divisionId: string = "bd770ed0-2027-47e0-ab34-901a151e9f7c",
-) {
+export async function fetchStandings(divisionId: string = "bd770ed0-2027-47e0-ab34-901a151e9f7c") {
   const { data, error } = await supabase
     .from("standings")
     .select("*, club:clubs(*)")
@@ -65,11 +63,7 @@ export async function fetchActiveSeasonClubs() {
 }
 
 export async function fetchClubBySlug(slug: string) {
-  const { data, error } = await supabase
-    .from("clubs")
-    .select("*")
-    .eq("slug", slug)
-    .maybeSingle();
+  const { data, error } = await supabase.from("clubs").select("*").eq("slug", slug).maybeSingle();
   if (error) throw error;
   return data;
 }
@@ -103,7 +97,9 @@ export async function fetchUpcomingMatches(limit = 5) {
   if (!activeSeason) return [];
   const { data, error } = await supabase
     .from("matches")
-    .select(`${MATCH_PUBLIC_COLS}, home:clubs!matches_home_club_id_fkey(*), away:clubs!matches_away_club_id_fkey(*)`)
+    .select(
+      `${MATCH_PUBLIC_COLS}, home:clubs!matches_home_club_id_fkey(*), away:clubs!matches_away_club_id_fkey(*)`,
+    )
     .eq("status", "scheduled")
     .eq("season_id", activeSeason)
     .order("kickoff_at", { ascending: true })
@@ -117,7 +113,9 @@ export async function fetchRecentResults(limit = 5) {
   if (!activeSeason) return [];
   const { data, error } = await supabase
     .from("matches")
-    .select(`${MATCH_PUBLIC_COLS}, home:clubs!matches_home_club_id_fkey(*), away:clubs!matches_away_club_id_fkey(*)`)
+    .select(
+      `${MATCH_PUBLIC_COLS}, home:clubs!matches_home_club_id_fkey(*), away:clubs!matches_away_club_id_fkey(*)`,
+    )
     .eq("status", "completed")
     .eq("season_id", activeSeason)
     .order("kickoff_at", { ascending: false })
@@ -127,7 +125,7 @@ export async function fetchRecentResults(limit = 5) {
 }
 
 /** id ของ season ที่ active (is_active = true) — ใช้กรองข้อมูลหน้าแรก/แมตช์ให้เป็นฤดูกาลปัจจุบัน */
-async function getActiveSeasonId(): Promise<string | null> {
+export async function getActiveSeasonId(): Promise<string | null> {
   const { data, error } = await supabase
     .from("seasons")
     .select("id")
@@ -140,7 +138,9 @@ async function getActiveSeasonId(): Promise<string | null> {
 export async function fetchAllMatches() {
   const { data, error } = await supabase
     .from("matches")
-    .select(`${MATCH_PUBLIC_COLS}, home:clubs!matches_home_club_id_fkey(*), away:clubs!matches_away_club_id_fkey(*)`)
+    .select(
+      `${MATCH_PUBLIC_COLS}, home:clubs!matches_home_club_id_fkey(*), away:clubs!matches_away_club_id_fkey(*)`,
+    )
     .order("kickoff_at", { ascending: true });
   if (error) throw error;
   return data ?? [];
@@ -149,7 +149,9 @@ export async function fetchAllMatches() {
 export async function fetchMatchById(id: string) {
   const { data, error } = await supabase
     .from("matches")
-    .select(`${MATCH_PUBLIC_COLS}, home:clubs!matches_home_club_id_fkey(*), away:clubs!matches_away_club_id_fkey(*), mvp:players!matches_mvp_player_id_fkey(*)`)
+    .select(
+      `${MATCH_PUBLIC_COLS}, home:clubs!matches_home_club_id_fkey(*), away:clubs!matches_away_club_id_fkey(*), mvp:players!matches_mvp_player_id_fkey(*)`,
+    )
     .eq("id", id)
     .maybeSingle();
   if (error) throw error;
@@ -199,10 +201,7 @@ export async function fetchNewsBySlug(slug: string) {
 }
 
 export async function fetchSponsors() {
-  const { data, error } = await supabase
-    .from("sponsors")
-    .select("*")
-    .order("display_order");
+  const { data, error } = await supabase.from("sponsors").select("*").order("display_order");
   if (error) throw error;
   return data ?? [];
 }

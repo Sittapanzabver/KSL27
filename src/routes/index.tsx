@@ -9,6 +9,7 @@ import {
   fetchSponsors,
   fetchDivisions,
   fetchActiveSeasonClubs,
+  getActiveSeasonId,
 } from "@/lib/queries";
 import { fetchStandingsFromMatches } from "@/lib/calculateStandings";
 import { ClubCrest } from "@/components/site/ClubCrest";
@@ -28,7 +29,6 @@ export const Route = createFileRoute("/")({
       "/",
     ),
 });
-
 
 function MatchCenterSection() {
   const { data: recent = [] } = useQuery({
@@ -51,9 +51,7 @@ function MatchCenterSection() {
         <div className="grid gap-6 lg:grid-cols-2">
           {/* Latest Results */}
           <div>
-            <h3 className="font-display text-lg font-extrabold mb-3">
-              ผลการแข่งขันล่าสุด
-            </h3>
+            <h3 className="font-display text-lg font-extrabold mb-3">ผลการแข่งขันล่าสุด</h3>
             {recent.length === 0 ? (
               <p className="text-sm text-muted-foreground py-4">
                 ยังไม่มีข้อมูล — ฤดูกาล {SITE_YEAR} กำลังจะเปิดฉาก
@@ -61,11 +59,7 @@ function MatchCenterSection() {
             ) : (
               <div className="space-y-2">
                 {recent.map((m: any) => (
-                  <Link
-                    key={m.id}
-                    to="/matches/$matchId"
-                    params={{ matchId: m.id }}
-                  >
+                  <Link key={m.id} to="/matches/$matchId" params={{ matchId: m.id }}>
                     <MiniMatch match={m} done />
                   </Link>
                 ))}
@@ -74,9 +68,7 @@ function MatchCenterSection() {
           </div>
           {/* Upcoming Fixtures */}
           <div>
-            <h3 className="font-display text-lg font-extrabold mb-3">
-              นัดหมายถัดไป
-            </h3>
+            <h3 className="font-display text-lg font-extrabold mb-3">นัดหมายถัดไป</h3>
             {upcoming.length === 0 ? (
               <p className="text-sm text-muted-foreground py-4">
                 ยังไม่มีข้อมูล — รอตารางแข่งขันฤดูกาล {SITE_YEAR}
@@ -84,11 +76,7 @@ function MatchCenterSection() {
             ) : (
               <div className="space-y-2">
                 {upcoming.map((m: any) => (
-                  <Link
-                    key={m.id}
-                    to="/matches/$matchId"
-                    params={{ matchId: m.id }}
-                  >
+                  <Link key={m.id} to="/matches/$matchId" params={{ matchId: m.id }}>
                     <MiniMatch match={m} />
                   </Link>
                 ))}
@@ -177,15 +165,17 @@ function HomePage() {
 
   const seniorDivisionId = divisions
     ? (
-        [...divisions].sort((a: any, b: any) => a.tier - b.tier).find(
-          (d: any) => d.tier === 1
-        ) ?? divisions[0]
+        [...divisions].sort((a: any, b: any) => a.tier - b.tier).find((d: any) => d.tier === 1) ??
+        divisions[0]
       )?.id
     : undefined;
 
   const { data: standings = [] } = useQuery({
     queryKey: ["standings-from-matches", seniorDivisionId ?? "default"],
-    queryFn: () => fetchStandingsFromMatches(seniorDivisionId!),
+    queryFn: async () => {
+      const sid = await getActiveSeasonId();
+      return fetchStandingsFromMatches(seniorDivisionId!, sid!);
+    },
     enabled: !!seniorDivisionId,
   });
 

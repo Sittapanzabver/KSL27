@@ -2,7 +2,6 @@ import { CONTACT_URL, tiers, type SponsorTier } from "@/constants/sponsorTiers";
 import { SectionHeader } from "./SectionHeader";
 import { SITE_YEAR } from "@/lib/site";
 
-
 function TierCard({ tier, idx }: { tier: SponsorTier; idx: number }) {
   return (
     <div
@@ -35,38 +34,26 @@ function TierCard({ tier, idx }: { tier: SponsorTier; idx: number }) {
           </span>
           <div
             className={`h-px w-10 ${
-              tier.highlight
-                ? "bg-korat-red"
-                : idx === 1
-                  ? "bg-yellow-500/50"
-                  : "bg-border"
+              tier.highlight ? "bg-korat-red" : idx === 1 ? "bg-yellow-500/50" : "bg-border"
             }`}
           />
         </div>
 
         <h3
           className={`text-2xl font-black tracking-tight mb-2 ${
-            tier.highlight
-              ? "text-foreground"
-              : idx === 1
-                ? "text-yellow-500"
-                : "text-foreground"
+            tier.highlight ? "text-foreground" : idx === 1 ? "text-yellow-500" : "text-foreground"
           }`}
         >
           {tier.name}
         </h3>
-        <p className="text-[11px] text-muted-foreground mb-6 leading-snug">
-          {tier.tagline}
-        </p>
+        <p className="text-[11px] text-muted-foreground mb-6 leading-snug">{tier.tagline}</p>
 
         <div className="flex-1 space-y-2.5 mb-7 border-t border-border/60 pt-5">
           {tier.perks.map((p) => (
             <div key={p} className="flex items-start gap-3">
               <span
                 className={`mt-0.5 flex items-center justify-center size-4 text-[10px] font-black leading-none flex-shrink-0 ${
-                  tier.highlight
-                    ? "bg-korat-red text-white"
-                    : "bg-foreground/10 text-foreground"
+                  tier.highlight ? "bg-korat-red text-white" : "bg-foreground/10 text-foreground"
                 }`}
               >
                 ✓
@@ -143,7 +130,7 @@ export function PackagesSection() {
           </p>
           <div className="flex-1 space-y-2.5 mb-7 border-t border-border/60 pt-5">
             {[
-              "โลโก้บนชุดแข่ง U-16 ทั้ง 8 ทีม",
+              "โลโก้บนชุดแข่ง U-16 ทั้ง 7 ทีม",
               "ป้ายสนามในนัดเยาวชนทุกแมตช์",
               "Feature บน KSL Hub หน้า Sponsors",
               "โพสต์ Social Media ต้อนรับสปอนเซอร์",
@@ -167,8 +154,7 @@ export function PackagesSection() {
       </div>
 
       <p className="text-[11px] text-muted-foreground/60 mt-5 text-center">
-        * แพ็กเกจทั้งหมดปรับแต่งได้ตามอุตสาหกรรมและเป้าหมายของธุรกิจ ·
-        พร้อมรายงานผลรายเดือน
+        * แพ็กเกจทั้งหมดปรับแต่งได้ตามอุตสาหกรรมและเป้าหมายของธุรกิจ · พร้อมรายงานผลรายเดือน
       </p>
     </section>
   );

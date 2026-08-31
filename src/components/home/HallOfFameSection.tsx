@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { Trophy, Star, Award, HeartHandshake, ArrowRight } from "lucide-react";
 import { fetchClubHistory } from "@/lib/archiveQueries";
+import { SEASON_ARCHIVE } from "@/lib/seasonArchive";
 import { fetchTopScorersTable } from "@/lib/queries";
 import { SectionTitle } from "./SectionTitle";
 
@@ -18,6 +19,14 @@ type Category = {
 
 const CATEGORIES: Category[] = [
   {
+    key: "clubs",
+    icon: Award,
+    eyebrow: "Club Achievements",
+    title: "ผลงานสโมสร",
+    description: "ถ้วยรางวัล แชมป์ และความสำเร็จของแต่ละสโมสร",
+    accent: "from-korat-red/25 to-korat-red/0",
+  },
+  {
     key: "legends",
     icon: Star,
     eyebrow: "Legendary Players",
@@ -31,14 +40,6 @@ const CATEGORIES: Category[] = [
     eyebrow: "Top Scorers",
     title: "ดาวซัลโวตลอดกาล",
     description: "เจ้าของรองเท้าทองคำและสถิติประตูสูงสุดในแต่ละฤดูกาล",
-    accent: "from-korat-red/25 to-korat-red/0",
-  },
-  {
-    key: "clubs",
-    icon: Award,
-    eyebrow: "Club Achievements",
-    title: "ผลงานสโมสร",
-    description: "ถ้วยรางวัล แชมป์ และความสำเร็จของแต่ละสโมสร",
     accent: "from-cyan-500/20 to-cyan-500/0",
   },
   {
@@ -50,6 +51,20 @@ const CATEGORIES: Category[] = [
     accent: "from-emerald-500/20 to-emerald-500/0",
   },
 ];
+
+/** แชมป์ + รองแชมป์แต่ละฤดูกาล */
+const CHAMPIONS_HISTORY = SEASON_ARCHIVE.filter((s) => s.archived)
+  .sort((a, b) => b.year - a.year)
+  .map((s) => ({
+    year: s.year,
+    champion: s.standings[0]?.team ?? s.champion,
+    championShort: s.standings[0]?.short ?? "",
+    championColor: s.standings[0]?.color ?? "#cc0000",
+    runnerUp: s.standings[1]?.team ?? "-",
+    runnerUpShort: s.standings[1]?.short ?? "",
+    runnerUpColor: s.standings[1]?.color ?? "#666",
+    matchdays: s.matchdays,
+  }));
 
 export function HallOfFameSection() {
   const { data: history = [] } = useQuery({
@@ -87,19 +102,19 @@ export function HallOfFameSection() {
               HALL OF <span className="text-korat-red">FAME</span>
             </h3>
             <p className="mt-3 text-sm text-concrete/80 leading-relaxed">
-              รวมตำนาน ผู้เล่น สโมสร และผู้สนับสนุน ที่ร่วมสร้างประวัติศาสตร์ลีกโคราชตลอดทุกฤดูกาล
+              รวมสโมสร ตำนานผู้เล่น และผู้สนับสนุน ที่ร่วมสร้างประวัติศาสตร์ลีกโคราชตลอดทุกฤดูกาล
             </p>
           </div>
 
           <div className="flex flex-wrap items-center gap-2 text-[10px] uppercase tracking-widest font-bold text-concrete/70">
-            {topScorer && (
+            {topAchievement && (
               <span className="inline-flex items-center gap-1.5 rounded-full bg-korat-red/15 px-3 py-1 text-korat-red">
-                <Trophy className="size-3" /> {topScorer.name} · {topScorer.goals} ประตู
+                <Award className="size-3" /> {topAchievement.club}
               </span>
             )}
-            {topAchievement && (
+            {topScorer && (
               <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-500/15 px-3 py-1 text-amber-300">
-                <Award className="size-3" /> {topAchievement.club}
+                <Trophy className="size-3" /> {topScorer.name} · {topScorer.goals} ประตู
               </span>
             )}
           </div>
@@ -131,6 +146,64 @@ export function HallOfFameSection() {
               </div>
             );
           })}
+        </div>
+
+        {/* ── Champions History ──────────────────────────────────── */}
+        <div className="relative mt-8">
+          <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-amber-300 mb-4">
+            Champions Roll of Honor
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+            {CHAMPIONS_HISTORY.map((season) => (
+              <div
+                key={season.year}
+                className="relative overflow-hidden rounded-xl border border-white/10 bg-white/[0.03] p-4 hover:border-korat-red/50 transition-colors"
+              >
+                <div className="flex items-center justify-between mb-3">
+                  <span className="font-display text-2xl font-extrabold text-white/20">
+                    {season.year}
+                  </span>
+                  <span className="text-[9px] font-bold uppercase tracking-widest text-white/30">
+                    {season.matchdays} นัด
+                  </span>
+                </div>
+
+                {/* Champion */}
+                <div className="flex items-center gap-3 mb-2">
+                  <div
+                    className="size-8 rounded-full flex items-center justify-center text-xs font-black text-white"
+                    style={{ backgroundColor: season.championColor }}
+                  >
+                    🏆
+                  </div>
+                  <div>
+                    <p className="text-[9px] font-bold uppercase tracking-widest text-amber-400">
+                      แชมป์
+                    </p>
+                    <p className="text-sm font-bold text-white leading-tight">{season.champion}</p>
+                  </div>
+                </div>
+
+                {/* Runner-up */}
+                <div className="flex items-center gap-3">
+                  <div
+                    className="size-8 rounded-full flex items-center justify-center text-xs font-black text-white/70 border border-white/20"
+                    style={{ backgroundColor: season.runnerUpColor + "40" }}
+                  >
+                    🥈
+                  </div>
+                  <div>
+                    <p className="text-[9px] font-bold uppercase tracking-widest text-white/40">
+                      รองแชมป์
+                    </p>
+                    <p className="text-sm font-medium text-white/70 leading-tight">
+                      {season.runnerUp}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="relative mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-korat-red group-hover:gap-3 transition-all">

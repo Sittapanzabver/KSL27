@@ -1,31 +1,18 @@
 // src/routes/clubs.tsx
 import { createFileRoute, Link, Outlet, useMatchRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { fetchActiveSeasonClubs, fetchDivisions } from "@/lib/queries";
-import { fetchStandingsFromMatches } from "@/lib/calculateStandings";
+import { fetchActiveSeasonClubs } from "@/lib/queries";
 import { ClubCrest } from "@/components/site/ClubCrest";
 import { PageHeader } from "./standings";
-import { Users, GraduationCap } from "lucide-react";
+import { GraduationCap } from "lucide-react";
 import { buildHead, SITE_YEAR } from "@/lib/site";
 
 const U16_HERO_URL = "/u16-hero.jpg";
 
-const U16_CLUBS = new Set([
-  "pakthongchai-united",
-  "khonburi-fc",
-  "suranaree-fc",
-  "union-korat",
-  "khamsakaesaeng-fc",
-]);
-
 export const Route = createFileRoute("/clubs")({
   component: ClubsLayout,
   head: () =>
-    buildHead(
-      "สโมสร",
-      `ทำความรู้จัก 7 สโมสรในศึก Korat Super League ${SITE_YEAR}`,
-      "/clubs"
-    ),
+    buildHead("สโมสร", `ทำความรู้จัก 7 สโมสรในศึก Korat Super League ${SITE_YEAR}`, "/clubs"),
 });
 
 function ClubsLayout() {
@@ -36,34 +23,15 @@ function ClubsLayout() {
 
 function ClubsPage() {
   const [clubs, setClubs] = useState<any[]>([]);
-  const [standings, setStandings] = useState<any[]>([]);
 
   useEffect(() => {
     fetchActiveSeasonClubs().then(setClubs);
-    fetchDivisions().then((divs: any[]) => {
-      const senior =
-        [...divs].sort((a, b) => a.tier - b.tier).find((d) => d.tier === 1) ??
-        divs[0];
-      if (senior) {
-        fetchStandingsFromMatches(senior.id).then(setStandings);
-      }
-    });
   }, []);
-
-  const standingsMap = new Map(standings.map((s) => [s.club_id, s]));
-  const seniorClubs = clubs.length
-    ? standings.length
-      ? standings
-          .map((s) => clubs.find((c) => c.id === s.club_id))
-          .filter(Boolean)
-      : clubs
-    : [];
 
   return (
     <div>
-      {/* ── U-16 Academy Banner ─────────────────────────────────────────── */}
+      {/* U-16 Academy Banner */}
       <div className="relative overflow-hidden border-b border-border bg-background">
-        {/* Background image */}
         <div className="absolute inset-0 z-0">
           <img
             src={U16_HERO_URL}
@@ -74,38 +42,29 @@ function ClubsPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-background/30" />
         </div>
 
-        {/* Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-10">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
-            {/* Left */}
             <div className="flex items-center gap-4">
               <div className="p-3 bg-korat-gold/15 border border-korat-gold/30 rounded-sm">
                 <GraduationCap className="size-6 text-korat-gold" />
               </div>
               <div>
                 <p className="text-[9px] font-black uppercase tracking-[0.22em] text-korat-gold mb-0.5">
-                  KSL Academy · ทุกสโมสรมีทีม U-16
+                  KSL Academy
                 </p>
                 <p className="text-sm font-bold text-foreground">
-                  พัฒนาเยาวชนนักเตะ 120+ คน ใน 8 อำเภอนครราชสีมา
-                </p>
-                <p className="text-xs text-muted-foreground mt-0.5">
-                  ลีกฟุตบอลเยาวชน U-16 ซีซั่น ${SITE_YEAR} — ควบคู่กับทีมชุดใหญ่
+                  พัฒนาเยาวชนนักเตะ 120+ คน ใน 7 อำเภอนครราชสีมา
                 </p>
               </div>
             </div>
 
-            {/* Right — mini stats */}
             <div className="flex gap-px border border-border bg-border shrink-0">
               {[
-                { n: "8", l: "สโมสร" },
+                { n: "7", l: "สโมสร" },
                 { n: "120+", l: "เยาวชน" },
                 { n: "U-16", l: "หมวดอายุ" },
               ].map((s) => (
-                <div
-                  key={s.l}
-                  className="bg-card px-4 py-3 text-center min-w-[64px]"
-                >
+                <div key={s.l} className="bg-card px-4 py-3 text-center min-w-[64px]">
                   <div className="font-display text-lg font-extrabold tabular-nums text-korat-gold">
                     {s.n}
                   </div>
@@ -119,94 +78,51 @@ function ClubsPage() {
         </div>
       </div>
 
-      {/* ── Club list ───────────────────────────────────────────────────── */}
+      {/* Club list */}
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-12">
         <PageHeader
-          eyebrow="The Clubs & Players"
-          title="สโมสร & นักเตะ"
-          subtitle={`7 สโมสรชั้นนำที่ลงแข่งในศึก Korat Super League ${SITE_YEAR} — ทุกสโมสรมีทีมเยาวชน U-16 พัฒนาควบคู่กัน`}
+          eyebrow="The Clubs"
+          title="สโมสร"
+          subtitle={`7 สโมสรชั้นนำที่ลงแข่งในศึก Korat Super League ${SITE_YEAR}`}
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {seniorClubs.map((c) => {
-            const s = standingsMap.get(c.id);
-            const rank = standings.findIndex((st) => st.club_id === c.id) + 1;
-            return (
-              <Link
-                key={c.id}
-                to="/clubs/$slug"
-                params={{ slug: c.slug }}
-                className="relative bg-card border border-border p-6 hover:border-korat-red transition-colors group block overflow-hidden"
-              >
-                {/* Rank badge (top-right) */}
-                {rank > 0 && (
-                  <div
-                    className={`absolute top-3 right-3 font-display text-[10px] font-extrabold px-2 py-0.5 tracking-widest ${
-                      rank === 1
-                        ? "bg-korat-gold text-asphalt"
-                        : rank <= 3
-                        ? "bg-white/10 text-white"
-                        : "bg-border text-muted-foreground"
-                    }`}
-                  >
-                    {rank === 1 ? "🏆 #1" : `#${rank}`}
-                  </div>
-                )}
-
-                {/* Club identity */}
-                <div className="flex items-start gap-4 mb-5">
-                  <ClubCrest
-                    shortName={c.short_name}
-                    color={c.primary_color}
-                    logoUrl={c.logo_url}
-                    size="xl"
-                  />
-                  <div className="flex-1 min-w-0 pt-1">
-                    <h3 className="font-display text-lg font-extrabold leading-tight group-hover:text-korat-red transition-colors">
-                      {c.name}
-                    </h3>
-                    <p className="text-xs text-muted-foreground mt-1">
-                      {c.home_venue}
-                    </p>
-                    <p className="text-[10px] text-muted-foreground mt-1">
-                      ก่อตั้ง {c.founded_year}
-                    </p>
-                  </div>
+          {clubs.map((c) => (
+            <Link
+              key={c.id}
+              to="/clubs/$slug"
+              params={{ slug: c.slug }}
+              className="relative bg-card border border-border p-6 hover:border-korat-red transition-colors group block overflow-hidden"
+            >
+              <div className="flex items-start gap-4 mb-4">
+                <ClubCrest
+                  shortName={c.short_name}
+                  color={c.primary_color}
+                  logoUrl={c.logo_url}
+                  size="xl"
+                />
+                <div className="flex-1 min-w-0 pt-1">
+                  <h3 className="font-display text-lg font-extrabold leading-tight group-hover:text-korat-red transition-colors">
+                    {c.name}
+                  </h3>
+                  <p className="text-xs text-muted-foreground mt-1">{c.home_venue}</p>
+                  <p className="text-[10px] text-muted-foreground mt-1">ก่อตั้ง {c.founded_year}</p>
                 </div>
+              </div>
 
-                {/* Senior stats */}
-                {s && (
-                  <div className="grid grid-cols-4 gap-2 pt-4 border-t border-border text-center">
-                    <Stat label="แต้ม" value={s.points} highlight />
-                    <Stat label="ชนะ" value={s.won} />
-                    <Stat label="เสมอ" value={s.drawn} />
-                    <Stat label="แข่ง" value={s.played} />
-                  </div>
-                )}
+              <div className="pt-3 border-t border-border">
+                <p className="text-[10px] text-muted-foreground text-center">
+                  รอฤดูกาล {SITE_YEAR}
+                </p>
+              </div>
 
-                {/* U-16 badge */}
-                <div className="mt-4 flex items-center justify-between">
-                  {U16_CLUBS.has(c.slug) ? (
-                    <div className="inline-flex items-center gap-1 bg-korat-gold/10 border border-korat-gold/30 px-2 py-1">
-                      <Users className="size-2.5 text-korat-gold" />
-                      <span className="text-[9px] font-bold uppercase tracking-widest text-korat-gold">
-                        มีทีม U-16
-                      </span>
-                    </div>
-                  ) : (
-                    <div className="inline-flex items-center gap-1 bg-border/40 border border-border px-2 py-1">
-                      <span className="text-[9px] font-bold uppercase tracking-widest text-muted-foreground">
-                        ชุดใหญ่เท่านั้น
-                      </span>
-                    </div>
-                  )}
-                  <span className="text-xs font-bold uppercase tracking-wider text-korat-red group-hover:translate-x-0.5 transition-transform">
-                    ดูโปรไฟล์ →
-                  </span>
-                </div>
-              </Link>
-            );
-          })}
+              <div className="mt-3 flex items-center justify-end">
+                <span className="text-xs font-bold uppercase tracking-wider text-korat-red group-hover:translate-x-0.5 transition-transform">
+                  ดูโปรไฟล์ →
+                </span>
+              </div>
+            </Link>
+          ))}
         </div>
 
         {/* Investor CTA */}
@@ -230,7 +146,7 @@ function ClubsPage() {
               </h3>
               <p className="text-xs text-muted-foreground max-w-md leading-relaxed">
                 สนับสนุน KSL Academy U-16 — โลโก้สปอนเซอร์บนชุดนักเตะ ป้ายสนาม
-                และเว็บไซต์อย่างเป็นทางการ ใน 8 อำเภอ 120+ เยาวชน
+                และเว็บไซต์อย่างเป็นทางการ ใน 7 อำเภอ 120+ เยาวชน
               </p>
             </div>
             <Link
@@ -241,31 +157,6 @@ function ClubsPage() {
             </Link>
           </div>
         </div>
-      </div>
-    </div>
-  );
-}
-
-function Stat({
-  label,
-  value,
-  highlight,
-}: {
-  label: string;
-  value: number;
-  highlight?: boolean;
-}) {
-  return (
-    <div>
-      <div
-        className={`font-display text-2xl font-extrabold tabular-nums ${
-          highlight ? "text-korat-red" : ""
-        }`}
-      >
-        {value}
-      </div>
-      <div className="text-[10px] uppercase tracking-widest text-muted-foreground">
-        {label}
       </div>
     </div>
   );

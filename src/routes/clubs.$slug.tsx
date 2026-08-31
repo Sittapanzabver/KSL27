@@ -6,9 +6,11 @@ import {
   fetchDivisions,
   fetchMatchEvents,
   fetchPlayersByClub,
+  getActiveSeasonId,
 } from "@/lib/queries";
 import { fetchStandingsFromMatches } from "@/lib/calculateStandings";
 import { ClubCrest } from "@/components/site/ClubCrest";
+import { SkillShowcaseSection } from "@/components/club/SkillShowcaseSection";
 import { SITE_YEAR, buildHead } from "@/lib/site";
 
 export const Route = createFileRoute("/clubs/$slug")({
@@ -36,40 +38,124 @@ const CLUB_SPONSORS: Record<string, { name: string; logo: string; url: string; t
 };
 
 const DISTRICT_ATTRACTIONS: Record<string, { name: string; desc: string; img: string }[]> = {
-  "ครบุรี": [
-    { name: "สะพานไม้ 100 ปี", desc: "สะพานไม้อายุกว่า 100 ปี ทอดยาวเกือบ 1 กม. ผ่านทุ่งนาสีเขียว จุดชมพระอาทิตย์ตกดินที่สวยงาม", img: "https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=600&q=80" },
-    { name: "เขื่อนลำแชะ", desc: "เขื่อนในผืนป่าดงพญาเย็น-เขาใหญ่ ทะเลสาบขนาดใหญ่กว่า 275 ล้าน ลบ.ม. บรรยากาศธรรมชาติร่มรื่น", img: "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&q=80" },
-    { name: "ป่าดงพญาเย็น-เขาใหญ่", desc: "มรดกโลกทางธรรมชาติ UNESCO ป่าฝนเขตร้อนที่อุดมสมบูรณ์ที่สุดแห่งหนึ่งในเอเชียตะวันออกเฉียงใต้", img: "https://images.unsplash.com/photo-1448375240586-882707db888b?w=600&q=80" },
+  ครบุรี: [
+    {
+      name: "สะพานไม้ 100 ปี",
+      desc: "สะพานไม้อายุกว่า 100 ปี ทอดยาวเกือบ 1 กม. ผ่านทุ่งนาสีเขียว จุดชมพระอาทิตย์ตกดินที่สวยงาม",
+      img: "https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=600&q=80",
+    },
+    {
+      name: "เขื่อนลำแชะ",
+      desc: "เขื่อนในผืนป่าดงพญาเย็น-เขาใหญ่ ทะเลสาบขนาดใหญ่กว่า 275 ล้าน ลบ.ม. บรรยากาศธรรมชาติร่มรื่น",
+      img: "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&q=80",
+    },
+    {
+      name: "ป่าดงพญาเย็น-เขาใหญ่",
+      desc: "มรดกโลกทางธรรมชาติ UNESCO ป่าฝนเขตร้อนที่อุดมสมบูรณ์ที่สุดแห่งหนึ่งในเอเชียตะวันออกเฉียงใต้",
+      img: "https://images.unsplash.com/photo-1448375240586-882707db888b?w=600&q=80",
+    },
   ],
-  "พิมาย": [
-    { name: "อุทยานประวัติศาสตร์พิมาย", desc: "ปราสาทขอมโบราณที่ยิ่งใหญ่ที่สุดในไทย มรดกประวัติศาสตร์คู่เมืองพิมายมากกว่า 1,000 ปี", img: "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=600&q=80" },
-    { name: "พิพิธภัณฑสถานแห่งชาติพิมาย", desc: "รวบรวมโบราณวัตถุสมัยขอมและทวารวดีชิ้นสำคัญ ศึกษาประวัติศาสตร์อีสานใต้ได้ในที่เดียว", img: "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=600&q=80" },
-    { name: "อุทยานไทรงาม", desc: "ต้นไทรขนาดยักษ์อายุนับร้อยปี รากระเกะระกะงดงาม เป็นสัญลักษณ์ธรรมชาติประจำพิมาย", img: "https://images.unsplash.com/photo-1448375240586-882707db888b?w=600&q=80" },
+  พิมาย: [
+    {
+      name: "อุทยานประวัติศาสตร์พิมาย",
+      desc: "ปราสาทขอมโบราณที่ยิ่งใหญ่ที่สุดในไทย มรดกประวัติศาสตร์คู่เมืองพิมายมากกว่า 1,000 ปี",
+      img: "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=600&q=80",
+    },
+    {
+      name: "พิพิธภัณฑสถานแห่งชาติพิมาย",
+      desc: "รวบรวมโบราณวัตถุสมัยขอมและทวารวดีชิ้นสำคัญ ศึกษาประวัติศาสตร์อีสานใต้ได้ในที่เดียว",
+      img: "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=600&q=80",
+    },
+    {
+      name: "อุทยานไทรงาม",
+      desc: "ต้นไทรขนาดยักษ์อายุนับร้อยปี รากระเกะระกะงดงาม เป็นสัญลักษณ์ธรรมชาติประจำพิมาย",
+      img: "https://images.unsplash.com/photo-1448375240586-882707db888b?w=600&q=80",
+    },
   ],
-  "ปักธงชัย": [
-    { name: "ศูนย์หัตถกรรมผ้าไหมปักธงชัย", desc: "แหล่งผ้าไหมมือทอชื่อดังระดับประเทศ ชมกระบวนการทอผ้าและเลือกซื้อผ้าไหมคุณภาพ", img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" },
-    { name: "วนอุทยานปักธงชัย", desc: "ป่าธรรมชาติร่มรื่นใกล้ตัวเมือง เหมาะสำหรับเดินป่าและพักผ่อนหย่อนใจท่ามกลางธรรมชาติ", img: "https://images.unsplash.com/photo-1448375240586-882707db888b?w=600&q=80" },
-    { name: "ตลาดย้อนยุคปักธงชัย", desc: "ตลาดชุมชนบรรยากาศวินเทจ อาหารพื้นเมืองและของฝากหลากหลาย วิถีชีวิตชุมชนโคราชแท้ๆ", img: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&q=80" },
+  ปักธงชัย: [
+    {
+      name: "ศูนย์หัตถกรรมผ้าไหมปักธงชัย",
+      desc: "แหล่งผ้าไหมมือทอชื่อดังระดับประเทศ ชมกระบวนการทอผ้าและเลือกซื้อผ้าไหมคุณภาพ",
+      img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
+    },
+    {
+      name: "วนอุทยานปักธงชัย",
+      desc: "ป่าธรรมชาติร่มรื่นใกล้ตัวเมือง เหมาะสำหรับเดินป่าและพักผ่อนหย่อนใจท่ามกลางธรรมชาติ",
+      img: "https://images.unsplash.com/photo-1448375240586-882707db888b?w=600&q=80",
+    },
+    {
+      name: "ตลาดย้อนยุคปักธงชัย",
+      desc: "ตลาดชุมชนบรรยากาศวินเทจ อาหารพื้นเมืองและของฝากหลากหลาย วิถีชีวิตชุมชนโคราชแท้ๆ",
+      img: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&q=80",
+    },
   ],
-  "เสิงสาง": [
-    { name: "อุทยานแห่งชาติทับลาน", desc: "ผืนป่ามรดกโลก UNESCO ติดกับเขาใหญ่ ธรรมชาติบริสุทธิ์ น้ำตกและสัตว์ป่าหลากหลายชนิด", img: "https://images.unsplash.com/photo-1448375240586-882707db888b?w=600&q=80" },
-    { name: "น้ำตกเสิงสาง", desc: "น้ำตกธรรมชาติในป่าเขตอุทยานทับลาน อากาศเย็นสบาย เหมาะเที่ยวช่วงหน้าฝนและต้นหนาว", img: "https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=600&q=80" },
-    { name: "หมู่บ้านชาวกูย", desc: "ชุมชนชาติพันธุ์กูย (ส่วย) วัฒนธรรมเลี้ยงช้างและวิถีชีวิตดั้งเดิมที่หาชมได้ยาก", img: "https://images.unsplash.com/photo-1559054663-e8d23213f55c?w=600&q=80" },
+  เสิงสาง: [
+    {
+      name: "อุทยานแห่งชาติทับลาน",
+      desc: "ผืนป่ามรดกโลก UNESCO ติดกับเขาใหญ่ ธรรมชาติบริสุทธิ์ น้ำตกและสัตว์ป่าหลากหลายชนิด",
+      img: "https://images.unsplash.com/photo-1448375240586-882707db888b?w=600&q=80",
+    },
+    {
+      name: "น้ำตกเสิงสาง",
+      desc: "น้ำตกธรรมชาติในป่าเขตอุทยานทับลาน อากาศเย็นสบาย เหมาะเที่ยวช่วงหน้าฝนและต้นหนาว",
+      img: "https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=600&q=80",
+    },
+    {
+      name: "หมู่บ้านชาวกูย",
+      desc: "ชุมชนชาติพันธุ์กูย (ส่วย) วัฒนธรรมเลี้ยงช้างและวิถีชีวิตดั้งเดิมที่หาชมได้ยาก",
+      img: "https://images.unsplash.com/photo-1559054663-e8d23213f55c?w=600&q=80",
+    },
   ],
-  "โนนแดง": [
-    { name: "วัดโนนแดง", desc: "วัดเก่าแก่ประจำชุมชน ศิลปะอีสานงดงาม เป็นศูนย์รวมจิตใจของชาวโนนแดงมาช้านาน", img: "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=600&q=80" },
-    { name: "ทุ่งนาโนนแดง", desc: "ทุ่งนาเขียวขจีกว้างใหญ่ บรรยากาศชนบทอีสานแท้ๆ สวยงามโดยเฉพาะช่วงหน้าทำนาปี", img: "https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=600&q=80" },
-    { name: "หนองน้ำชุมชน", desc: "แหล่งน้ำธรรมชาติของชุมชน จุดพักผ่อนยามเย็น มีวิวทิวทัศน์สงบงาม", img: "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&q=80" },
+  โนนแดง: [
+    {
+      name: "วัดโนนแดง",
+      desc: "วัดเก่าแก่ประจำชุมชน ศิลปะอีสานงดงาม เป็นศูนย์รวมจิตใจของชาวโนนแดงมาช้านาน",
+      img: "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=600&q=80",
+    },
+    {
+      name: "ทุ่งนาโนนแดง",
+      desc: "ทุ่งนาเขียวขจีกว้างใหญ่ บรรยากาศชนบทอีสานแท้ๆ สวยงามโดยเฉพาะช่วงหน้าทำนาปี",
+      img: "https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=600&q=80",
+    },
+    {
+      name: "หนองน้ำชุมชน",
+      desc: "แหล่งน้ำธรรมชาติของชุมชน จุดพักผ่อนยามเย็น มีวิวทิวทัศน์สงบงาม",
+      img: "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&q=80",
+    },
   ],
-  "ขามสะแกแสง": [
-    { name: "ปราสาทเมืองแขก", desc: "โบราณสถานขอมยุคก่อนพิมาย หินทรายแดงสลักลวดลายละเอียด หนึ่งใน unseen โคราชที่ยังไม่ดังมาก", img: "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=600&q=80" },
-    { name: "หนองระเวียง", desc: "บึงน้ำขนาดใหญ่ แหล่งนกน้ำธรรมชาติ บรรยากาศสงบเงียบ เหมาะสำหรับชมพระอาทิตย์ขึ้นยามเช้า", img: "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&q=80" },
-    { name: "ตลาดชุมชนขามสะแกแสง", desc: "ตลาดเช้าชุมชน อาหารพื้นบ้านอีสานสดใหม่ ข้าวต้มมัด หมูปิ้ง ของฝากราคาย่อมเยา", img: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&q=80" },
+  ขามสะแกแสง: [
+    {
+      name: "ปราสาทเมืองแขก",
+      desc: "โบราณสถานขอมยุคก่อนพิมาย หินทรายแดงสลักลวดลายละเอียด หนึ่งใน unseen โคราชที่ยังไม่ดังมาก",
+      img: "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=600&q=80",
+    },
+    {
+      name: "หนองระเวียง",
+      desc: "บึงน้ำขนาดใหญ่ แหล่งนกน้ำธรรมชาติ บรรยากาศสงบเงียบ เหมาะสำหรับชมพระอาทิตย์ขึ้นยามเช้า",
+      img: "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&q=80",
+    },
+    {
+      name: "ตลาดชุมชนขามสะแกแสง",
+      desc: "ตลาดเช้าชุมชน อาหารพื้นบ้านอีสานสดใหม่ ข้าวต้มมัด หมูปิ้ง ของฝากราคาย่อมเยา",
+      img: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&q=80",
+    },
   ],
-  "เมืองนครราชสีมา": [
-    { name: "อนุสาวรีย์ท้าวสุรนารี", desc: "สัญลักษณ์แห่งความกล้าหาญประจำโคราช วีรสตรีผู้กอบกู้เมืองในยุค ร.3 ศูนย์รวมใจชาวโคราช", img: "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=600&q=80" },
-    { name: "ตลาดย่าโม", desc: "ตลาดกลางคืนใจเมืองโคราช บรรยากาศคึกคัก อาหารอร่อยและสินค้าท้องถิ่นหลากหลายในราคาเป็นกันเอง", img: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&q=80" },
-    { name: "ประตูชุมพล", desc: "ประตูเมืองโบราณอายุกว่า 300 ปี สัญลักษณ์ทางประวัติศาสตร์ที่เหลือรอดของกำแพงเมืองโคราช", img: "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=600&q=80" },
+  เมืองนครราชสีมา: [
+    {
+      name: "อนุสาวรีย์ท้าวสุรนารี",
+      desc: "สัญลักษณ์แห่งความกล้าหาญประจำโคราช วีรสตรีผู้กอบกู้เมืองในยุค ร.3 ศูนย์รวมใจชาวโคราช",
+      img: "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=600&q=80",
+    },
+    {
+      name: "ตลาดย่าโม",
+      desc: "ตลาดกลางคืนใจเมืองโคราช บรรยากาศคึกคัก อาหารอร่อยและสินค้าท้องถิ่นหลากหลายในราคาเป็นกันเอง",
+      img: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&q=80",
+    },
+    {
+      name: "ประตูชุมพล",
+      desc: "ประตูเมืองโบราณอายุกว่า 300 ปี สัญลักษณ์ทางประวัติศาสตร์ที่เหลือรอดของกำแพงเมืองโคราช",
+      img: "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=600&q=80",
+    },
   ],
 };
 
@@ -83,16 +169,14 @@ function ClubDetail() {
   const [seniorDivisionId, setSeniorDivisionId] = useState<string | null>(null);
   const [eventsByMatch, setEventsByMatch] = useState<Record<string, any[]>>({});
   const [matchTab, setMatchTab] = useState<DivCategory>("senior");
+  const [activeSeasonId, setActiveSeasonId] = useState<string | null>(null);
   const [squadCategory, setSquadCategory] = useState<DivCategory>("senior");
 
   const seniorPlayers = useMemo(
     () => players.filter((p) => (p.category ?? "senior") === "senior"),
-    [players]
+    [players],
   );
-  const u16Players = useMemo(
-    () => players.filter((p) => p.category === "u16"),
-    [players]
-  );
+  const u16Players = useMemo(() => players.filter((p) => p.category === "u16"), [players]);
   const filteredSquad = squadCategory === "u16" ? u16Players : seniorPlayers;
 
   const clubSponsors = CLUB_SPONSORS[slug] ?? [];
@@ -121,10 +205,12 @@ function ClubDetail() {
 
       setPlayers(pls);
       setDivisions(divs);
-      setMatches(all.filter((m: any) => m.home.id === c.id || m.away.id === c.id));
+      const clubMatches = all.filter((m: any) => m.home.id === c.id || m.away.id === c.id);
+      const seasonId = await getActiveSeasonId();
+      setActiveSeasonId(seasonId);
+      setMatches(seasonId ? clubMatches.filter((m: any) => m.season_id === seasonId) : clubMatches);
 
-      const senior =
-        [...divs].sort((a, b) => a.tier - b.tier).find((d) => d.tier === 1) ?? divs[0];
+      const senior = [...divs].sort((a, b) => a.tier - b.tier).find((d) => d.tier === 1) ?? divs[0];
       if (senior) {
         setSeniorDivisionId(senior.id);
         try {
@@ -155,7 +241,7 @@ function ClubDetail() {
           } catch {
             return [m.id, []] as const;
           }
-        })
+        }),
       );
 
       if (!active) return;
@@ -184,18 +270,18 @@ function ClubDetail() {
 
   const filteredMatches = useMemo(
     () => matches.filter((m) => categorize(m) === matchTab),
-    [matches, matchTab, divCategoryById]
+    [matches, matchTab, divCategoryById],
   );
 
   const hasU16 = useMemo(
     () => matches.some((m) => categorize(m) === "u16"),
-    [matches, divCategoryById]
+    [matches, divCategoryById],
   );
 
   // ── Standings position + season stats (senior only) ──────────────────
   const standingRow = useMemo(
     () => (club ? standings.find((s) => s.club_id === club.id) : null),
-    [standings, club]
+    [standings, club],
   );
   const leaguePosition = useMemo(() => {
     if (!club || !standings.length) return null;
@@ -207,10 +293,7 @@ function ClubDetail() {
   const recentResults = useMemo(() => {
     return matches
       .filter((m) => categorize(m) === "senior" && isFinished(m))
-      .sort(
-        (a, b) =>
-          new Date(b.kickoff_at).getTime() - new Date(a.kickoff_at).getTime()
-      )
+      .sort((a, b) => new Date(b.kickoff_at).getTime() - new Date(a.kickoff_at).getTime())
       .slice(0, 5);
   }, [matches, divCategoryById]);
 
@@ -287,9 +370,7 @@ function ClubDetail() {
                 {club.name}
               </h1>
               {club.description && (
-                <p className="text-sm text-muted-foreground mt-2 max-w-lg">
-                  {club.description}
-                </p>
+                <p className="text-sm text-muted-foreground mt-2 max-w-lg">{club.description}</p>
               )}
 
               <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mt-4 text-xs sm:text-sm text-muted-foreground">
@@ -299,7 +380,8 @@ function ClubDetail() {
                 </span>
                 <span className="inline-flex items-center gap-1.5">
                   <span className="text-foreground/40">★</span>
-                  ก่อตั้ง <span className="font-bold text-foreground">{club.founded_year ?? "-"}</span>
+                  ก่อตั้ง{" "}
+                  <span className="font-bold text-foreground">{club.founded_year ?? "-"}</span>
                 </span>
               </div>
             </div>
@@ -308,7 +390,11 @@ function ClubDetail() {
           {/* Season stat strip */}
           {standingRow && (
             <div className="mt-8 md:mt-10 grid grid-cols-3 sm:grid-cols-6 gap-px bg-border border border-border overflow-hidden rounded-sm">
-              <HeroStat label="อันดับ" value={leaguePosition ? `#${leaguePosition}` : "—"} highlight />
+              <HeroStat
+                label="อันดับ"
+                value={leaguePosition ? `#${leaguePosition}` : "—"}
+                highlight
+              />
               <HeroStat label="แต้ม" value={standingRow.points} />
               <HeroStat label="แข่ง" value={standingRow.played} />
               <HeroStat
@@ -333,7 +419,6 @@ function ClubDetail() {
       </section>
 
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-10 md:py-12 space-y-10 md:space-y-14">
-
         {/* ── พักฤดูกาล banner (phimai-fc only) ─────────────────── */}
         {slug === "phimai-fc" && (
           <div className="relative overflow-hidden border border-korat-gold/30 bg-korat-gold/5 p-6 md:p-8">
@@ -400,9 +485,7 @@ function ClubDetail() {
             <h2 className="font-display text-xl md:text-2xl font-extrabold mb-4 border-l-4 border-korat-red pl-3">
               ประวัติสโมสร
             </h2>
-            <p className="text-sm leading-relaxed text-foreground/90">
-              {club.history}
-            </p>
+            <p className="text-sm leading-relaxed text-foreground/90">{club.history}</p>
           </section>
         )}
 
@@ -480,6 +563,9 @@ function ClubDetail() {
           </section>
         )}
 
+        {/* ── Skills & Strengths ──────────────────────────────────── */}
+        <SkillShowcaseSection slug={slug} clubName={club.name} primaryColor={club.primary_color} />
+
         {/* ── ผู้สนับสนุนหลัก ──────────────────────────────────── */}
         {clubSponsors.length > 0 && (
           <section>
@@ -544,10 +630,12 @@ function ClubDetail() {
 
           {/* Category tabs */}
           <div className="flex gap-2 mb-3 border-b border-border">
-            {([
-              { key: "senior", label: "ผู้ใหญ่", count: seniorPlayers.length },
-              { key: "u16", label: "U-16", count: u16Players.length },
-            ] as { key: DivCategory; label: string; count: number }[]).map((t) => (
+            {(
+              [
+                { key: "senior", label: "ผู้ใหญ่", count: seniorPlayers.length },
+                { key: "u16", label: "U-16", count: u16Players.length },
+              ] as { key: DivCategory; label: string; count: number }[]
+            ).map((t) => (
               <button
                 key={t.key}
                 onClick={() => setSquadCategory(t.key)}
@@ -562,12 +650,9 @@ function ClubDetail() {
             ))}
           </div>
 
-
           {/* Transfermarkt-style table */}
           {filteredSquad.length === 0 ? (
-            <p className="text-muted-foreground text-sm text-center py-8">
-              ยังไม่มีข้อมูลนักเตะ
-            </p>
+            <p className="text-muted-foreground text-sm text-center py-8">ยังไม่มีข้อมูลนักเตะ</p>
           ) : (
             <div className="overflow-x-auto border border-border">
               <table className="w-full">
@@ -578,7 +663,6 @@ function ClubDetail() {
                     <th className="w-16 text-center py-2">ประตู</th>
                     <th className="w-16 text-center py-2">แอสซิสต์</th>
                   </tr>
-
                 </thead>
                 <tbody>
                   {filteredSquad.map((p, i) => (
@@ -590,7 +674,6 @@ function ClubDetail() {
           )}
         </section>
 
-
         {/* ── โปรแกรมและผลการแข่งขัน ────────────────────────── */}
         <section>
           <h2 className="font-display text-xl md:text-2xl font-extrabold mb-4 border-l-4 border-korat-red pl-3">
@@ -598,10 +681,12 @@ function ClubDetail() {
           </h2>
 
           <div className="flex gap-2 mb-4 border-b border-border">
-            {([
-              { key: "senior", label: "ชุดใหญ่" },
-              { key: "u16", label: "U-16" },
-            ] as { key: DivCategory; label: string }[]).map((t) => (
+            {(
+              [
+                { key: "senior", label: "ชุดใหญ่" },
+                { key: "u16", label: "U-16" },
+              ] as { key: DivCategory; label: string }[]
+            ).map((t) => (
               <button
                 key={t.key}
                 onClick={() => setMatchTab(t.key)}
@@ -623,12 +708,7 @@ function ClubDetail() {
           ) : (
             <div className="space-y-2">
               {filteredMatches.map((m) => (
-                <ClubMatchRow
-                  key={m.id}
-                  match={m}
-                  club={club}
-                  events={eventsByMatch[m.id] ?? []}
-                />
+                <ClubMatchRow key={m.id} match={m} club={club} events={eventsByMatch[m.id] ?? []} />
               ))}
 
               {filteredMatches.length === 0 && (
@@ -668,9 +748,7 @@ function ClubDetail() {
                       <p className="font-bold text-sm group-hover:text-korat-red transition-colors">
                         {a.name}
                       </p>
-                      <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
-                        {a.desc}
-                      </p>
+                      <p className="text-xs text-muted-foreground mt-1 leading-relaxed">{a.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -678,7 +756,6 @@ function ClubDetail() {
             </section>
           );
         })()}
-
       </div>
     </div>
   );
@@ -757,7 +834,9 @@ function ClubMatchRow({ match, club, events }: { match: any; club: any; events: 
 
   const clubGoals = events
     .filter((e) => e.club?.short_name === club.short_name)
-    .filter((e) => e.event_type === "goal" || e.event_type === "penalty" || e.event_type === "own_goal")
+    .filter(
+      (e) => e.event_type === "goal" || e.event_type === "penalty" || e.event_type === "own_goal",
+    )
     .sort((a, b) => (a.minute ?? 0) - (b.minute ?? 0));
 
   const result = done
@@ -852,8 +931,6 @@ function SquadRow({
 }) {
   const initial = (player.name ?? "?").trim().charAt(0);
 
-
-
   return (
     <tr
       className={`border-b border-border/50 hover:bg-muted/20 transition-colors ${
@@ -862,7 +939,7 @@ function SquadRow({
     >
       <td
         className="w-12 text-center font-display text-lg font-extrabold tabular-nums py-2"
-        style={{ color: player.jersey_number ? clubColor ?? "#E10600" : undefined }}
+        style={{ color: player.jersey_number ? (clubColor ?? "#E10600") : undefined }}
       >
         {player.jersey_number ?? <span className="text-muted-foreground">—</span>}
       </td>
@@ -882,7 +959,6 @@ function SquadRow({
           <span className="font-medium text-sm truncate">{player.name}</span>
         </div>
       </td>
-      
 
       <td
         className={`w-16 text-center tabular-nums text-sm py-2 ${

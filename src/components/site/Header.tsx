@@ -3,10 +3,13 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useI18n } from "@/lib/i18n";
 import { SITE_YEAR } from "@/lib/site";
+import { WayfinderSearchBar } from "@/components/wayfinder/WayfinderSearchBar";
+
+type NavKey = Parameters<ReturnType<typeof useI18n>["t"]>[0];
 
 type NavItem =
-  | { type: "link"; to: string; key: string }
-  | { type: "group"; key: string; items: { to: string; key: string }[] };
+  | { type: "link"; to: string; key: NavKey }
+  | { type: "group"; key: NavKey; items: { to: string; key: NavKey }[] };
 
 const navItems: NavItem[] = [
   { type: "link", to: "/", key: "nav.home" },
@@ -41,7 +44,9 @@ export function Header() {
     "relative text-sm font-semibold tracking-wide uppercase text-white/90 hover:text-white transition-colors py-1 after:content-[''] after:absolute after:left-0 after:right-0 after:-bottom-1 after:h-[2px] after:bg-korat-red after:scale-x-0 after:origin-left after:transition-transform hover:after:scale-x-100";
 
   return (
-    <header className={`sticky top-0 z-50 transition-shadow duration-300 ${scrolled ? "shadow-[0_4px_20px_-6px_rgba(0,0,0,0.6)]" : ""}`}>
+    <header
+      className={`sticky top-0 z-50 transition-shadow duration-300 ${scrolled ? "shadow-[0_4px_20px_-6px_rgba(0,0,0,0.6)]" : ""}`}
+    >
       {/* Thin red top bar */}
       <div className="h-1 w-full bg-korat-red" />
 
@@ -65,13 +70,16 @@ export function Header() {
             </div>
           </Link>
 
+          {/* Wayfinder Search Bar — center */}
+          <WayfinderSearchBar />
+
           <nav className="hidden lg:flex items-center gap-7">
             {navItems.map((item) => {
               if (item.type === "group") {
                 return (
                   <div key={item.key} className="relative group">
                     <button className={`${linkBase} inline-flex items-center gap-1`}>
-                      {t(item.key as any)}
+                      {t(item.key)}
                       <ChevronDown className="size-3.5" />
                     </button>
                     <div className="absolute left-0 top-full pt-3 hidden group-hover:block min-w-[180px]">
@@ -83,7 +91,7 @@ export function Header() {
                             className="block px-4 py-2 text-sm font-semibold uppercase tracking-wide hover:bg-korat-red/10 hover:text-korat-red"
                             activeProps={{ className: "text-korat-red bg-korat-red/10" }}
                           >
-                            {t(sub.key as any)}
+                            {t(sub.key)}
                           </Link>
                         ))}
                       </div>
@@ -99,14 +107,18 @@ export function Header() {
                   activeProps={{ className: "text-korat-red after:scale-x-100" }}
                   activeOptions={{ exact: item.to === "/" }}
                 >
-                  {t(item.key as any)}
+                  {t(item.key)}
                 </Link>
               );
             })}
           </nav>
 
           <div className="lg:hidden flex items-center gap-2">
-            <button className="p-2 -mr-2 text-white" onClick={() => setOpen((o) => !o)} aria-label="Toggle menu">
+            <button
+              className="p-2 -mr-2 text-white"
+              onClick={() => setOpen((o) => !o)}
+              aria-label="Toggle menu"
+            >
               {open ? <X className="size-6" /> : <Menu className="size-6" />}
             </button>
           </div>
@@ -115,20 +127,20 @@ export function Header() {
         {open && (
           <nav className="lg:hidden border-t border-white/10 bg-asphalt">
             <div className="px-4 py-3 flex flex-col">
-              {navItems.flatMap((item) =>
-                item.type === "group" ? item.items : [item],
-              ).map((item) => (
-                <Link
-                  key={item.to}
-                  to={item.to}
-                  onClick={() => setOpen(false)}
-                  className="py-3 text-sm font-semibold tracking-wide uppercase border-b border-white/5"
-                  activeProps={{ className: "text-korat-red" }}
-                  activeOptions={{ exact: item.to === "/" }}
-                >
-                  {t(item.key as any)}
-                </Link>
-              ))}
+              {navItems
+                .flatMap((item) => (item.type === "group" ? item.items : [item]))
+                .map((item) => (
+                  <Link
+                    key={item.to}
+                    to={item.to}
+                    onClick={() => setOpen(false)}
+                    className="py-3 text-sm font-semibold tracking-wide uppercase border-b border-white/5"
+                    activeProps={{ className: "text-korat-red" }}
+                    activeOptions={{ exact: item.to === "/" }}
+                  >
+                    {t(item.key)}
+                  </Link>
+                ))}
             </div>
           </nav>
         )}
