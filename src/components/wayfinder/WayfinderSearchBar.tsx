@@ -4,15 +4,16 @@
  * Real-time autocomplete + group ตาม category
  */
 import { useState, useEffect, useRef, useMemo } from "react";
-import { Link, useNavigate } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { Search, X, MapPin, Users, Newspaper, Trophy, ArrowRight } from "lucide-react";
-import { fetchActiveSeasonClubs, fetchNews, fetchAllPlayers } from "@/lib/queries";
+import { fetchActiveSeasonClubs, fetchNews, fetchAllPlayers, fetchAllMatches } from "@/lib/queries";
 import { CLUB_FALLBACKS } from "@/constants/clubFallbacks";
 import { SITE_YEAR } from "@/lib/site";
 
 type ActiveClub = Awaited<ReturnType<typeof fetchActiveSeasonClubs>>[number];
 type Player = Awaited<ReturnType<typeof fetchAllPlayers>>[number];
 type NewsItem = Awaited<ReturnType<typeof fetchNews>>[number];
+type Match = Awaited<ReturnType<typeof fetchAllMatches>>[number];
 
 /** District list — 32 อำเภอ นครราชสีมา */
 const DISTRICTS = [
@@ -51,7 +52,7 @@ const DISTRICTS = [
 ];
 
 /** Simplified search result types */
-type SearchCategory = "สโมสร" | "อำเภอ" | "นักเตะ" | "ข่าว";
+type SearchCategory = "สโมสร" | "อำเภอ" | "นักเตะ" | "ข่าว" | "แมตช์";
 
 interface SearchResult {
   id: string;
@@ -81,25 +82,27 @@ export function WayfinderSearchBar() {
   const [clubs, setClubs] = useState<ActiveClub[]>([]);
   const [players, setPlayers] = useState<Player[]>([]);
   const [news, setNews] = useState<NewsItem[]>([]);
+  const [matches, setMatches] = useState<Match[]>([]);
   const [loading, setLoading] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const navigate = useNavigate();
 
   // Load data on mount
   useEffect(() => {
     let active = true;
     (async () => {
       try {
-        const [c, p, n] = await Promise.all([
+        const [c, p, n, m] = await Promise.all([
           fetchActiveSeasonClubs(),
           fetchAllPlayers(),
           fetchNews(20),
+          fetchAllMatches(),
         ]);
         if (active) {
           setClubs(c);
           setPlayers(p);
           setNews(n);
+          setMatches(m);
         }
       } catch {
         // Graceful — use fallbacks
@@ -194,8 +197,27 @@ export function WayfinderSearchBar() {
       }
     }
 
+    // Matches
+    for (const m of matches) {
+      const homeName = m.home?.name ?? "";
+      const awayName = m.away?.name ?? "";
+      const venue = m.venue ?? "";
+      const mdLabel = `MD${m.matchweek}`;
+      const hay = `${homeName} ${awayName} ${venue} ${mdLabel}`;
+      if (fuzzyMatch(q, hay)) {
+        items.push({
+          id: `match-${m.id}`,
+          title: `${homeName} vs ${awayName}`,
+          subtitle: `${mdLabel} · ${venue || "สนามเหย้า"}`,
+          category: "แมตช์",
+          href: `/matches/${m.id}`,
+          icon: <Trophy className="size-4" />,
+        });
+      }
+    }
+
     return items.slice(0, 20); // Limit results
-  }, [query, clubs, players, news]);
+  }, [query, clubs, players, news, matches]);
 
   // Group results by category
   const grouped = useMemo(() => {
@@ -204,6 +226,7 @@ export function WayfinderSearchBar() {
       อำเภอ: [],
       นักเตะ: [],
       ข่าว: [],
+      แมตช์: [],
     };
     for (const r of results) {
       groups[r.category].push(r);
@@ -255,7 +278,7 @@ export function WayfinderSearchBar() {
           {hasResults ? (
             <>
               {/* Group by category */}
-              {(["สโมสร", "อำเภอ", "นักเตะ", "ข่าว"] as const).map((cat) => {
+              {(["สโมสร", "อำเภอ", "นักเตะ", "ข่าว", "แมตช์"] as const).map((cat) => {
                 const items = grouped[cat];
                 if (items.length === 0) return null;
                 return (

@@ -20,7 +20,7 @@ export function FinalCtaSection() {
             ร่วมสร้างอนาคตฟุตบอลเยาวชนโคราช
           </h3>
           <p className="text-sm md:text-base text-white/70">
-            120+ เยาวชนนักเตะ · 7 อำเภอ · ทีม U-16 ครบทุกสโมสร
+            120+ เยาวชนนักเตะ · 6 อำเภอ · ทีม U-16 ครบทุกสโมสร
           </p>
         </div>
       </div>

@@ -53,7 +53,7 @@ function ClubsPage() {
                   KSL Academy
                 </p>
                 <p className="text-sm font-bold text-foreground">
-                  พัฒนาเยาวชนนักเตะ 120+ คน ใน 7 อำเภอนครราชสีมา
+                  พัฒนาเยาวชนนักเตะ 120+ คน ใน 6 อำเภอนครราชสีมา
                 </p>
               </div>
             </div>
@@ -146,7 +146,7 @@ function ClubsPage() {
               </h3>
               <p className="text-xs text-muted-foreground max-w-md leading-relaxed">
                 สนับสนุน KSL Academy U-16 — โลโก้สปอนเซอร์บนชุดนักเตะ ป้ายสนาม
-                และเว็บไซต์อย่างเป็นทางการ ใน 7 อำเภอ 120+ เยาวชน
+                และเว็บไซต์อย่างเป็นทางการ ใน 6 อำเภอ 120+ เยาวชน
               </p>
             </div>
             <Link

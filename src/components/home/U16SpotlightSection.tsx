@@ -49,7 +49,7 @@ export function U16SpotlightSection() {
         </h2>
 
         {/* Sub */}
-        <p className="text-sm text-white/70 mt-3">เยาวชนนักเตะจาก 7 อำเภอ · ฤดูกาล {SITE_YEAR}</p>
+        <p className="text-sm text-white/70 mt-3">เยาวชนนักเตะจาก 6 อำเภอ · ฤดูกาล {SITE_YEAR}</p>
 
         {/* CTAs */}
         <div className="flex gap-3 mt-6">

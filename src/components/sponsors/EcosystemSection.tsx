@@ -33,7 +33,7 @@ export function EcosystemSection({ clubs }: { clubs: Club[] }) {
         />
         <div className="relative p-6 md:p-10">
           <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-8 max-w-3xl">
-            Korat Super League ครอบคลุม <span className="text-foreground font-bold">7 อำเภอ</span>{" "}
+            Korat Super League ครอบคลุม <span className="text-foreground font-bold">6 อำเภอ</span>{" "}
             ทั่วจังหวัดนครราชสีมา แต่ละสโมสรมีฐานแฟนที่แข็งแกร่งในชุมชนของตนเอง —
             การสนับสนุนลีกนี้คือการพูดกับชาวโคราชโดยตรง ผ่านสิ่งที่พวกเขารักจริง
           </p>
@@ -64,7 +64,7 @@ export function EcosystemSection({ clubs }: { clubs: Club[] }) {
 
           <div className="mt-10 pt-8 border-t border-border grid grid-cols-3 gap-4 text-center">
             {[
-              { n: "7", l: "อำเภอ / Districts" },
+              { n: "6", l: "อำเภอ / Districts" },
               { n: "14", l: "Matchdays (Projected)" },
               { n: "315K+", l: "Online Reach (Projected)" },
             ].map((s) => (

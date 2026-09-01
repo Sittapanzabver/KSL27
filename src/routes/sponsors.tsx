@@ -47,7 +47,7 @@ function SponsorsPage() {
             <span className="text-korat-gold">อนาคตโคราช</span>
           </h1>
           <p className="text-base md:text-lg text-white/65 max-w-2xl leading-relaxed">
-            สนับสนุน Korat Super League และ KSL Academy U-16 — แบรนด์ของคุณเข้าถึงชุมชนฟุตบอล 7
+            สนับสนุน Korat Super League และ KSL Academy U-16 — แบรนด์ของคุณเข้าถึงชุมชนฟุตบอล 6
             อำเภอ ผู้ชมไลฟ์สดสะสม projected 315,000+ คน
           </p>
         </div>
