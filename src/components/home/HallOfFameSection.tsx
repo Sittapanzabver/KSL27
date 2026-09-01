@@ -77,7 +77,7 @@ export function HallOfFameSection() {
     queryFn: () => fetchTopScorersTable("senior"),
   });
 
-  const topScorer = (scorers as any[])[0];
+  const topScorer = scorers[0];
   const topAchievement = history
     .flatMap((c) => c.achievements.map((a) => ({ club: c.display_name, text: a })))
     .slice(0, 1)[0];

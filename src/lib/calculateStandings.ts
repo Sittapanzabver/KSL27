@@ -1,10 +1,21 @@
 // Compute league standings from a list of completed matches.
 // Each match should include home/away club objects and home_score/away_score.
 
+import type { Club } from "@/lib/queries";
+
+export interface MatchLike {
+  id: string;
+  status: string;
+  home_score: number | null;
+  away_score: number | null;
+  home?: Club | null;
+  away?: Club | null;
+}
+
 export interface StandingRow {
   id: string;
   club_id: string;
-  club: any;
+  club: Club;
   played: number;
   won: number;
   drawn: number;
@@ -15,10 +26,10 @@ export interface StandingRow {
   points: number;
 }
 
-export function calculateStandings(matches: any[]): StandingRow[] {
+export function calculateStandings(matches: MatchLike[]): StandingRow[] {
   const table = new Map<string, StandingRow>();
 
-  const ensure = (club: any): StandingRow | null => {
+  const ensure = (club: Club | null | undefined): StandingRow | null => {
     if (!club?.id) return null;
     let row = table.get(club.id);
     if (!row) {

@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { fetchDivisions, getActiveSeasonId } from "@/lib/queries";
+import { fetchDivisions, getActiveSeasonId, type Division } from "@/lib/queries";
 import { fetchStandingsFromMatches } from "@/lib/calculateStandings";
 import { ClubCrest } from "@/components/site/ClubCrest";
 import { DivisionTab } from "@/components/DivisionTab";
@@ -26,7 +26,7 @@ function StandingsPage() {
     queryKey: ["divisions"],
     queryFn: async () => {
       const divs = await fetchDivisions();
-      return [...divs].sort((a: any, b: any) => a.tier - b.tier);
+      return [...divs].sort((a: Division, b: Division) => a.tier - b.tier);
     },
   });
 

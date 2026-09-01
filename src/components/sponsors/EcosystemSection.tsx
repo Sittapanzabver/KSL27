@@ -1,8 +1,9 @@
 import { ClubCrest } from "@/components/site/ClubCrest";
 import { teams } from "@/constants/sponsorTiers";
 import { SectionHeader } from "./SectionHeader";
+import type { Club } from "@/lib/queries";
 
-export function EcosystemSection({ clubs }: { clubs: any[] }) {
+export function EcosystemSection({ clubs }: { clubs: Club[] }) {
   const list =
     clubs.length > 0
       ? clubs
@@ -38,7 +39,7 @@ export function EcosystemSection({ clubs }: { clubs: any[] }) {
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {list.map((c: any) => (
+            {list.map((c) => (
               <div
                 key={c.id}
                 className="group relative border border-border bg-asphalt-deep/40 p-4 flex items-center gap-3 hover:border-korat-red/60 hover:bg-korat-red/[0.04] transition-all"

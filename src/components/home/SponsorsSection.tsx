@@ -2,8 +2,9 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { SITE_YEAR } from "@/lib/site";
+import type { Sponsor } from "@/lib/queries";
 
-export function SponsorsSection({ sponsors }: { sponsors: any[] }) {
+export function SponsorsSection({ sponsors }: { sponsors: Sponsor[] }) {
   const { t } = useI18n();
   const titleSponsors = sponsors.filter((s) => s.tier === "title");
   const otherSponsors = sponsors.filter((s) => s.tier !== "title");

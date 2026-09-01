@@ -18,6 +18,13 @@ export function isClubOnBreak(slug: string | undefined): boolean {
   return !!slug && (CLUBS_ON_BREAK_2027 as readonly string[]).includes(slug);
 }
 
+export type Club = Awaited<ReturnType<typeof fetchActiveSeasonClubs>>[number];
+export type Division = Awaited<ReturnType<typeof fetchDivisions>>[number];
+export type NewsItem = Awaited<ReturnType<typeof fetchNews>>[number];
+export type Sponsor = Awaited<ReturnType<typeof fetchSponsors>>[number];
+export type Match = Awaited<ReturnType<typeof fetchAllMatches>>[number];
+export type TopScorer = Awaited<ReturnType<typeof fetchTopScorersTable>>[number];
+
 export async function fetchStandings(divisionId: string = "bd770ed0-2027-47e0-ab34-901a151e9f7c") {
   const { data, error } = await supabase
     .from("standings")

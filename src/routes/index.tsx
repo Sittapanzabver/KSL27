@@ -10,6 +10,9 @@ import {
   fetchDivisions,
   fetchActiveSeasonClubs,
   getActiveSeasonId,
+  type Match,
+  type Division,
+  type Club,
 } from "@/lib/queries";
 import { fetchStandingsFromMatches } from "@/lib/calculateStandings";
 import { ClubCrest } from "@/components/site/ClubCrest";
@@ -58,7 +61,7 @@ function MatchCenterSection() {
               </p>
             ) : (
               <div className="space-y-2">
-                {recent.map((m: any) => (
+                {recent.map((m: Match) => (
                   <Link key={m.id} to="/matches/$matchId" params={{ matchId: m.id }}>
                     <MiniMatch match={m} done />
                   </Link>
@@ -75,7 +78,7 @@ function MatchCenterSection() {
               </p>
             ) : (
               <div className="space-y-2">
-                {upcoming.map((m: any) => (
+                {upcoming.map((m: Match) => (
                   <Link key={m.id} to="/matches/$matchId" params={{ matchId: m.id }}>
                     <MiniMatch match={m} />
                   </Link>
@@ -121,8 +124,8 @@ function ClubGrid() {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {seniorClubs.map((c: any) => {
-            const sponsorName = (c as any).sponsor_name as string | undefined;
+          {seniorClubs.map((c: Club) => {
+            const sponsorName = (c as { sponsor_name?: string | null }).sponsor_name;
             return (
               <Link
                 key={c.id}
@@ -165,8 +168,9 @@ function HomePage() {
 
   const seniorDivisionId = divisions
     ? (
-        [...divisions].sort((a: any, b: any) => a.tier - b.tier).find((d: any) => d.tier === 1) ??
-        divisions[0]
+        [...divisions]
+          .sort((a: Division, b: Division) => a.tier - b.tier)
+          .find((d: Division) => d.tier === 1) ?? divisions[0]
       )?.id
     : undefined;
 

@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { fetchActiveSeasonClubs } from "@/lib/queries";
+import { fetchActiveSeasonClubs, type Club } from "@/lib/queries";
 import { MediaMetricsSection } from "@/components/sponsors/MediaMetricsSection";
 import { PackagesSection } from "@/components/sponsors/PackagesSection";
 import { EcosystemSection } from "@/components/sponsors/EcosystemSection";
@@ -19,7 +19,7 @@ export const Route = createFileRoute("/sponsors")({
 });
 
 function SponsorsPage() {
-  const [clubs, setClubs] = useState<any[]>([]);
+  const [clubs, setClubs] = useState<Club[]>([]);
 
   useEffect(() => {
     fetchActiveSeasonClubs().then(setClubs);

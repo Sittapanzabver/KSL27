@@ -1,7 +1,7 @@
 // src/routes/clubs.tsx
 import { createFileRoute, Link, Outlet, useMatchRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { fetchActiveSeasonClubs } from "@/lib/queries";
+import { fetchActiveSeasonClubs, type Club } from "@/lib/queries";
 import { ClubCrest } from "@/components/site/ClubCrest";
 import { PageHeader } from "./standings";
 import { GraduationCap } from "lucide-react";
@@ -22,7 +22,7 @@ function ClubsLayout() {
 }
 
 function ClubsPage() {
-  const [clubs, setClubs] = useState<any[]>([]);
+  const [clubs, setClubs] = useState<Club[]>([]);
 
   useEffect(() => {
     fetchActiveSeasonClubs().then(setClubs);

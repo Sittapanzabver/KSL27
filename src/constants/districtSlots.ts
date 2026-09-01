@@ -29,7 +29,7 @@ export const DISTRICT_SLOTS: DistrictSlot[] = [
   { name: "จักราช", x: 58, y: 57 },
   { name: "เฉลิมพระเกียรติ", x: 51, y: 55 },
   { name: "โชคชัย", x: 50, y: 66 },
-  { name: "หนองบุนนาก", x: 58, y: 70 },
+  { name: "หนองบุญมาก", x: 58, y: 70 },
   { name: "เสิงสาง", x: 63, y: 82, clubSlugs: ["soengsang-united"] },
   { name: "ครบุรี", x: 48, y: 84, clubSlugs: ["khonburi-fc"] },
   { name: "ปักธงชัย", x: 38, y: 73, clubSlugs: ["pakthongchai-united"] },
