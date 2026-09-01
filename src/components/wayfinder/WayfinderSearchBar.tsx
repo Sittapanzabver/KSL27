@@ -167,14 +167,14 @@ export function WayfinderSearchBar() {
 
     // Players
     for (const p of players) {
+      if (!p.club?.slug) continue;
       if (fuzzyMatch(q, p.name)) {
-        const clubName = p.club?.name || "";
         items.push({
           id: `player-${p.id}`,
           title: p.name,
-          subtitle: clubName,
+          subtitle: p.club.name,
           category: "นักเตะ",
-          href: `/clubs/${p.club?.slug || ""}`,
+          href: `/clubs/${p.club.slug}`,
           icon: <Users className="size-4" />,
         });
       }

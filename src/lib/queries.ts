@@ -24,6 +24,8 @@ export type NewsItem = Awaited<ReturnType<typeof fetchNews>>[number];
 export type Sponsor = Awaited<ReturnType<typeof fetchSponsors>>[number];
 export type Match = Awaited<ReturnType<typeof fetchAllMatches>>[number];
 export type TopScorer = Awaited<ReturnType<typeof fetchTopScorersTable>>[number];
+export type Player = Awaited<ReturnType<typeof fetchPlayersByClub>>[number];
+export type MatchEvent = Awaited<ReturnType<typeof fetchMatchEvents>>[number];
 
 export async function fetchStandings(divisionId: string = "bd770ed0-2027-47e0-ab34-901a151e9f7c") {
   const { data, error } = await supabase

@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import {
   fetchAllMatches,
   fetchClubBySlug,
@@ -7,8 +7,13 @@ import {
   fetchMatchEvents,
   fetchPlayersByClub,
   getActiveSeasonId,
+  type Club,
+  type Division,
+  type Match,
+  type MatchEvent,
+  type Player,
 } from "@/lib/queries";
-import { fetchStandingsFromMatches } from "@/lib/calculateStandings";
+import { fetchStandingsFromMatches, type StandingRow } from "@/lib/calculateStandings";
 import { ClubCrest } from "@/components/site/ClubCrest";
 import { SkillShowcaseSection } from "@/components/club/SkillShowcaseSection";
 import { SITE_YEAR, buildHead } from "@/lib/site";
@@ -24,6 +29,12 @@ export const Route = createFileRoute("/clubs/$slug")({
 });
 
 type DivCategory = "senior" | "u16";
+
+/** clubs Row + 2 columns ที่ยังไม่อยู่ใน generated types (แต่อยู่ใน DB จริง) */
+type ClubDetail = Club & {
+  secondary_color?: string | null;
+  stadium_capacity?: number | null;
+};
 
 // ─── Club sponsor config ───────────────────────────────────────────────────
 const CLUB_SPONSORS: Record<string, { name: string; logo: string; url: string; tier: string }[]> = {
@@ -161,13 +172,13 @@ const DISTRICT_ATTRACTIONS: Record<string, { name: string; desc: string; img: st
 
 function ClubDetail() {
   const { slug } = Route.useParams();
-  const [club, setClub] = useState<any>(null);
-  const [players, setPlayers] = useState<any[]>([]);
-  const [matches, setMatches] = useState<any[]>([]);
-  const [divisions, setDivisions] = useState<any[]>([]);
-  const [standings, setStandings] = useState<any[]>([]);
+  const [club, setClub] = useState<ClubDetail | null>(null);
+  const [players, setPlayers] = useState<Player[]>([]);
+  const [matches, setMatches] = useState<Match[]>([]);
+  const [divisions, setDivisions] = useState<Division[]>([]);
+  const [standings, setStandings] = useState<StandingRow[]>([]);
   const [seniorDivisionId, setSeniorDivisionId] = useState<string | null>(null);
-  const [eventsByMatch, setEventsByMatch] = useState<Record<string, any[]>>({});
+  const [eventsByMatch, setEventsByMatch] = useState<Record<string, MatchEvent[]>>({});
   const [matchTab, setMatchTab] = useState<DivCategory>("senior");
   const [activeSeasonId, setActiveSeasonId] = useState<string | null>(null);
   const [squadCategory, setSquadCategory] = useState<DivCategory>("senior");
@@ -205,10 +216,12 @@ function ClubDetail() {
 
       setPlayers(pls);
       setDivisions(divs);
-      const clubMatches = all.filter((m: any) => m.home.id === c.id || m.away.id === c.id);
+      const clubMatches = all.filter((m: Match) => m.home.id === c.id || m.away.id === c.id);
       const seasonId = await getActiveSeasonId();
       setActiveSeasonId(seasonId);
-      setMatches(seasonId ? clubMatches.filter((m: any) => m.season_id === seasonId) : clubMatches);
+      setMatches(
+        seasonId ? clubMatches.filter((m: Match) => m.season_id === seasonId) : clubMatches,
+      );
 
       const senior = [...divs].sort((a, b) => a.tier - b.tier).find((d) => d.tier === 1) ?? divs[0];
       if (senior) {
@@ -263,20 +276,20 @@ function ClubDetail() {
     return map;
   }, [divisions]);
 
-  const categorize = (m: any): DivCategory => {
-    if (!m.division_id) return "senior";
-    return divCategoryById.get(m.division_id) ?? "senior";
-  };
+  const categorize = useCallback(
+    (m: Match): DivCategory => {
+      if (!m.division_id) return "senior";
+      return divCategoryById.get(m.division_id) ?? "senior";
+    },
+    [divCategoryById],
+  );
 
   const filteredMatches = useMemo(
     () => matches.filter((m) => categorize(m) === matchTab),
-    [matches, matchTab, divCategoryById],
+    [matches, matchTab, categorize],
   );
 
-  const hasU16 = useMemo(
-    () => matches.some((m) => categorize(m) === "u16"),
-    [matches, divCategoryById],
-  );
+  const hasU16 = useMemo(() => matches.some((m) => categorize(m) === "u16"), [matches, categorize]);
 
   // ── Standings position + season stats (senior only) ──────────────────
   const standingRow = useMemo(
@@ -295,7 +308,7 @@ function ClubDetail() {
       .filter((m) => categorize(m) === "senior" && isFinished(m))
       .sort((a, b) => new Date(b.kickoff_at).getTime() - new Date(a.kickoff_at).getTime())
       .slice(0, 5);
-  }, [matches, divCategoryById]);
+  }, [matches, categorize]);
 
   // Form (W/D/L) — chronological oldest→newest of last 5
   const form = useMemo(() => {
@@ -304,6 +317,7 @@ function ClubDetail() {
       const isHome = m.home.id === club.id;
       const my = isHome ? m.home_score : m.away_score;
       const opp = isHome ? m.away_score : m.home_score;
+      if (my == null || opp == null) return "D";
       if (my === opp) return "D";
       return my > opp ? "W" : "L";
     });
@@ -720,7 +734,8 @@ function ClubDetail() {
 
         {/* ── ที่เที่ยวใกล้เคียง ─────────────────────────────────── */}
         {(() => {
-          const attractions = DISTRICT_ATTRACTIONS[club.district];
+          const district = club.district ?? "";
+          const attractions = DISTRICT_ATTRACTIONS[district];
           if (!attractions || attractions.length === 0) return null;
           return (
             <section>
@@ -786,12 +801,12 @@ function HeroStat({
   );
 }
 
-function RecentResultCard({ match, club }: { match: any; club: any }) {
+function RecentResultCard({ match, club }: { match: Match; club: Club }) {
   const isHome = match.home.id === club.id;
   const opp = isHome ? match.away : match.home;
   const my = isHome ? match.home_score : match.away_score;
   const opp_s = isHome ? match.away_score : match.home_score;
-  const outcome = my === opp_s ? "D" : my > opp_s ? "W" : "L";
+  const outcome = my == null || opp_s == null ? "-" : my === opp_s ? "D" : my > opp_s ? "W" : "L";
   const outcomeColor =
     outcome === "W" ? "bg-success" : outcome === "L" ? "bg-korat-red" : "bg-muted";
 
@@ -827,7 +842,7 @@ function RecentResultCard({ match, club }: { match: any; club: any }) {
   );
 }
 
-function ClubMatchRow({ match, club, events }: { match: any; club: any; events: any[] }) {
+function ClubMatchRow({ match, club, events }: { match: Match; club: Club; events: MatchEvent[] }) {
   const isHome = match.home.id === club.id;
   const opp = isHome ? match.away : match.home;
   const done = isFinished(match);
@@ -840,11 +855,13 @@ function ClubMatchRow({ match, club, events }: { match: any; club: any; events: 
     .sort((a, b) => (a.minute ?? 0) - (b.minute ?? 0));
 
   const result = done
-    ? match.home_score === match.away_score
-      ? "เสมอ"
-      : (isHome ? match.home_score > match.away_score : match.away_score > match.home_score)
-        ? "ชนะ"
-        : "แพ้"
+    ? match.home_score == null || match.away_score == null
+      ? null
+      : match.home_score === match.away_score
+        ? "เสมอ"
+        : (isHome ? match.home_score > match.away_score : match.away_score > match.home_score)
+          ? "ชนะ"
+          : "แพ้"
     : null;
 
   return (
@@ -867,8 +884,8 @@ function ClubMatchRow({ match, club, events }: { match: any; club: any; events: 
             <>
               <span className="font-display text-lg font-extrabold tabular-nums">
                 {isHome
-                  ? `${match.home_score}-${match.away_score}`
-                  : `${match.away_score}-${match.home_score}`}
+                  ? `${match.home_score ?? "-"}-${match.away_score ?? "-"}`
+                  : `${match.away_score ?? "-"}-${match.home_score ?? "-"}`}
               </span>
               <span
                 className={`text-xs font-bold uppercase ${
@@ -907,11 +924,11 @@ function ClubMatchRow({ match, club, events }: { match: any; club: any; events: 
   );
 }
 
-function isFinished(match: any) {
+function isFinished(match: Match) {
   return match.status === "completed";
 }
 
-function InfoRow({ label, value }: { label: string; value: any }) {
+function InfoRow({ label, value }: { label: string; value: string | null }) {
   return (
     <div>
       <p className="text-xs text-muted-foreground uppercase tracking-widest mb-1">{label}</p>
@@ -925,7 +942,7 @@ function SquadRow({
   index,
   clubColor,
 }: {
-  player: any;
+  player: Player;
   index: number;
   clubColor?: string | null;
 }) {
